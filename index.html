@@ -6,53 +6,85 @@
     <title>LexSV-Pro | Dr. Tonny Ramirez</title>
     <meta name="theme-color" content="#0A1F44">
     <style>
-        :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFF;--gris:#F5F5F7}
-        *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,sans-serif}
-        body{background:var(--gris);color:var(--azul);padding-bottom:2rem}
-    .header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:4.5rem 1rem 2rem;text-align:center}
-    .logo{width:120px;height:120px;margin:0 auto 1rem;filter:drop-shadow(0 6px 12px rgba(212,175,55,.5))}
-    .titulo{color:var(--dorado);font-size:2.5rem;font-weight:800}
-    .sub{color:var(--blanco);font-size:1.05rem;margin-top:.5rem;opacity:.95}
-    .nav{position:sticky;top:0;background:var(--blanco);display:flex;overflow-x:auto;box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:100}
-    .nav-btn{flex:1;padding:1.2rem.5rem;border:none;background:var(--blanco);color:var(--azul);font-weight:700;font-size:.9rem;cursor:pointer;border-bottom:4px solid transparent}
-    .nav-btn.active{color:var(--dorado);border-bottom:4px solid var(--dorado)}
-    .seccion{display:none;padding:2rem 1.5rem;animation:fade.3s;max-width:900px;margin:0 auto}
-    .seccion.active{display:block}
-        @keyframes fade{from{opacity:0}to{opacity:1}}
-    .card{background:var(--blanco);margin:0 0 1.5rem;padding:2rem;border-radius:18px;box-shadow:0 4px 16px rgba(10,31,68,.1);border-left:5px solid var(--dorado)}
-    .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.2rem;margin-top:1.5rem}
-    .btn-ley{background:var(--blanco);border:2px solid var(--azul);color:var(--azul);padding:1.2rem;border-radius:14px;font-weight:700;text-align:center;cursor:pointer;transition:.2s}
-    .btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.96)}
-        h3{color:var(--azul);margin-bottom:1rem;font-size:1.5rem}
-        p{line-height:1.7;color:#333;font-size:1.05rem}
-    .articulo{background:#f9f9f9;padding:1.2rem;border-radius:10px;margin:1rem 0;border-left:4px solid var(--dorado);font-size:1rem}
-    .buscador{width:100%;padding:1rem;border:2px solid var(--azul);border-radius:10px;margin:1.5rem 0;font-size:1rem}
-    .ia-input{width:100%;min-height:120px;padding:1rem;border:2px solid var(--azul);border-radius:10px;font-size:1rem;margin:1rem 0}
-    .ia-btn{background:var(--azul);color:var(--dorado);border:none;padding:1rem 2rem;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer}
-    .ia-respuesta{background:#e8f4fd;padding:1.5rem;border-radius:10px;margin-top:1rem;border-left:4px solid #1a3a6b;display:none}
+        :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFF;--gris:#F8F9FA}
+        *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+        body{background:var(--gris);color:var(--azul);line-height:1.6}
+   .header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+   .header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(212,175,55,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(212,175,55,0.1)"/></svg>');opacity:.3}
+   .logo-container{display:flex;flex-direction:column;align-items:center;gap:1rem;position:relative;z-index:2}
+   .logo-beagle{width:130px;height:130px;filter:drop-shadow(0 8px 16px rgba(212,175,55,.4))}
+   .titulo{color:var(--dorado);font-size:2.8rem;font-weight:900;letter-spacing:-1px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+   .sub{color:var(--blanco);font-size:1.1rem;margin-top:.3rem;opacity:.95;font-weight:500}
+   .nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 20px rgba(0,0,0,.08);z-index:100}
+   .nav-btn{flex:1;padding:1.3rem 1rem;border:none;background:var(--blanco);color:var(--azul);font-weight:700;font-size:.95rem;cursor:pointer;border-bottom:4px solid transparent;transition:.2s}
+   .nav-btn:hover{background:#f8f9fa}
+   .nav-btn.active{color:var(--dorado);border-bottom:4px solid var(--dorado);background:#fefdf8}
+   .seccion{display:none;padding:2.5rem 1.5rem;animation:fade.4s;max-width:1000px;margin:0 auto}
+   .seccion.active{display:block}
+        @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+   .card{background:var(--blanco);margin:0 0 2rem;padding:2.5rem;border-radius:20px;box-shadow:0 8px 24px rgba(10,31,68,.08);border:1px solid rgba(10,31,68,.06)}
+   .card-titulo{color:var(--azul);margin-bottom:1.2rem;font-size:1.6rem;font-weight:800;display:flex;align-items:center;gap:.8rem}
+   .card-titulo::before{content:'';width:5px;height:30px;background:var(--dorado);border-radius:3px}
+   .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:2rem}
+   .btn-ley{background:linear-gradient(135deg,#fff 0%,#f8f9fa 100%);border:2px solid var(--azul);color:var(--azul);padding:1.4rem;border-radius:16px;font-weight:700;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 4px 12px rgba(10,31,68,.06)}
+   .btn-ley:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,31,68,.12);border-color:var(--dorado)}
+   .btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.98)}
+   .articulo{background:#f8f9fa;padding:1.5rem;border-radius:12px;margin:1.2rem 0;border-left:5px solid var(--dorado);font-size:1.05rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+   .buscador{width:100%;padding:1.2rem;border:2px solid #e1e5e9;border-radius:12px;margin:1.5rem 0;font-size:1.05rem;transition:.2s}
+   .buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 3px rgba(212,175,55,.1)}
     </style>
 </head>
 <body>
     <header class="header">
-        <!-- TOROGOZ SVG DEFINITIVO - ESTE SÍ SALE -->
-        <svg class="logo" viewBox="0 0 100 100">
-            <defs>
-                <linearGradient id="oro" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#FFD700" />
-                    <stop offset="100%" style="stop-color:#D4AF37" />
-                </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="47" fill="#0A1F44" stroke="url(#oro)" stroke-width="5"/>
-            <path d="M25 68 Q 35 38 50 44 Q 65 38 75 68 L 68 75 Q 50 56 32 75 Z" fill="url(#oro)"/>
-            <path d="M40 28 L 50 12 L 60 28 Q 55 37 45 37 Q 40 37 40 28" fill="url(#oro)"/>
-            <circle cx="39" cy="45" r="3.5" fill="#0A1F44"/>
-            <circle cx="61" cy="45" r="3.5" fill="#0A1F44"/>
-            <ellipse cx="20" cy="50" rx="8" ry="14" fill="#1E90FF" transform="rotate(-25 20 50)"/>
-            <ellipse cx="80" cy="50" rx="8" ry="14" fill="#1E90FF" transform="rotate(25 80 50)"/>
-            <path d="M50 53 L 46 64 L 54 64 Z" fill="#FF4500"/>
-        </svg>
-        <h1 class="titulo">LexSV-Pro</h1>
-        <p class="sub">Dr. Tonny Ramirez | Propietario Único | Santa Tecla, El Salvador</p>
+        <div class="logo-container">
+            <!-- LOGO BEAGLE PROFESIONAL - DR. TONNY RAMIREZ -->
+            <svg class="logo-beagle" viewBox="0 0 200 200">
+                <defs>
+                    <linearGradient id="beagleGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFD700"/>
+                        <stop offset="100%" style="stop-color:#D4AF37"/>
+                    </linearGradient>
+                    <filter id="shadow">
+                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+                    </filter>
+                </defs>
+                <!-- Círculo base elegante -->
+                <circle cx="100" cy="100" r="95" fill="#0A1F44" stroke="url(#beagleGold)" stroke-width="6" filter="url(#shadow)"/>
+
+                <!-- Cara Beagle -->
+                <ellipse cx="100" cy="110" rx="45" ry="50" fill="url(#beagleGold)"/>
+                <ellipse cx="100" cy="120" rx="35" ry="30" fill="#F5DEB3"/>
+
+                <!-- Orejas largas de Beagle -->
+                <ellipse cx="55" cy="90" rx="18" ry="35" fill="#8B4513" transform="rotate(-25 55 90)"/>
+                <ellipse cx="145" cy="90" rx="18" ry="35" fill="#8B4513" transform="rotate(25 145 90)"/>
+
+                <!-- Manchas características -->
+                <ellipse cx="85" cy="95" rx="12" ry="15" fill="#8B4513"/>
+                <ellipse cx="120" cy="130" rx="15" ry="18" fill="#8B4513"/>
+
+                <!-- Ojos -->
+                <ellipse cx="85" cy="100" rx="6" ry="8" fill="#0A1F44"/>
+                <ellipse cx="115" cy="100" rx="6" ry="8" fill="#0A1F44"/>
+                <circle cx="87" cy="98" r="2" fill="#FFF"/>
+                <circle cx="117" cy="98" r="2" fill="#FFF"/>
+
+                <!-- Nariz -->
+                <ellipse cx="100" cy="118" rx="8" ry="6" fill="#0A1F44"/>
+
+                <!-- Hocico -->
+                <path d="M100 124 Q 90 132 100 135 Q 110 132 100 124" fill="#8B4513"/>
+
+                <!-- Texto circular "DR. TONNY RAMIREZ" -->
+                <path id="curve" d="M 50 160 A 50 50 0 0 1 150 160" fill="none"/>
+                <text font-size="11" font-weight="700" fill="url(#beagleGold)">
+                    <textPath href="#curve" startOffset="50%" text-anchor="middle">DR. TONNY RAMIREZ • ABOGADO</textPath>
+                </text>
+            </svg>
+
+            <h1 class="titulo">LexSV-Pro</h1>
+            <p class="sub">Despacho Jurídico Digital | Santa Tecla, El Salvador</p>
+        </div>
     </header>
 
     <nav class="nav">
@@ -65,11 +97,11 @@
 
     <div id="inicio" class="seccion active">
         <div class="card">
-            <h3>Bienvenido Dr. Ramirez</h3>
-            <p><strong>Software jurídico privado y seguro.</strong> 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador. Tus casos nunca salen de tu dispositivo.</p>
+            <h3 class="card-titulo">Bienvenido Dr. Ramirez</h3>
+            <p><strong>Software jurídico privado y seguro.</strong> 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador. Tus expedientes nunca salen de tu dispositivo.</p>
         </div>
         <div class="card">
-            <h3>Accesos Rápidos</h3>
+            <h3 class="card-titulo">Accesos Rápidos</h3>
             <div class="btn-grid">
                 <div class="btn-ley" onclick="mostrar('casos')">📁 Nuevo Caso</div>
                 <div class="btn-ley" onclick="mostrar('plazos')">⚖️ Calcular Plazo</div>
@@ -81,16 +113,16 @@
 
     <div id="casos" class="seccion">
         <div class="card">
-            <h3>📁 Mis Casos Activos</h3>
-            <p>Próximamente: Guardá expedientes cifrados en tu dispositivo. 100% privado, sin nube.</p>
-            <div class="btn-ley" style="margin-top:1.5rem;max-width:250px">+ Agregar Nuevo Caso</div>
+            <h3 class="card-titulo">Mis Casos Activos</h3>
+            <p>Próximamente: Sistema de gestión de expedientes cifrados. Guarda clientes, audiencias y documentos 100% en tu dispositivo.</p>
+            <div class="btn-ley" style="margin-top:2rem;max-width:280px">+ Agregar Nuevo Caso</div>
         </div>
     </div>
 
     <div id="leyes" class="seccion">
         <div class="card">
-            <h3>📚 Códigos y Leyes de El Salvador</h3>
-            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo: ej. 'homicidio' o 'Art. 146'..." onkeyup="buscarArticulos()">
+            <h3 class="card-titulo">Códigos y Leyes de El Salvador</h3>
+            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo: ej. 'homicidio', 'Art. 146', 'divorcio'..." onkeyup="buscarArticulos()">
             <div class="btn-grid">
                 <div class="btn-ley" onclick="verLey('cpcm')">CPCM</div>
                 <div class="btn-ley" onclick="verLey('cp')">Código Penal</div>
@@ -107,21 +139,22 @@
 
     <div id="plazos" class="seccion">
         <div class="card">
-            <h3>⚖️ Calculadora Plazos CPCM</h3>
+            <h3 class="card-titulo">Calculadora Plazos CPCM</h3>
             <div class="articulo"><strong>Art. 146 CPCM:</strong> Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario.</div>
             <div class="articulo"><strong>Art. 147 CPCM:</strong> Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles.</div>
             <div class="articulo"><strong>Art. 224 CPCM:</strong> Término para contestar demanda: 20 días hábiles.</div>
-            <p style="margin-top:1.5rem;color:var(--dorado);font-weight:700">Próximamente: Calculadora automática con calendario judicial SV.</p>
+            <div class="articulo"><strong>Art. 272 CPCM:</strong> Término para apelar: 5 días hábiles desde la notificación.</div>
+            <p style="margin-top:2rem;color:var(--dorado);font-weight:700;font-size:1.1rem">Próximamente: Calculadora automática con calendario judicial de El Salvador.</p>
         </div>
     </div>
 
     <div id="ia" class="seccion">
         <div class="card">
-            <h3>🤖 IA Legal Asistente - Modo Offline</h3>
-            <p>Consultá jurisprudencia básica, redactá modelos de escritos y analizá casos. 100% offline.</p>
-            <textarea class="ia-input" id="preguntaIA" placeholder="Ej: Redactame un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia..."></textarea>
-            <button class="ia-btn" onclick="consultarIA()">Consultar IA LexSV</button>
-            <div class="ia-respuesta" id="respuestaIA"></div>
+            <h3 class="card-titulo">IA Legal Asistente - LexSV</h3>
+            <p>Esta IA funciona 100% offline. Consulta los 8 códigos cargados y genera borradores de escritos.</p>
+            <textarea class="buscador" id="preguntaIA" placeholder="Ej: Redactame un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia..." style="min-height:140px;resize:vertical"></textarea>
+            <button class="btn-ley" style="background:var(--azul);color:var(--dorado);border:none;max-width:250px" onclick="consultarIA()">Consultar IA LexSV</button>
+            <div id="respuestaIA" style="display:none;margin-top:2rem"></div>
         </div>
     </div>
 
@@ -131,7 +164,7 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             event.target.classList.add('active');
-            window.scrollTo(0,0);
+            window.scrollTo({top:0,behavior:'smooth'});
         }
 
         const baseDatosLeyes = {
@@ -139,39 +172,47 @@
                 {art:"CPCM Art. 1", texto:"Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal."},
                 {art:"CPCM Art. 146", texto:"Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario."},
                 {art:"CPCM Art. 217", texto:"La demanda deberá contener: nombre del juez, nombre y generales de las partes, hechos, fundamentos de derecho y petitorio claro."},
-                {art:"CPCM Art. 224", texto:"El demandado tiene 20 días hábiles para contestar la demanda desde su notificación."}
+                {art:"CPCM Art. 224", texto:"El demandado tiene 20 días hábiles para contestar la demanda desde su notificación."},
+                {art:"CPCM Art. 272", texto:"El recurso de apelación deberá interponerse dentro de 5 días hábiles siguientes a la notificación."}
             ],
             cp: [
                 {art:"CP Art. 1", texto:"Nadie podrá ser sancionado por hechos que la ley penal no haya previsto como delito o falta con anterioridad a su comisión."},
                 {art:"CP Art. 114", texto:"Homicidio simple: El que matare a otro será sancionado con prisión de diez a veinte años."},
-                {art:"CP Art. 207", texto:"Hurto: El que se apoderare de cosa mueble ajena, sin violencia en las personas ni fuerza en las cosas, será sancionado con prisión de dos a cinco años."}
+                {art:"CP Art. 207", texto:"Hurto: El que se apoderare de cosa mueble ajena, sin violencia en las personas ni fuerza en las cosas, será sancionado con prisión de dos a cinco años."},
+                {art:"CP Art. 218", texto:"Estafa: El que con ánimo de lucro defraudare a otro, prisión de 2 a 5 años."}
             ],
             ct: [
                 {art:"CT Art. 1", texto:"El presente Código regula las relaciones entre patronos y trabajadores privados y las de éstos entre sí."},
-                {art:"CT Art. 29", texto:"Contrato individual de trabajo es aquel por el cual una persona se obliga a prestar a otra sus servicios personales bajo dependencia."},
-                {art:"CT Art. 58", texto:"La jornada ordinaria de trabajo efectivo diurno no excederá de ocho horas diarias, ni la semana laboral de cuarenta y cuatro horas."}
+                {art:"CT Art. 29", texto:"Contrato individual de trabajo es aquel por el cual una persona se obliga a prestar a otra sus servicios personales bajo dependencia y subordinación."},
+                {art:"CT Art. 58", texto:"La jornada ordinaria de trabajo efectivo diurno no excederá de ocho horas diarias, ni la semana laboral de cuarenta y cuatro horas."},
+                {art:"CT Art. 306", texto:"El trabajador tiene derecho a un día de descanso remunerado por cada semana laboral."}
             ],
             cf: [
                 {art:"CF Art. 1", texto:"La familia es la base fundamental de la sociedad y tendrá la protección del Estado."},
                 {art:"CF Art. 11", texto:"El matrimonio es la unión legal de un hombre y una mujer, con el fin de establecer una plena y permanente comunidad de vida."},
+                {art:"CF Art. 106", texto:"El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo."},
                 {art:"CF Art. 211", texto:"Los padres tienen el deber de alimentar, educar, dar asistencia y protección a sus hijos menores de edad."}
             ],
             cc: [
                 {art:"CC Art. 1", texto:"Son comerciantes los que teniendo capacidad legal para contratar, ejercen por cuenta propia actos de comercio, haciendo de ello su profesión habitual."},
-                {art:"CC Art. 21", texto:"La sociedad mercantil es un contrato por el cual dos o más personas se obligan a poner en común bienes o industria."}
+                {art:"CC Art. 21", texto:"La sociedad mercantil es un contrato por el cual dos o más personas se obligan a poner en común bienes o industria."},
+                {art:"CC Art. 553", texto:"El cheque es un título valor a la orden, literal y autónomo."}
             ],
             cn: [
                 {art:"Cn. Art. 1", texto:"El Salvador reconoce a la persona humana como el origen y el fin de la actividad del Estado."},
                 {art:"Cn. Art. 2", texto:"Toda persona tiene derecho a la vida, a la integridad física y moral, a la libertad, a la seguridad, al trabajo, a la propiedad y posesión."},
-                {art:"Cn. Art. 11", texto:"Ninguna persona puede ser privada del derecho a la vida, a la libertad, a la propiedad y posesión, ni de cualquier otro de sus derechos sin ser previamente oída y vencida en juicio."}
+                {art:"Cn. Art. 11", texto:"Ninguna persona puede ser privada del derecho a la vida, a la libertad, a la propiedad y posesión, ni de cualquier otro de sus derechos sin ser previamente oída y vencida en juicio."},
+                {art:"Cn. Art. 144", texto:"Los tratados internacionales celebrados por El Salvador con otros estados constituyen leyes de la República."}
             ],
             lpa: [
                 {art:"LPA Art. 1", texto:"La presente Ley regula la actividad de la Administración Pública en sus relaciones con los administrados."},
-                {art:"LPA Art. 86", texto:"El plazo máximo para dictar resolución expresa y notificarla será de tres meses, salvo que una norma con rango de ley establezca otro mayor."}
+                {art:"LPA Art. 86", texto:"El plazo máximo para dictar resolución expresa y notificarla será de tres meses, salvo que una norma con rango de ley establezca otro mayor."},
+                {art:"LPA Art. 132", texto:"Los actos administrativos producen efectos desde la fecha en que se dicten, salvo que en ellos se disponga otra cosa."}
             ],
             lpdp: [
                 {art:"LPDP Art. 1", texto:"Esta Ley tiene por objeto garantizar el derecho a la protección de datos personales."},
-                {art:"LPDP Art. 6", texto:"El tratamiento de datos personales requiere el consentimiento previo, expreso e informado del titular, salvo excepciones legales."}
+                {art:"LPDP Art. 6", texto:"El tratamiento de datos personales requiere el consentimiento previo, expreso e informado del titular, salvo excepciones legales."},
+                {art:"LPDP Art. 15", texto:"El titular tiene derecho a acceder, rectificar, cancelar y oponerse al tratamiento de sus datos personales."}
             ]
         };
 
@@ -187,41 +228,65 @@
         function buscarArticulos() {
             const query = document.getElementById('buscarLey').value.toLowerCase();
             if(query.length < 3) {
-                document.getElementById('contenido-ley').innerHTML = '<p>Escribí al menos 3 letras para buscar...</p>';
+                document.getElementById('contenido-ley').innerHTML = '<p style="text-align:center;color:#666;padding:2rem">Escribí al menos 3 letras para buscar en los 8 códigos...</p>';
                 return;
             }
             let resultados = '';
+            let contador = 0;
             Object.values(baseDatosLeyes).forEach(codigo => {
                 codigo.forEach(a => {
                     if(a.texto.toLowerCase().includes(query) || a.art.toLowerCase().includes(query)) {
                         resultados += `<div class="articulo"><strong>${a.art}.-</strong> ${a.texto}</div>`;
+                        contador++;
                     }
                 });
             });
-            document.getElementById('contenido-ley').innerHTML = resultados || '<p>No se encontraron artículos.</p>';
+            document.getElementById('contenido-ley').innerHTML = resultados || '<p style="text-align:center;color:#666;padding:2rem">No se encontraron artículos con "' + query + '"</p>';
         }
 
         function consultarIA() {
             const pregunta = document.getElementById('preguntaIA').value.toLowerCase();
             const resp = document.getElementById('respuestaIA');
             resp.style.display = 'block';
+            resp.className = 'articulo';
 
             if(pregunta.includes('divorcio') && pregunta.includes('mutuo')) {
-                resp.innerHTML = `<strong>Modelo Demanda Divorcio Mutuo Acuerdo - CF Art. 106:</strong><br><br>
-                SEÑOR JUEZ DE FAMILIA...<br>
-                [Nombre], mayor de edad, abogado, del domicilio de Santa Tecla...<br>
-                EXPONEMOS: Que venimos a promover DILIGENCIAS DE DIVORCIO POR MUTUO CONSENTIMIENTO...<br><br>
-                <em>Nota: LexSV-Pro genera borradores. Siempre revise con legislación vigente.</em>`;
-            } else if(pregunta.includes('plazo') || pregunta.includes('cpcm')) {
-                resp.innerHTML = `<strong>Según CPCM Art. 146 y 147:</strong><br>
-                1. Los plazos son perentorios e improrrogables<br>
-                2. Se cuentan desde el día siguiente a la notificación<br>
-                3. No corren días inhábiles<br><br>
-                <em>Para cálculo exacto, use la pestaña "Plazos" próximamente.</em>`;
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.2rem">Modelo Demanda Divorcio Mutuo Acuerdo - CF Art. 106</strong><br><br>
+                <strong>SEÑOR JUEZ DE FAMILIA DE SANTA TECLA</strong><br><br>
+                Nosotros, [NOMBRE ESPOSO] y [NOMBRE ESPOSA], mayores de edad, casados entre sí, del domicilio de Santa Tecla, actuando en nombre propio...<br><br>
+                <strong>EXPONEMOS:</strong><br>
+                I. Que contrajimos matrimonio civil el día [FECHA]...<br>
+                II. Que de dicha unión no procreamos hijos / procreamos a...<br>
+                III. Que por convenir a nuestros intereses, hemos decidido disolver el vínculo matrimonial...<br><br>
+                <strong>PETITORIO:</strong> Se decrete el divorcio por mutuo consentimiento...<br><br>
+                <em style="color:var(--dorado)">Nota: LexSV-Pro genera borradores. Validá con legislación vigente y ajustá datos.</em>`;
+            } else if(pregunta.includes('plazo') || pregunta.includes('cpcm') || pregunta.includes('término')) {
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.2rem">Cálculo de Plazos - CPCM Art. 146-147</strong><br><br>
+                <strong>Reglas de Oro:</strong><br>
+                1. Los plazos son <strong>perentorios e improrrogables</strong><br>
+                2. Se cuentan desde el <strong>día siguiente</strong> a la notificación<br>
+                3. <strong>No corren</strong> días inhábiles, sábados, domingos ni feriados<br><br>
+                <strong>Plazos Comunes:</strong><br>
+                • Contestar demanda: <strong>20 días hábiles</strong> Art. 224 CPCM<br>
+                • Apelar: <strong>5 días hábiles</strong> Art. 272 CPCM<br>
+                • Casación: <strong>15 días hábiles</strong> Art. 524 CPCM<br><br>
+                <em style="color:var(--dorado)">Próximamente: Calculadora con calendario judicial 2026 de El Salvador</em>`;
+            } else if(pregunta.includes('homicidio') || pregunta.includes('penal')) {
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.2rem">Código Penal - Delitos</strong><br><br>
+                <strong>CP Art. 114 - Homicidio Simple:</strong> Prisión de 10 a 20 años<br>
+                <strong>CP Art. 207 - Hurto:</strong> Prisión de 2 a 5 años sin violencia<br>
+                <strong>CP Art. 218 - Estafa:</strong> Prisión de 2 a 5 años<br><br>
+                <em style="color:var(--dorado)">Tip: Usá el buscador en "Leyes SV" para encontrar artículos específicos</em>`;
             } else {
-                resp.innerHTML = `<strong>LexSV-Pro IA Offline:</strong><br>
-                Tu consulta fue registrada. En la versión completa, esta IA buscará en los 8 códigos cargados y jurisprudencia de la CSJ.<br><br>
-                <em>Próximamente: Redacción automática de escritos, análisis de jurisprudencia y alertas de plazos.</em>`;
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.2rem">LexSV-Pro IA Offline v1.0</strong><br><br>
+                Tu consulta: "${document.getElementById('preguntaIA').value}"<br><br>
+                <strong>Esta IA busca en 8 códigos:</strong> CPCM, Penal, Trabajo, Familia, Comercio, Constitución, Proc. Adm. y Prot. Datos.<br><br>
+                <strong>Próximas funciones:</strong><br>
+                • Redacción automática de demandas, contestaciones y recursos<br>
+                • Análisis de jurisprudencia de la Sala de lo Constitucional<br>
+                • Alertas de vencimiento de plazos<br>
+                • Modelos de contratos y escritos<br><br>
+                <em style="color:var(--dorado)">Todo funciona 100% offline. Tus datos nunca salen de tu dispositivo.</em>`;
             }
         }
     </script>
