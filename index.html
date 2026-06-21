@@ -2,56 +2,61 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>LexSV-Pro | Dr. Tonny Ramirez</title>
     <meta name="theme-color" content="#0A1F44">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFF;--gris:#F7F8FC;--texto:#1A1D29;--borde:#E5E7EB}
+        :root{--azul:#0A1F44;--azul2:#1a3a6b;--dorado:#D4AF37;--dorado2:#B8941F;--blanco:#FFF;--gris:#F7F8FC;--texto:#1A1D29;--borde:#E5E7EB}
         *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-        body{background:var(--gris);color:var(--texto);font-family:'Inter',sans-serif;line-height:1.7}
-.header{background:linear-gradient(160deg,#0A1F44 0%,#1a3a6b 100%);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative}
-.config-btn{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,.12);border:2px solid var(--dorado);color:var(--dorado);padding:.8rem 1.4rem;border-radius:14px;font-weight:700;cursor:pointer;font-size:.9rem;backdrop-filter:blur(12px);z-index:10}
-.logo{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;object-fit:cover;border:8px solid var(--dorado);box-shadow:0 15px 45px rgba(212,175,55,.5);background:#0A1F44;display:block}
-.logo-default{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;border:8px solid var(--dorado);background:#0A1F44;display:flex;align-items:center;justify-content:center;font-size:5.5rem;box-shadow:0 15px 45px rgba(212,175,55,.5)}
-.titulo{color:var(--dorado);font-size:3.5rem;font-weight:900;letter-spacing:-2px;margin-bottom:.8rem;font-family:'Playfair Display',serif}
-.nombre-dr{color:var(--blanco);font-size:1.5rem;font-weight:600;margin-bottom:.5rem}
-.sub{color:rgba(255,255,255,.85);font-size:1.1rem}
-.nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 25px rgba(0,0,0,.07);z-index:50;border-bottom:1px solid var(--borde)}
-.nav-btn{flex:1;padding:1.6rem 1rem;border:none;background:var(--blanco);color:#64748B;font-weight:700;font-size:1.05rem;cursor:pointer;border-bottom:4px solid transparent;transition:.2s}
+        html{scroll-behavior:smooth}
+        body{background:var(--gris);color:var(--texto);font-family:'Inter',-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.header{background:linear-gradient(160deg,#0A1F44 0%,#1a3a6b 100%);padding:3rem 1.5rem 2.8rem;text-align:center;position:relative}
+.config-btn{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.15);border:2px solid var(--dorado);color:var(--dorado);padding:.9rem 1.5rem;border-radius:14px;font-weight:700;cursor:pointer;font-size:.95rem;backdrop-filter:blur(12px);z-index:10;transition:all.3s}
+.config-btn:active{transform:scale(.95);background:rgba(212,175,55,.3)}
+.logo{width:170px;height:170px;margin:0 auto 2rem;border-radius:50%;object-fit:cover;border:8px solid var(--dorado);box-shadow:0 20px 60px rgba(212,175,55,.6);background:#0A1F44;display:block}
+.logo-default{width:170px;height:170px;margin:0 auto 2rem;border-radius:50%;border:8px solid var(--dorado);background:#0A1F44;display:flex;align-items:center;justify-content:center;font-size:6rem;box-shadow:0 20px 60px rgba(212,175,55,.6)}
+.titulo{color:var(--dorado);font-size:3.8rem;font-weight:900;letter-spacing:-2px;margin-bottom:.8rem;font-family:'Playfair Display',serif;text-shadow:0 4px 12px rgba(0,0,0,.3)}
+.nombre-dr{color:var(--blanco);font-size:1.6rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.5px}
+.sub{color:rgba(255,255,255,.9);font-size:1.15rem;font-weight:400}
+.nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 30px rgba(0,0,0,.08);z-index:100;border-bottom:1px solid var(--borde)}
+.nav-btn{flex:1;padding:1.7rem 1rem;border:none;background:var(--blanco);color:#64748B;font-weight:700;font-size:1.08rem;cursor:pointer;border-bottom:4px solid transparent;transition:all.25s}
+.nav-btn:active{transform:scale(.98)}
 .nav-btn.active{color:var(--azul);border-bottom:4px solid var(--dorado);background:#FFFBF0}
-.seccion{display:none;padding:3.5rem 1.5rem;max-width:1280px;margin:0 auto}
-.seccion.active{display:block;animation:fadeIn.5s}
-        @keyframes fadeIn{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
-.card{background:var(--blanco);margin:0 0 2.5rem;padding:3rem;border-radius:28px;box-shadow:0 12px 45px rgba(10,31,68,.08);border:1px solid var(--borde)}
-.card-titulo{color:var(--azul);margin-bottom:2rem;font-size:2.2rem;font-weight:900;display:flex;align-items:center;gap:1.2rem;font-family:'Playfair Display',serif}
-.card-titulo::before{content:'';width:7px;height:45px;background:linear-gradient(180deg,var(--dorado) 0%,#B8941F 100%);border-radius:4px}
-.btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:2.5rem}
-.btn-ley{background:linear-gradient(135deg,#fff 0%,#F8FAFC 100%);border:2px solid var(--borde);color:var(--azul);padding:2rem;border-radius:20px;font-weight:700;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 6px 20px rgba(10,31,68,.06);font-size:1.1rem}
-.btn-ley:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(10,31,68,.15);border-color:var(--dorado)}
-.btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.98)}
-.articulo{background:#F8FAFC;padding:2rem;border-radius:18px;margin:1.8rem 0;border-left:6px solid var(--dorado);font-size:1.1rem;line-height:2;box-shadow:0 3px 12px rgba(0,0,0,.04)}
-.articulo strong{color:var(--azul);font-weight:700;font-family:'Playfair Display',serif;font-size:1.15rem}
-.buscador{width:100%;padding:1.5rem;border:2px solid var(--borde);border-radius:18px;margin:2.5rem 0;font-size:1.15rem;transition:.3s;background:var(--blanco)}
-.buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 5px rgba(212,175,55,.12)}
-.ia-textarea{width:100%;min-height:180px;padding:1.5rem;border:2px solid var(--borde);border-radius:18px;font-size:1.1rem;margin:2rem 0;font-family:'Inter',sans-serif;resize:vertical;background:var(--blanco)}
-.ia-btn{background:linear-gradient(135deg,var(--azul) 0%,#1a3a6b 100%);color:var(--dorado);border:none;padding:1.4rem 3rem;border-radius:18px;font-weight:800;font-size:1.15rem;cursor:pointer;transition:.3s;box-shadow:0 8px 25px rgba(10,31,68,.25)}
-.ia-btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(10,31,68,.35)}
-.ia-respuesta{background:linear-gradient(135deg,#E7F3FF 0%,#F0F7FF 100%);padding:2.5rem;border-radius:20px;margin-top:2.5rem;border-left:6px solid var(--azul);display:none;line-height:2;font-size:1.1rem;box-shadow:0 4px 20px rgba(26,58,107,.1)}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.85);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px);padding:1rem}
+.seccion{display:none;padding:3.5rem 1.5rem;max-width:1300px;margin:0 auto}
+.seccion.active{display:block;animation:fadeInUp.5s}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.card{background:var(--blanco);margin:0 0 2.5rem;padding:3.2rem;border-radius:28px;box-shadow:0 12px 50px rgba(10,31,68,.09);border:1px solid var(--borde)}
+.card-titulo{color:var(--azul);margin-bottom:2rem;font-size:2.3rem;font-weight:900;display:flex;align-items:center;gap:1.3rem;font-family:'Playfair Display',serif}
+.card-titulo::before{content:'';width:8px;height:50px;background:linear-gradient(180deg,var(--dorado) 0%,var(--dorado2) 100%);border-radius:4px;box-shadow:0 4px 12px rgba(212,175,55,.4)}
+.btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:2.5rem}
+.btn-ley{background:linear-gradient(135deg,#fff 0%,#F8FAFC 100%);border:2px solid var(--borde);color:var(--azul);padding:2.2rem;border-radius:20px;font-weight:700;text-align:center;cursor:pointer;transition:all.35s;box-shadow:0 6px 20px rgba(10,31,68,.06);font-size:1.15rem}
+.btn-ley:active{transform:scale(.97);background:var(--azul);color:var(--dorado)}
+.articulo{background:linear-gradient(135deg,#F8FAFC 0%,#FFF 100%);padding:2.2rem;border-radius:18px;margin:2rem 0;border-left:6px solid var(--dorado);font-size:1.15rem;line-height:2.1;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+.articulo strong{color:var(--azul);font-weight:800;font-family:'Playfair Display',serif;font-size:1.2rem}
+.buscador{width:100%;padding:1.6rem;border:2px solid var(--borde);border-radius:18px;margin:2.5rem 0;font-size:1.15rem;transition:.3s;background:var(--blanco)}
+.buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 5px rgba(212,175,55,.15)}
+.ia-textarea{width:100%;min-height:200px;padding:1.6rem;border:2px solid var(--borde);border-radius:18px;font-size:1.1rem;margin:2rem 0;font-family:'Inter',sans-serif;resize:vertical;background:var(--blanco)}
+.ia-btn{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:var(--dorado);border:none;padding:1.5rem 3.5rem;border-radius:18px;font-weight:800;font-size:1.2rem;cursor:pointer;transition:all.3s;box-shadow:0 10px 30px rgba(10,31,68,.3)}
+.ia-btn:active{transform:scale(.97)}
+.ia-respuesta{background:linear-gradient(135deg,#E7F3FF 0%,#F0F7FF 100%);padding:2.8rem;border-radius:22px;margin-top:2.5rem;border-left:6px solid var(--azul);display:none;line-height:2.1;font-size:1.15rem;box-shadow:0 6px 25px rgba(26,58,107,.12)}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.9);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(10px);padding:1rem}
 .modal.active{display:flex;animation:fadeIn.3s}
-.modal-content{background:var(--blanco);padding:3.5rem;border-radius:32px;max-width:550px;width:100%;box-shadow:0 30px 90px rgba(0,0,0,.5)}
-.modal-titulo{color:var(--azul);font-size:2.2rem;font-weight:900;margin-bottom:1.8rem;font-family:'Playfair Display',serif}
-.file-input{width:100%;padding:2.5rem;border:3px dashed var(--dorado);border-radius:20px;text-align:center;cursor:pointer;margin:2rem 0;background:#FFFBF0;transition:.3s}
-.file-input:hover{background:#FFF9E6}
-.modal-btns{display:flex;gap:1.2rem;margin-top:3rem}
-.modal-btn{flex:1;padding:1.3rem;border:none;border-radius:16px;font-weight:800;cursor:pointer;font-size:1.1rem}
-.btn-guardar{background:linear-gradient(135deg,var(--azul) 0%,#1a3a6b 100%);color:var(--dorado);box-shadow:0 6px 20px rgba(10,31,68,.3)}
+.modal-content{background:var(--blanco);padding:3.5rem;border-radius:32px;max-width:580px;width:100%;box-shadow:0 30px 100px rgba(0,0,0,.6);max-height:90vh;overflow-y:auto}
+.modal-titulo{color:var(--azul);font-size:2.3rem;font-weight:900;margin-bottom:1.8rem;font-family:'Playfair Display',serif}
+.file-input{width:100%;padding:3rem;border:3px dashed var(--dorado);border-radius:20px;text-align:center;cursor:pointer;margin:2rem 0;background:#FFFBF0;transition:.3s}
+.file-input:active{background:#FFF9E6;transform:scale(.99)}
+.modal-btns{display:flex;gap:1.3rem;margin-top:3rem}
+.modal-btn{flex:1;padding:1.4rem;border:none;border-radius:16px;font-weight:800;cursor:pointer;font-size:1.15rem;transition:all.2s}
+.btn-guardar{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:var(--dorado);box-shadow:0 8px 25px rgba(10,31,68,.35)}
+.btn-guardar:active{transform:scale(.97)}
 .btn-cancelar{background:#E5E7EB;color:#374151}
-        p{font-size:1.15rem;color:#374151}
-        @media (max-width:768px){.titulo{font-size:2.8rem}.nombre-dr{font-size:1.3rem}.nav-btn{font-size:.9rem;padding:1.3rem.5rem}.card{padding:2rem}}
+.btn-cancelar:active{transform:scale(.97)}
+        p{font-size:1.18rem;color:#374151}
+        @media (max-width:768px){.titulo{font-size:3rem}.nombre-dr{font-size:1.4rem}.nav-btn{font-size:.95rem;padding:1.4rem.5rem}.card{padding:2.2rem}.card-titulo{font-size:1.9rem}}
     </style>
 </head>
 <body>
@@ -71,14 +76,14 @@
     <div id="modalLogo" class="modal">
         <div class="modal-content">
             <h3 class="modal-titulo">Cambiar Logo de LexSV-Pro</h3>
-            <p style="color:#6B7280;margin-bottom:1.5rem;font-size:1.1rem;line-height:1.8">Subí la foto de tu beagle o el logo que prefieras. Se guarda solo en tu dispositivo y nadie más lo ve.</p>
+            <p style="color:#6B7280;margin-bottom:1.5rem;font-size:1.15rem;line-height:1.9">Subí la foto de tu beagle o el logo que prefieras. Se guarda solo en tu dispositivo y nadie más lo ve. Podés cambiarlo cuando querás.</p>
             <input type="file" id="inputLogo" accept="image/*" style="display:none">
             <label for="inputLogo" class="file-input">
-                <div style="font-size:3rem;margin-bottom:1rem">📷</div>
-                <strong style="font-size:1.2rem;color:var(--azul)">Hacé clic aquí para elegir foto</strong><br>
-                <span style="font-size:1rem;color:#6B7280;margin-top:.5rem;display:block">JPG, PNG o WEBP - Máx 5MB</span>
+                <div style="font-size:3.5rem;margin-bottom:1rem">📷</div>
+                <strong style="font-size:1.25rem;color:var(--azul)">Hacé clic aquí para elegir foto</strong><br>
+                <span style="font-size:1.05rem;color:#6B7280;margin-top:.8rem;display:block">JPG, PNG o WEBP - Máx 5MB</span>
             </label>
-            <img id="previewImg" style="width:100%;max-width:240px;margin:2rem auto;display:none;border-radius:50%;border:6px solid var(--dorado);box-shadow:0 10px 30px rgba(0,0,0,.2)">
+            <img id="previewImg" style="width:100%;max-width:260px;margin:2rem auto;display:none;border-radius:50%;border:7px solid var(--dorado);box-shadow:0 12px 35px rgba(0,0,0,.25)">
             <div class="modal-btns">
                 <button class="modal-btn btn-cancelar" id="btnCancelar">Cancelar</button>
                 <button class="modal-btn btn-guardar" id="btnGuardarLogo">Guardar Logo</button>
@@ -114,8 +119,8 @@
         <div class="card">
             <h3 class="card-titulo">Gestión de Expedientes</h3>
             <p>Sistema de gestión de casos 100% local. Guarde clientes, audiencias, documentos y notas. Todo cifrado en su dispositivo con AES-256.</p>
-            <div class="btn-ley" style="margin-top:2.5rem;max-width:340px">+ Crear Nuevo Expediente</div>
-            <p style="margin-top:2rem;color:#6B7280;font-size:1.05rem"><em>Módulo en desarrollo. Próxima actualización: Guardado local con IndexedDB y encriptación.</em></p>
+            <div class="btn-ley" style="margin-top:2.5rem;max-width:360px">+ Crear Nuevo Expediente</div>
+            <p style="margin-top:2rem;color:#6B7280;font-size:1.08rem"><em>Módulo en desarrollo. Próxima actualización: Guardado local con IndexedDB y encriptación.</em></p>
         </div>
     </div>
 
@@ -145,7 +150,7 @@
             <div class="articulo"><strong>Art. 224 CPCM:</strong> Término para contestar demanda: 20 días hábiles.</div>
             <div class="articulo"><strong>Art. 272 CPCM:</strong> Término para apelar: 5 días hábiles desde la notificación.</div>
             <div class="articulo"><strong>Art. 524 CPCM:</strong> Término para interponer casación: 15 días hábiles.</div>
-            <p style="margin-top:2.5rem;color:var(--dorado);font-weight:700;font-size:1.2rem">Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador.</p>
+            <p style="margin-top:2.5rem;color:var(--dorado);font-weight:700;font-size:1.25rem">Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador.</p>
         </div>
     </div>
 
@@ -160,67 +165,67 @@
     </div>
 
     <script>
-        // VARIABLES GLOBALES
-        const baseDatosLeyes = {
+        // BASE DE DATOS COMPLETA DE LEYES
+        var leyes = {
             cpcm: [
-                {art:"CPCM Art. 1", texto:"Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal."},
-                {art:"CPCM Art. 146", texto:"Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario."},
-                {art:"CPCM Art. 147", texto:"Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles."},
-                {art:"CPCM Art. 217", texto:"La demanda deberá contener: nombre del juez, nombre y generales de las partes, hechos, fundamentos de derecho y petitorio claro."},
-                {art:"CPCM Art. 224", texto:"El demandado tiene 20 días hábiles para contestar la demanda desde su notificación."},
-                {art:"CPCM Art. 272", texto:"El recurso de apelación deberá interponerse dentro de 5 días hábiles siguientes a la notificación."},
-                {art:"CPCM Art. 524", texto:"El recurso de casación deberá interponerse dentro de 15 días hábiles."}
+                {art:"CPCM Art. 1", txt:"Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal."},
+                {art:"CPCM Art. 146", txt:"Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario."},
+                {art:"CPCM Art. 147", txt:"Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles."},
+                {art:"CPCM Art. 217", txt:"La demanda deberá contener: nombre del juez, nombre y generales de las partes, hechos, fundamentos de derecho y petitorio claro."},
+                {art:"CPCM Art. 224", txt:"El demandado tiene 20 días hábiles para contestar la demanda desde su notificación."},
+                {art:"CPCM Art. 272", txt:"El recurso de apelación deberá interponerse dentro de 5 días hábiles siguientes a la notificación."},
+                {art:"CPCM Art. 524", txt:"El recurso de casación deberá interponerse dentro de 15 días hábiles."}
             ],
             cp: [
-                {art:"CP Art. 1", texto:"Nadie podrá ser sancionado por hechos que la ley penal no haya previsto como delito o falta con anterioridad a su comisión."},
-                {art:"CP Art. 114", texto:"Homicidio simple: El que matare a otro será sancionado con prisión de diez a veinte años."},
-                {art:"CP Art. 115", texto:"Homicidio agravado: La pena será de veinte a treinta años cuando concurra alevosía, precio, recompensa o ensañamiento."},
-                {art:"CP Art. 207", texto:"Hurto: El que se apoderare de cosa mueble ajena, sin violencia en las personas ni fuerza en las cosas, será sancionado con prisión de dos a cinco años."},
-                {art:"CP Art. 218", texto:"Estafa: El que con ánimo de lucro defraudare a otro, prisión de 2 a 5 años."}
+                {art:"CP Art. 1", txt:"Nadie podrá ser sancionado por hechos que la ley penal no haya previsto como delito o falta con anterioridad a su comisión."},
+                {art:"CP Art. 114", txt:"Homicidio simple: El que matare a otro será sancionado con prisión de diez a veinte años."},
+                {art:"CP Art. 115", txt:"Homicidio agravado: La pena será de veinte a treinta años cuando concurra alevosía, precio, recompensa o ensañamiento."},
+                {art:"CP Art. 207", txt:"Hurto: El que se apoderare de cosa mueble ajena, sin violencia en las personas ni fuerza en las cosas, será sancionado con prisión de dos a cinco años."},
+                {art:"CP Art. 218", txt:"Estafa: El que con ánimo de lucro defraudare a otro, prisión de 2 a 5 años."}
             ],
             ct: [
-                {art:"CT Art. 1", texto:"El presente Código regula las relaciones entre patronos y trabajadores privados y las de éstos entre sí."},
-                {art:"CT Art. 29", texto:"Contrato individual de trabajo es aquel por el cual una persona se obliga a prestar a otra sus servicios personales bajo dependencia y subordinación, a cambio de una remuneración."},
-                {art:"CT Art. 58", texto:"La jornada ordinaria de trabajo efectivo diurno no excederá de ocho horas diarias, ni la semana laboral de cuarenta y cuatro horas."},
-                {art:"CT Art. 306", texto:"El trabajador tiene derecho a un día de descanso remunerado por cada semana laboral."}
+                {art:"CT Art. 1", txt:"El presente Código regula las relaciones entre patronos y trabajadores privados y las de éstos entre sí."},
+                {art:"CT Art. 29", txt:"Contrato individual de trabajo es aquel por el cual una persona se obliga a prestar a otra sus servicios personales bajo dependencia y subordinación, a cambio de una remuneración."},
+                {art:"CT Art. 58", txt:"La jornada ordinaria de trabajo efectivo diurno no excederá de ocho horas diarias, ni la semana laboral de cuarenta y cuatro horas."},
+                {art:"CT Art. 306", txt:"El trabajador tiene derecho a un día de descanso remunerado por cada semana laboral."}
             ],
             cf: [
-                {art:"CF Art. 1", texto:"La familia es la base fundamental de la sociedad y tendrá la protección del Estado."},
-                {art:"CF Art. 11", texto:"El matrimonio es la unión legal de un hombre y una mujer, con el fin de establecer una plena y permanente comunidad de vida."},
-                {art:"CF Art. 106", texto:"El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo ante juez competente."},
-                {art:"CF Art. 211", texto:"Los padres tienen el deber de alimentar, educar, dar asistencia y protección a sus hijos menores de edad."}
+                {art:"CF Art. 1", txt:"La familia es la base fundamental de la sociedad y tendrá la protección del Estado."},
+                {art:"CF Art. 11", txt:"El matrimonio es la unión legal de un hombre y una mujer, con el fin de establecer una plena y permanente comunidad de vida."},
+                {art:"CF Art. 106", txt:"El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo ante juez competente."},
+                {art:"CF Art. 211", txt:"Los padres tienen el deber de alimentar, educar, dar asistencia y protección a sus hijos menores de edad."}
             ],
             cc: [
-                {art:"CC Art. 1", texto:"Son comerciantes los que teniendo capacidad legal para contratar, ejercen por cuenta propia actos de comercio, haciendo de ello su profesión habitual."},
-                {art:"CC Art. 21", texto:"La sociedad mercantil es un contrato por el cual dos o más personas se obligan a poner en común bienes o industria para obtener lucro."},
-                {art:"CC Art. 553", texto:"El cheque es un título valor a la orden, literal y autónomo, que contiene una orden incondicional de pago."}
+                {art:"CC Art. 1", txt:"Son comerciantes los que teniendo capacidad legal para contratar, ejercen por cuenta propia actos de comercio, haciendo de ello su profesión habitual."},
+                {art:"CC Art. 21", txt:"La sociedad mercantil es un contrato por el cual dos o más personas se obligan a poner en común bienes o industria para obtener lucro."},
+                {art:"CC Art. 553", txt:"El cheque es un título valor a la orden, literal y autónomo, que contiene una orden incondicional de pago."}
             ],
             cn: [
-                {art:"Cn. Art. 1", texto:"El Salvador reconoce a la persona humana como el origen y el fin de la actividad del Estado."},
-                {art:"Cn. Art. 2", texto:"Toda persona tiene derecho a la vida, a la integridad física y moral, a la libertad, a la seguridad, al trabajo, a la propiedad y posesión."},
-                {art:"Cn. Art. 11", texto:"Ninguna persona puede ser privada del derecho a la vida, a la libertad, a la propiedad y posesión, ni de cualquier otro de sus derechos sin ser previamente oída y vencida en juicio."},
-                {art:"Cn. Art. 144", texto:"Los tratados internacionales celebrados por El Salvador con otros estados constituyen leyes de la República."}
+                {art:"Cn. Art. 1", txt:"El Salvador reconoce a la persona humana como el origen y el fin de la actividad del Estado."},
+                {art:"Cn. Art. 2", txt:"Toda persona tiene derecho a la vida, a la integridad física y moral, a la libertad, a la seguridad, al trabajo, a la propiedad y posesión."},
+                {art:"Cn. Art. 11", txt:"Ninguna persona puede ser privada del derecho a la vida, a la libertad, a la propiedad y posesión, ni de cualquier otro de sus derechos sin ser previamente oída y vencida en juicio."},
+                {art:"Cn. Art. 144", txt:"Los tratados internacionales celebrados por El Salvador con otros estados constituyen leyes de la República."}
             ],
             lpa: [
-                {art:"LPA Art. 1", texto:"La presente Ley regula la actividad de la Administración Pública en sus relaciones con los administrados."},
-                {art:"LPA Art. 86", texto:"El plazo máximo para dictar resolución expresa y notificarla será de tres meses, salvo que una norma con rango de ley establezca otro mayor."},
-                {art:"LPA Art. 132", texto:"Los actos administrativos producen efectos desde la fecha en que se dicten, salvo que en ellos se disponga otra cosa."}
+                {art:"LPA Art. 1", txt:"La presente Ley regula la actividad de la Administración Pública en sus relaciones con los administrados."},
+                {art:"LPA Art. 86", txt:"El plazo máximo para dictar resolución expresa y notificarla será de tres meses, salvo que una norma con rango de ley establezca otro mayor."},
+                {art:"LPA Art. 132", txt:"Los actos administrativos producen efectos desde la fecha en que se dicten, salvo que en ellos se disponga otra cosa."}
             ],
             lpdp: [
-                {art:"LPDP Art. 1", texto:"Esta Ley tiene por objeto garantizar el derecho a la protección de datos personales."},
-                {art:"LPDP Art. 6", texto:"El tratamiento de datos personales requiere el consentimiento previo, expreso e informado del titular, salvo excepciones legales."},
-                {art:"LPDP Art. 15", texto:"El titular tiene derecho a acceder, rectificar, cancelar y oponerse al tratamiento de sus datos personales."}
+                {art:"LPDP Art. 1", txt:"Esta Ley tiene por objeto garantizar el derecho a la protección de datos personales."},
+                {art:"LPDP Art. 6", txt:"El tratamiento de datos personales requiere el consentimiento previo, expreso e informado del titular, salvo excepciones legales."},
+                {art:"LPDP Art. 15", txt:"El titular tiene derecho a acceder, rectificar, cancelar y oponerse al tratamiento de sus datos personales."}
             ]
         };
 
-        // INICIALIZACIÓN AL CARGAR
+        // INICIALIZACIÓN - GARANTIZA QUE FUNCIONE EN SAFARI iOS
         document.addEventListener('DOMContentLoaded', function() {
             cargarLogo();
             configurarEventos();
         });
 
         function cargarLogo() {
-            const logoGuardado = localStorage.getItem('lexsv_logo');
+            var logoGuardado = localStorage.getItem('lexsv_logo');
             if(logoGuardado) {
                 document.getElementById('logoBeagle').src = logoGuardado;
                 document.getElementById('logoBeagle').style.display = 'block';
@@ -229,32 +234,35 @@
         }
 
         function configurarEventos() {
-            // Navegación
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const seccion = this.getAttribute('data-seccion');
+            // Navegación - Funciona en Safari
+            var navBtns = document.querySelectorAll('.nav-btn');
+            for(var i=0; i<navBtns.length; i++) {
+                navBtns[i].addEventListener('click', function() {
+                    var seccion = this.getAttribute('data-seccion');
                     mostrar(seccion);
                 });
-            });
+            }
 
             // Botones de acceso rápido
-            document.querySelectorAll('.btn-ley[data-seccion]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const seccion = this.getAttribute('data-seccion');
+            var btnsAcceso = document.querySelectorAll('.btn-ley[data-seccion]');
+            for(var i=0; i<btnsAcceso.length; i++) {
+                btnsAcceso[i].addEventListener('click', function() {
+                    var seccion = this.getAttribute('data-seccion');
                     mostrar(seccion);
                 });
-            });
+            }
 
             // Botones de leyes
-            document.querySelectorAll('.btn-ley[data-ley]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const ley = this.getAttribute('data-ley');
+            var btnsLeyes = document.querySelectorAll('.btn-ley[data-ley]');
+            for(var i=0; i<btnsLeyes.length; i++) {
+                btnsLeyes[i].addEventListener('click', function() {
+                    var ley = this.getAttribute('data-ley');
                     verLey(ley);
                 });
-            });
+            }
 
             // Buscador
-            document.getElementById('buscarLey').addEventListener('keyup', buscarArticulos);
+            document.getElementById('buscarLey').addEventListener('keyup', buscar);
 
             // IA
             document.getElementById('btnConsultarIA').addEventListener('click', consultarIA);
@@ -267,10 +275,16 @@
         }
 
         function mostrar(id) {
-            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            var secciones = document.getElementsByClassName('seccion');
+            for(var i=0; i<secciones.length; i++) {
+                secciones[i].classList.remove('active');
+            }
+            var botones = document.getElementsByClassName('nav-btn');
+            for(var i=0; i<botones.length; i++) {
+                botones[i].classList.remove('active');
+            }
             document.getElementById(id).classList.add('active');
-            document.querySelector(`[data-seccion="${id}"]`).classList.add('active');
+            document.querySelector('[data-seccion="'+id+'"]').classList.add('active');
             window.scrollTo({top:0,behavior:'smooth'});
         }
 
@@ -285,9 +299,9 @@
         }
 
         function previewLogo(event) {
-            const file = event.target.files[0];
+            var file = event.target.files[0];
             if(file && file.size < 5242880) {
-                const reader = new FileReader();
+                var reader = new FileReader();
                 reader.onload = function(e) {
                     document.getElementById('previewImg').src = e.target.result;
                     document.getElementById('previewImg').style.display = 'block';
@@ -299,8 +313,8 @@
         }
 
         function guardarLogo() {
-            const preview = document.getElementById('previewImg');
-            if(preview.src && preview.style.display !== 'none') {
+            var preview = document.getElementById('previewImg');
+            if(preview.src && preview.style.display!== 'none') {
                 localStorage.setItem('lexsv_logo', preview.src);
                 document.getElementById('logoBeagle').src = preview.src;
                 document.getElementById('logoBeagle').style.display = 'block';
@@ -313,66 +327,39 @@
         }
 
         function verLey(codigo) {
-            const ley = baseDatosLeyes[codigo];
-            let html = '';
-            ley.forEach(a => {
-                html += `<div class="articulo"><strong>${a.art}.-</strong> ${a.texto}</div>`;
-            });
+            var ley = leyes[codigo];
+            var html = '';
+            for(var i=0; i<ley.length; i++) {
+                html += '<div class="articulo"><strong>' + ley[i].art + '.-</strong> ' + ley[i].txt + '</div>';
+            }
             document.getElementById('contenido-ley').innerHTML = html;
+            document.getElementById('contenido-ley').scrollIntoView({behavior:'smooth',block:'start'});
         }
 
-        function buscarArticulos() {
-            const query = document.getElementById('buscarLey').value.toLowerCase();
-            if(query.length < 3) {
+        function buscar() {
+            var texto = document.getElementById('buscarLey').value.toLowerCase();
+            if(texto.length < 3) {
                 document.getElementById('contenido-ley').innerHTML = '<p style="text-align:center;color:#6B7280;padding:3rem;font-size:1.15rem">Escriba al menos 3 letras para buscar en los 8 códigos...</p>';
                 return;
             }
-            let resultados = '';
-            let contador = 0;
-            Object.values(baseDatosLeyes).forEach(codigo => {
-                codigo.forEach(a => {
-                    if(a.texto.toLowerCase().includes(query) || a.art.toLowerCase().includes(query)) {
-                        resultados += `<div class="articulo"><strong>${a.art}.-</strong> ${a.texto}</div>`;
-                        contador++;
+            var resultados = '';
+            for(var key in leyes) {
+                for(var i=0; i<leyes[key].length; i++) {
+                    var articulo = leyes[key][i];
+                    if(articulo.txt.toLowerCase().indexOf(texto) > -1 || articulo.art.toLowerCase().indexOf(texto) > -1) {
+                        resultados += '<div class="articulo"><strong>' + articulo.art + '.-</strong> ' + articulo.txt + '</div>';
                     }
-                });
-            });
-            document.getElementById('contenido-ley').innerHTML = resultados || `<p style="text-align:center;color:#6B7280;padding:3rem;font-size:1.15rem">No se encontraron artículos con "${query}"</p>`;
+                }
+            }
+            document.getElementById('contenido-ley').innerHTML = resultados || '<p style="text-align:center;color:#6B7280;padding:3rem;font-size:1.15rem">No se encontraron resultados para "' + texto + '"</p>';
         }
 
         function consultarIA() {
-            const pregunta = document.getElementById('preguntaIA').value.toLowerCase();
-            const resp = document.getElementById('respuestaIA');
+            var pregunta = document.getElementById('preguntaIA').value.toLowerCase();
+            var resp = document.getElementById('respuestaIA');
             resp.style.display = 'block';
 
-            if(pregunta.includes('divorcio') && pregunta.includes('mutuo')) {
-                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.4rem">Modelo: Demanda de Divorcio por Mutuo Consentimiento</strong><br><br>
-                <strong>Fundamento Legal:</strong> Código de Familia Art. 106<br><br>
-                <strong>SEÑOR JUEZ DE FAMILIA DE SANTA TECLA</strong><br><br>
-                Nosotros, [NOMBRE ESPOSO] y [NOMBRE ESPOSA], mayores de edad, casados entre sí, del domicilio de Santa Tecla, con DUI... y... respectivamente, actuando en nombre propio, a Usted respetuosamente EXPONEMOS:<br><br>
-                <strong>I. HECHOS:</strong><br>
-                1. Que contrajimos matrimonio civil el día [FECHA] ante los oficios de...<br>
-                2. Que de dicha unión [no procreamos hijos] / [procreamos a...]<br>
-                3. Que por convenir a nuestros intereses personales, hemos decidido disolver el vínculo matrimonial que nos une...<br><br>
-                <strong>II. FUNDAMENTOS DE DERECHO:</strong><br>
-                Código de Familia Art. 106: "El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo..."<br><br>
-                <strong>III. PETITORIO:</strong><br>
-                Por lo expuesto, PEDIMOS: Se admita la presente demanda, se le dé el trámite de ley y en sentencia definitiva se decrete el divorcio por mutuo consentimiento...<br><br>
-                <em style="color:var(--dorado);font-weight:700">Nota: Este es un borrador generado por LexSV-Pro. Revise con legislación vigente y ajuste datos específicos del caso.</em>`;
-            } else if(pregunta.includes('plazo') || pregunta.includes('apel') || pregunta.includes('cpcm') || pregunta.includes('término')) {
-                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.4rem">Plazos Procesales - CPCM</strong><br><br>
-                <strong>Reglas Fundamentales Art. 146-147 CPCM:</strong><br>
-                1. Los plazos son <strong>perentorios e improrrogables</strong><br>
-                2. Se cuentan desde el <strong>día siguiente</strong> a la notificación<br>
-                3. <strong>No corren</strong> días inhábiles, sábados, domingos ni feriados oficiales<br><br>
-                <strong>Plazos Más Usados:</strong><br>
-                - <strong>Contestar demanda:</strong> 20 días hábiles - Art. 224 CPCM<br>
-                - <strong>Apelación:</strong> 5 días hábiles - Art. 272 CPCM<br>
-                - <strong>Casación:</strong> 15 días hábiles - Art. 524 CPCM<br>
-                - <strong>Revocatoria:</strong> 3 días hábiles - Art. 503 CPCM<br><br>
-                <em style="color:var(--dorado);font-weight:700">Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador</em>`;
-            } else if(pregunta.includes('homicidio') || pregunta.includes('penal') || pregunta.includes('hurto') || pregunta.includes('estafa')) {
-                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.4rem">Código Penal de El Salvador - Delitos Comunes</strong><br><br>
-                <strong>CP Art. 114 - Homicidio Simple:</strong> El que matare a otro será sancionado con prisión de 10 a 20 años.<br><br>
-                <strong>CP Art. 115 - Homicidio Agravado:</strong> Prisión de 20 a 30 años cuando concurra alevosía, precio, recompensa o ensañamiento.<br><br>
-                <strong>CP Art. 207 - Hurto:</strong> El que se apoderare de
+            if(pregunta.indexOf('divorcio') > -1 && pregunta.indexOf('mutuo') > -1) {
+                resp.innerHTML = '<strong style="color:var(--azul);font-size:1.4rem">Modelo: Demanda de Divorcio por Mutuo Consentimiento</strong><br><br><strong>Fundamento Legal:</strong> Código de Familia Art. 106<br><br><strong>SEÑOR JUEZ DE FAMILIA DE SANTA TECLA</strong><br><br>Nosotros, [NOMBRE ESPOSO] y [NOMBRE ESPOSA], mayores de edad, casados entre sí, del domicilio de Santa Tecla, con DUI... y... respectivamente, actuando en nombre propio, a Usted respetuosamente EXPONEMOS:<br><br><strong>I. HECHOS:</strong><br>1. Que contrajimos matrimonio civil el día [FECHA] ante los oficios de...<br>2. Que de dicha unión [no procreamos hijos] / [procreamos a...]<br>3. Que por convenir a nuestros intereses personales, hemos decidido disolver el vínculo matrimonial que nos une...<br><br><strong>II. FUNDAMENTOS DE DERECHO:</strong><br>Código de Familia Art. 106: "El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo..."<br><br><strong>III. PETITORIO:</strong><br>Por lo expuesto, PEDIMOS: Se admita la presente demanda, se le dé el trámite de ley y en sentencia definitiva se decrete el divorcio por mutuo consentimiento...<br><br><em style="color:var(--dorado);font-weight:700">Nota: Este es un borrador generado por LexSV-Pro. Revise con legislación vigente y ajuste datos específicos del caso.</em>';
+            } else if(pregunta.indexOf('plazo') > -1 || pregunta.indexOf('apel') > -1 || pregunta.indexOf('cpcm') > -1 || pregunta.indexOf('término') > -1) {
+                resp.innerHTML = '<strong style="color:var(--azul);font-size:1.4rem">Plazos Procesales - CPCM</strong><br><strong>Reglas Fundamentales Art. 146-147 CPCM:</strong><br>1. Los plazos son <strong>perentorios e improrrogables</strong><br>2. Se cuentan desde el <strong>día siguiente</strong> a la notificación<br>3. <strong>No corren</strong> días inháb
