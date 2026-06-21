@@ -2,27 +2,25 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LexSV-Pro | Dr. Tonny Ramirez</title>
     <meta name="theme-color" content="#0A1F44">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFF;--gris:#F7F8FC;--texto:#1A1D29;--borde:#E5E7EB}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{background:var(--gris);color:var(--texto);font-family:'Inter',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+        *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+        body{background:var(--gris);color:var(--texto);font-family:'Inter',sans-serif;line-height:1.7}
 .header{background:linear-gradient(160deg,#0A1F44 0%,#1a3a6b 100%);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative}
-.config-btn{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.12);border:2px solid var(--dorado);color:var(--dorado);padding:.8rem 1.4rem;border-radius:14px;font-weight:700;cursor:pointer;font-size:.9rem;backdrop-filter:blur(12px);font-family:'Inter',sans-serif;transition:.3s}
-.config-btn:hover{background:rgba(212,175,55,.3);transform:translateY(-2px)}
-.logo{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;object-fit:cover;border:8px solid var(--dorado);box-shadow:0 15px 45px rgba(212,175,55,.5);background:#0A1F44}
+.config-btn{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,.12);border:2px solid var(--dorado);color:var(--dorado);padding:.8rem 1.4rem;border-radius:14px;font-weight:700;cursor:pointer;font-size:.9rem;backdrop-filter:blur(12px);z-index:10}
+.logo{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;object-fit:cover;border:8px solid var(--dorado);box-shadow:0 15px 45px rgba(212,175,55,.5);background:#0A1F44;display:block}
 .logo-default{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;border:8px solid var(--dorado);background:#0A1F44;display:flex;align-items:center;justify-content:center;font-size:5.5rem;box-shadow:0 15px 45px rgba(212,175,55,.5)}
 .titulo{color:var(--dorado);font-size:3.5rem;font-weight:900;letter-spacing:-2px;margin-bottom:.8rem;font-family:'Playfair Display',serif}
-.nombre-dr{color:var(--blanco);font-size:1.5rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.5px}
-.sub{color:rgba(255,255,255,.85);font-size:1.1rem;font-weight:400}
-.nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 25px rgba(0,0,0,.07);z-index:100;border-bottom:1px solid var(--borde)}
-.nav-btn{flex:1;padding:1.6rem 1rem;border:none;background:var(--blanco);color:#64748B;font-weight:700;font-size:1.05rem;cursor:pointer;border-bottom:4px solid transparent;transition:.2s;font-family:'Inter',sans-serif}
-.nav-btn:hover{background:#F8FAFC;color:var(--azul)}
+.nombre-dr{color:var(--blanco);font-size:1.5rem;font-weight:600;margin-bottom:.5rem}
+.sub{color:rgba(255,255,255,.85);font-size:1.1rem}
+.nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 25px rgba(0,0,0,.07);z-index:50;border-bottom:1px solid var(--borde)}
+.nav-btn{flex:1;padding:1.6rem 1rem;border:none;background:var(--blanco);color:#64748B;font-weight:700;font-size:1.05rem;cursor:pointer;border-bottom:4px solid transparent;transition:.2s}
 .nav-btn.active{color:var(--azul);border-bottom:4px solid var(--dorado);background:#FFFBF0}
 .seccion{display:none;padding:3.5rem 1.5rem;max-width:1280px;margin:0 auto}
 .seccion.active{display:block;animation:fadeIn.5s}
@@ -36,22 +34,21 @@
 .btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.98)}
 .articulo{background:#F8FAFC;padding:2rem;border-radius:18px;margin:1.8rem 0;border-left:6px solid var(--dorado);font-size:1.1rem;line-height:2;box-shadow:0 3px 12px rgba(0,0,0,.04)}
 .articulo strong{color:var(--azul);font-weight:700;font-family:'Playfair Display',serif;font-size:1.15rem}
-.buscador{width:100%;padding:1.5rem;border:2px solid var(--borde);border-radius:18px;margin:2.5rem 0;font-size:1.15rem;transition:.3s;font-family:'Inter',sans-serif;background:var(--blanco)}
+.buscador{width:100%;padding:1.5rem;border:2px solid var(--borde);border-radius:18px;margin:2.5rem 0;font-size:1.15rem;transition:.3s;background:var(--blanco)}
 .buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 5px rgba(212,175,55,.12)}
 .ia-textarea{width:100%;min-height:180px;padding:1.5rem;border:2px solid var(--borde);border-radius:18px;font-size:1.1rem;margin:2rem 0;font-family:'Inter',sans-serif;resize:vertical;background:var(--blanco)}
 .ia-btn{background:linear-gradient(135deg,var(--azul) 0%,#1a3a6b 100%);color:var(--dorado);border:none;padding:1.4rem 3rem;border-radius:18px;font-weight:800;font-size:1.15rem;cursor:pointer;transition:.3s;box-shadow:0 8px 25px rgba(10,31,68,.25)}
 .ia-btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(10,31,68,.35)}
 .ia-respuesta{background:linear-gradient(135deg,#E7F3FF 0%,#F0F7FF 100%);padding:2.5rem;border-radius:20px;margin-top:2.5rem;border-left:6px solid var(--azul);display:none;line-height:2;font-size:1.1rem;box-shadow:0 4px 20px rgba(26,58,107,.1)}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.85);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.85);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px);padding:1rem}
 .modal.active{display:flex;animation:fadeIn.3s}
-.modal-content{background:var(--blanco);padding:3.5rem;border-radius:32px;max-width:550px;width:90%;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.modal-content{background:var(--blanco);padding:3.5rem;border-radius:32px;max-width:550px;width:100%;box-shadow:0 30px 90px rgba(0,0,0,.5)}
 .modal-titulo{color:var(--azul);font-size:2.2rem;font-weight:900;margin-bottom:1.8rem;font-family:'Playfair Display',serif}
 .file-input{width:100%;padding:2.5rem;border:3px dashed var(--dorado);border-radius:20px;text-align:center;cursor:pointer;margin:2rem 0;background:#FFFBF0;transition:.3s}
-.file-input:hover{background:#FFF9E6;border-color:#B8941F}
+.file-input:hover{background:#FFF9E6}
 .modal-btns{display:flex;gap:1.2rem;margin-top:3rem}
-.modal-btn{flex:1;padding:1.3rem;border:none;border-radius:16px;font-weight:800;cursor:pointer;font-size:1.1rem;font-family:'Inter',sans-serif;transition:.2s}
+.modal-btn{flex:1;padding:1.3rem;border:none;border-radius:16px;font-weight:800;cursor:pointer;font-size:1.1rem}
 .btn-guardar{background:linear-gradient(135deg,var(--azul) 0%,#1a3a6b 100%);color:var(--dorado);box-shadow:0 6px 20px rgba(10,31,68,.3)}
-.btn-guardar:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(10,31,68,.4)}
 .btn-cancelar{background:#E5E7EB;color:#374151}
         p{font-size:1.15rem;color:#374151}
         @media (max-width:768px){.titulo{font-size:2.8rem}.nombre-dr{font-size:1.3rem}.nav-btn{font-size:.9rem;padding:1.3rem.5rem}.card{padding:2rem}}
@@ -59,7 +56,7 @@
 </head>
 <body>
     <header class="header">
-        <button class="config-btn" onclick="abrirModalLogo()">⚙️ Cambiar Logo</button>
+        <button class="config-btn" id="btnCambiarLogo">⚙️ Cambiar Logo</button>
 
         <div class="logo-container">
             <img id="logoBeagle" class="logo" src="" alt="Logo LexSV-Pro" style="display:none">
@@ -75,7 +72,7 @@
         <div class="modal-content">
             <h3 class="modal-titulo">Cambiar Logo de LexSV-Pro</h3>
             <p style="color:#6B7280;margin-bottom:1.5rem;font-size:1.1rem;line-height:1.8">Subí la foto de tu beagle o el logo que prefieras. Se guarda solo en tu dispositivo y nadie más lo ve.</p>
-            <input type="file" id="inputLogo" accept="image/*" style="display:none" onchange="previewLogo(event)">
+            <input type="file" id="inputLogo" accept="image/*" style="display:none">
             <label for="inputLogo" class="file-input">
                 <div style="font-size:3rem;margin-bottom:1rem">📷</div>
                 <strong style="font-size:1.2rem;color:var(--azul)">Hacé clic aquí para elegir foto</strong><br>
@@ -83,18 +80,18 @@
             </label>
             <img id="previewImg" style="width:100%;max-width:240px;margin:2rem auto;display:none;border-radius:50%;border:6px solid var(--dorado);box-shadow:0 10px 30px rgba(0,0,0,.2)">
             <div class="modal-btns">
-                <button class="modal-btn btn-cancelar" onclick="cerrarModalLogo()">Cancelar</button>
-                <button class="modal-btn btn-guardar" onclick="guardarLogo()">Guardar Logo</button>
+                <button class="modal-btn btn-cancelar" id="btnCancelar">Cancelar</button>
+                <button class="modal-btn btn-guardar" id="btnGuardarLogo">Guardar Logo</button>
             </div>
         </div>
     </div>
 
     <nav class="nav">
-        <button class="nav-btn active" onclick="mostrar('inicio')">Inicio</button>
-        <button class="nav-btn" onclick="mostrar('casos')">Casos</button>
-        <button class="nav-btn" onclick="mostrar('leyes')">Leyes SV</button>
-        <button class="nav-btn" onclick="mostrar('plazos')">Plazos</button>
-        <button class="nav-btn" onclick="mostrar('ia')">IA Legal</button>
+        <button class="nav-btn active" data-seccion="inicio">Inicio</button>
+        <button class="nav-btn" data-seccion="casos">Casos</button>
+        <button class="nav-btn" data-seccion="leyes">Leyes SV</button>
+        <button class="nav-btn" data-seccion="plazos">Plazos</button>
+        <button class="nav-btn" data-seccion="ia">IA Legal</button>
     </nav>
 
     <div id="inicio" class="seccion active">
@@ -105,10 +102,10 @@
         <div class="card">
             <h3 class="card-titulo">Accesos Rápidos</h3>
             <div class="btn-grid">
-                <div class="btn-ley" onclick="mostrar('casos')">📁 Nuevo Expediente</div>
-                <div class="btn-ley" onclick="mostrar('plazos')">⚖️ Calcular Plazo</div>
-                <div class="btn-ley" onclick="mostrar('leyes')">📚 Códigos SV</div>
-                <div class="btn-ley" onclick="mostrar('ia')">🤖 Asistente IA</div>
+                <div class="btn-ley" data-seccion="casos">📁 Nuevo Expediente</div>
+                <div class="btn-ley" data-seccion="plazos">⚖️ Calcular Plazo</div>
+                <div class="btn-ley" data-seccion="leyes">📚 Códigos SV</div>
+                <div class="btn-ley" data-seccion="ia">🤖 Asistente IA</div>
             </div>
         </div>
     </div>
@@ -125,16 +122,16 @@
     <div id="leyes" class="seccion">
         <div class="card">
             <h3 class="card-titulo">Códigos y Leyes de El Salvador</h3>
-            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo o palabra clave: ej. 'homicidio', 'Art. 146', 'divorcio'..." onkeyup="buscarArticulos()">
+            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo o palabra clave: ej. 'homicidio', 'Art. 146', 'divorcio'...">
             <div class="btn-grid">
-                <div class="btn-ley" onclick="verLey('cpcm')">CPCM</div>
-                <div class="btn-ley" onclick="verLey('cp')">Código Penal</div>
-                <div class="btn-ley" onclick="verLey('ct')">Código de Trabajo</div>
-                <div class="btn-ley" onclick="verLey('cf')">Código de Familia</div>
-                <div class="btn-ley" onclick="verLey('cc')">Código de Comercio</div>
-                <div class="btn-ley" onclick="verLey('cn')">Constitución</div>
-                <div class="btn-ley" onclick="verLey('lpa')">Ley Proc. Adm.</div>
-                <div class="btn-ley" onclick="verLey('lpdp')">Ley Prot. Datos</div>
+                <div class="btn-ley" data-ley="cpcm">CPCM</div>
+                <div class="btn-ley" data-ley="cp">Código Penal</div>
+                <div class="btn-ley" data-ley="ct">Código de Trabajo</div>
+                <div class="btn-ley" data-ley="cf">Código de Familia</div>
+                <div class="btn-ley" data-ley="cc">Código de Comercio</div>
+                <div class="btn-ley" data-ley="cn">Constitución</div>
+                <div class="btn-ley" data-ley="lpa">Ley Proc. Adm.</div>
+                <div class="btn-ley" data-ley="lpdp">Ley Prot. Datos</div>
             </div>
             <div id="contenido-ley"></div>
         </div>
@@ -157,67 +154,13 @@
             <h3 class="card-titulo">Asistente IA Legal - LexSV</h3>
             <p>Esta IA funciona 100% offline. Consulta los 8 códigos cargados y genera borradores de escritos basados en legislación salvadoreña.</p>
             <textarea class="ia-textarea" id="preguntaIA" placeholder="Ej: Redactame un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia. O: ¿Cuál es el plazo para apelar según CPCM?"></textarea>
-            <button class="ia-btn" onclick="consultarIA()">Consultar IA LexSV-Pro</button>
+            <button class="ia-btn" id="btnConsultarIA">Consultar IA LexSV-Pro</button>
             <div id="respuestaIA" class="ia-respuesta"></div>
         </div>
     </div>
 
     <script>
-        window.onload = function() {
-            const logoGuardado = localStorage.getItem('lexsv_logo');
-            if(logoGuardado) {
-                document.getElementById('logoBeagle').src = logoGuardado;
-                document.getElementById('logoBeagle').style.display = 'block';
-                document.getElementById('logoDefault').style.display = 'none';
-            }
-        }
-
-        function mostrar(id) {
-            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            event.target.classList.add('active');
-            window.scrollTo({top:0,behavior:'smooth'});
-        }
-
-        function abrirModalLogo() {
-            document.getElementById('modalLogo').classList.add('active');
-        }
-
-        function cerrarModalLogo() {
-            document.getElementById('modalLogo').classList.remove('active');
-            document.getElementById('previewImg').style.display = 'none';
-            document.getElementById('inputLogo').value = '';
-        }
-
-        function previewLogo(event) {
-            const file = event.target.files[0];
-            if(file && file.size < 5242880) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('previewImg').src = e.target.result;
-                    document.getElementById('previewImg').style.display = 'block';
-                }
-                reader.readAsDataURL(file);
-            } else {
-                alert('La imagen debe pesar menos de 5MB');
-            }
-        }
-
-        function guardarLogo() {
-            const preview = document.getElementById('previewImg');
-            if(preview.src && preview.style.display!== 'none') {
-                localStorage.setItem('lexsv_logo', preview.src);
-                document.getElementById('logoBeagle').src = preview.src;
-                document.getElementById('logoBeagle').style.display = 'block';
-                document.getElementById('logoDefault').style.display = 'none';
-                cerrarModalLogo();
-                alert('✅ Logo guardado. Queda en tu dispositivo para siempre. Podés cambiarlo cuando querás.');
-            } else {
-                alert('Por favor seleccioná una imagen primero');
-            }
-        }
-
+        // VARIABLES GLOBALES
         const baseDatosLeyes = {
             cpcm: [
                 {art:"CPCM Art. 1", texto:"Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal."},
@@ -269,6 +212,105 @@
                 {art:"LPDP Art. 15", texto:"El titular tiene derecho a acceder, rectificar, cancelar y oponerse al tratamiento de sus datos personales."}
             ]
         };
+
+        // INICIALIZACIÓN AL CARGAR
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarLogo();
+            configurarEventos();
+        });
+
+        function cargarLogo() {
+            const logoGuardado = localStorage.getItem('lexsv_logo');
+            if(logoGuardado) {
+                document.getElementById('logoBeagle').src = logoGuardado;
+                document.getElementById('logoBeagle').style.display = 'block';
+                document.getElementById('logoDefault').style.display = 'none';
+            }
+        }
+
+        function configurarEventos() {
+            // Navegación
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const seccion = this.getAttribute('data-seccion');
+                    mostrar(seccion);
+                });
+            });
+
+            // Botones de acceso rápido
+            document.querySelectorAll('.btn-ley[data-seccion]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const seccion = this.getAttribute('data-seccion');
+                    mostrar(seccion);
+                });
+            });
+
+            // Botones de leyes
+            document.querySelectorAll('.btn-ley[data-ley]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const ley = this.getAttribute('data-ley');
+                    verLey(ley);
+                });
+            });
+
+            // Buscador
+            document.getElementById('buscarLey').addEventListener('keyup', buscarArticulos);
+
+            // IA
+            document.getElementById('btnConsultarIA').addEventListener('click', consultarIA);
+
+            // Modal Logo
+            document.getElementById('btnCambiarLogo').addEventListener('click', abrirModalLogo);
+            document.getElementById('btnCancelar').addEventListener('click', cerrarModalLogo);
+            document.getElementById('btnGuardarLogo').addEventListener('click', guardarLogo);
+            document.getElementById('inputLogo').addEventListener('change', previewLogo);
+        }
+
+        function mostrar(id) {
+            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelector(`[data-seccion="${id}"]`).classList.add('active');
+            window.scrollTo({top:0,behavior:'smooth'});
+        }
+
+        function abrirModalLogo() {
+            document.getElementById('modalLogo').classList.add('active');
+        }
+
+        function cerrarModalLogo() {
+            document.getElementById('modalLogo').classList.remove('active');
+            document.getElementById('previewImg').style.display = 'none';
+            document.getElementById('inputLogo').value = '';
+        }
+
+        function previewLogo(event) {
+            const file = event.target.files[0];
+            if(file && file.size < 5242880) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewImg').src = e.target.result;
+                    document.getElementById('previewImg').style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                alert('La imagen debe pesar menos de 5MB');
+            }
+        }
+
+        function guardarLogo() {
+            const preview = document.getElementById('previewImg');
+            if(preview.src && preview.style.display !== 'none') {
+                localStorage.setItem('lexsv_logo', preview.src);
+                document.getElementById('logoBeagle').src = preview.src;
+                document.getElementById('logoBeagle').style.display = 'block';
+                document.getElementById('logoDefault').style.display = 'none';
+                cerrarModalLogo();
+                alert('✅ Logo guardado. Queda en tu dispositivo para siempre.');
+            } else {
+                alert('Por favor seleccioná una imagen primero');
+            }
+        }
 
         function verLey(codigo) {
             const ley = baseDatosLeyes[codigo];
@@ -333,14 +375,4 @@
                 resp.innerHTML = `<strong style="color:var(--azul);font-size:1.4rem">Código Penal de El Salvador - Delitos Comunes</strong><br><br>
                 <strong>CP Art. 114 - Homicidio Simple:</strong> El que matare a otro será sancionado con prisión de 10 a 20 años.<br><br>
                 <strong>CP Art. 115 - Homicidio Agravado:</strong> Prisión de 20 a 30 años cuando concurra alevosía, precio, recompensa o ensañamiento.<br><br>
-                <strong>CP Art. 207 - Hurto:</strong> El que se apoderare de cosa mueble ajena, sin violencia ni fuerza, prisión de 2 a 5 años.<br><br>
-                <strong>CP Art. 218 - Estafa:</strong> El que con ánimo de lucro defraudare a otro usando nombre fingido o engaño, prisión de 2 a 5 años.<br><br>
-                <em style="color:var(--dorado);font-weight:700">Tip: Use el buscador en "Leyes SV" para encontrar artículos específicos por palabra clave</em>`;
-            } else if(pregunta.includes('laboral') || pregunta.includes('trabajo') || pregunta.includes('despido')) {
-                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.4rem">Código de Trabajo - Derechos Fundamentales</strong><br><br>
-                <strong>CT Art. 29 - Contrato Individual:</strong> Es aquel por el cual una persona se obliga a prestar servicios bajo dependencia y subordinación a cambio de remuneración.<br><br>
-                <strong>CT Art. 58 - Jornada Laboral:</strong> La jornada diurna no excederá de 8 horas diarias ni 44 horas semanales.<br><br>
-                <strong>CT Art. 306 - Descanso Semanal:</strong> El trabajador tiene derecho a un día de descanso remunerado por cada semana laboral.<br><br>
-                <em style="color:var(--dorado);font-weight:700">Para casos de despido injustificado, corresponde indemnización según Art. 58 CT</em>`;
-            } else {
-                resp.inner
+                <strong>CP Art. 207 - Hurto:</strong> El que se apoderare de
