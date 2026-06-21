@@ -2,188 +2,109 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LexSV-Pro | Dr. Tonny Ramirez</title>
-    <meta name="theme-color" content="#0A1F44">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root{--azul:#0A1F44;--azul-oscuro:#061529;--dorado:#C9A961;--dorado-hover:#B8941F;--blanco:#FFF;--gris:#F5F6F8;--texto:#1A1D29;--borde:#DDE1E7;--gris-texto:#4A5568}
-        *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-        html{scroll-behavior:smooth}
-        body{background:var(--gris);color:var(--texto);font-family:'Inter',-apple-system,sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased}
-
-        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-      .header{background:linear-gradient(180deg,var(--azul) 0%,var(--azul-oscuro) 100%);padding:3.5rem 1.5rem;text-align:center;position:relative;border-bottom:3px solid var(--dorado)}
-      .config-btn{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:1.5px solid var(--dorado);color:var(--dorado);padding:.9rem 1.5rem;border-radius:8px;font-weight:700;cursor:pointer;font-size:.95rem;transition:all.2s;letter-spacing:.5px}
-      .config-btn:active{transform:scale(.96);background:rgba(201,169,97,.1)}
-      .config-btn i{margin-right:.5rem}
-
-      .logo{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;object-fit:cover;border:4px solid var(--dorado);box-shadow:0 10px 40px rgba(0,0,0,.3);background:var(--azul-oscuro);display:block}
-      .logo-default{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;border:4px solid var(--dorado);background:var(--azul-oscuro);display:flex;align-items:center;justify-content:center;font-size:5rem;box-shadow:0 10px 40px rgba(0,0,0,.3);color:var(--dorado)}
-
-      .titulo{color:var(--dorado);font-size:3.5rem;font-weight:900;letter-spacing:-1px;margin-bottom:.8rem;font-family:'Playfair Display',serif}
-      .nombre-dr{color:var(--blanco);font-size:1.5rem;font-weight:600;margin-bottom:.5rem;letter-spacing:1.5px;text-transform:uppercase}
-      .sub{color:rgba(255,255,255,.8);font-size:1.05rem;font-weight:400;letter-spacing:.8px}
-
-      .nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 2px 20px rgba(0,0,0,.06);z-index:100;border-bottom:1px solid var(--borde)}
-      .nav-btn{flex:1;padding:1.6rem 1rem;border:none;background:var(--blanco);color:var(--gris-texto);font-weight:700;font-size:1rem;cursor:pointer;border-bottom:3px solid transparent;transition:all.2s;letter-spacing:.3px}
-      .nav-btn i{display:block;font-size:1.6rem;margin-bottom:.4rem;color:#94A3B8;transition:all.2s}
-      .nav-btn:active{transform:scale(.98)}
-      .nav-btn.active{color:var(--azul);border-bottom:3px solid var(--dorado);background:linear-gradient(180deg,#FFFEF9 0%,transparent 100%)}
-      .nav-btn.active i{color:var(--dorado)}
-
-      .seccion{display:none;padding:3.5rem 1.5rem;max-width:1300px;margin:0 auto}
-      .seccion.active{display:block;animation:fadeIn.4s ease-out}
-
-      .card{background:var(--blanco);margin:0 0 2.5rem;padding:3rem;border-radius:16px;box-shadow:0 4px 25px rgba(10,31,68,.06);border:1px solid var(--borde)}
-      .card-titulo{color:var(--azul);margin-bottom:2rem;font-size:2.1rem;font-weight:800;display:flex;align-items:center;gap:1.2rem;font-family:'Playfair Display',serif;letter-spacing:-.5px}
-      .card-titulo::before{content:'';width:5px;height:40px;background:var(--dorado);border-radius:2px}
-      .card-titulo i{color:var(--dorado);font-size:2.2rem}
-
-      .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem;margin-top:2.5rem}
-      .btn-ley{background:var(--blanco);border:1.5px solid var(--borde);color:var(--azul);padding:2rem;border-radius:12px;font-weight:700;text-align:left;cursor:pointer;transition:all.25s;box-shadow:0 2px 10px rgba(10,31,68,.04);font-size:1.1rem;display:flex;align-items:center;gap:1rem}
-      .btn-ley:hover{border-color:var(--dorado);box-shadow:0 6px 20px rgba(10,31,68,.1);transform:translateY(-2px)}
-      .btn-ley:active{transform:scale(.98);background:var(--azul);color:var(--dorado)}
-      .btn-ley i{font-size:1.8rem;color:var(--dorado);width:40px;text-align:center}
-
-      .articulo{background:var(--gris);padding:2rem;border-radius:12px;margin:1.8rem 0;border-left:4px solid var(--dorado);font-size:1.1rem;line-height:2}
-      .articulo strong{color:var(--azul);font-weight:700;font-family:'Playfair Display',serif;font-size:1.15rem}
-
-      .buscador{width:100%;padding:1.5rem;border:1.5px solid var(--borde);border-radius:12px;margin:2.5rem 0;font-size:1.1rem;transition:.2s;background:var(--blanco);font-weight:500}
-      .buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 4px rgba(201,169,97,.1)}
-
-      .ia-textarea{width:100%;min-height:200px;padding:1.5rem;border:1.5px solid var(--borde);border-radius:12px;font-size:1.05rem;margin:2rem 0;font-family:'Inter',sans-serif;resize:vertical;background:var(--blanco)}
-      .ia-textarea:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 4px rgba(201,169,97,.1)}
-
-      .ia-btn{background:var(--azul);color:var(--dorado);border:2px solid var(--dorado);padding:1.4rem 3rem;border-radius:12px;font-weight:800;font-size:1.1rem;cursor:pointer;transition:all.2s;letter-spacing:.5px}
-      .ia-btn:active{transform:scale(.96);background:var(--dorado);color:var(--azul)}
-
-      .ia-respuesta{background:var(--gris);padding:2.5rem;border-radius:16px;margin-top:2.5rem;border-left:4px solid var(--azul);display:none;line-height:2;font-size:1.1rem}
-
-      .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.92);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px);padding:1rem}
-      .modal.active{display:flex;animation:fadeIn.3s}
-      .modal-content{background:var(--blanco);padding:3.5rem;border-radius:20px;max-width:560px;width:100%;box-shadow:0 25px 80px rgba(0,0,0,.5);max-height:90vh;overflow-y:auto}
-      .modal-titulo{color:var(--azul);font-size:2.2rem;font-weight:800;margin-bottom:1.8rem;font-family:'Playfair Display',serif;text-align:center}
-      .file-input{width:100%;padding:3rem;border:2px dashed var(--dorado);border-radius:16px;text-align:center;cursor:pointer;margin:2rem 0;background:#FFFEF9;transition:.2s}
-      .file-input:active{background:#FFFBF0;transform:scale(.99)}
-      .modal-btns{display:flex;gap:1.2rem;margin-top:3rem}
-      .modal-btn{flex:1;padding:1.3rem;border:none;border-radius:12px;font-weight:800;cursor:pointer;font-size:1.1rem;transition:all.2s}
-      .btn-guardar{background:var(--azul);color:var(--dorado);border:2px solid var(--dorado)}
-      .btn-guardar:active{transform:scale(.96)}
-      .btn-cancelar{background:var(--gris);color:var(--gris-texto);border:1.5px solid var(--borde)}
-      .btn-cancelar:active{transform:scale(.96)}
-
-        p{font-size:1.15rem;color:var(--gris-texto);font-weight:500}
-        @media (max-width:768px){.titulo{font-size:2.8rem}.nombre-dr{font-size:1.3rem}.nav-btn{font-size:.9rem;padding:1.4rem.5rem}.nav-btn i{font-size:1.4rem}.card{padding:2.2rem}.card-titulo{font-size:1.8rem}}
+        body{font-family:Arial,sans-serif;margin:0;padding:0;background:#F5F6F8;color:#1A1D29;line-height:1.8}
+       .header{background:#0A1F44;color:#C9A961;padding:3rem 1rem;text-align:center;border-bottom:3px solid #C9A961}
+       .header h1{margin:0;font-size:2.8rem;font-weight:900}
+       .header p{margin:.8rem 0 0;color:#FFF;font-size:1.1rem;letter-spacing:1px}
+       .nav{background:#FFF;display:flex;border-bottom:2px solid #DDE1E7;position:sticky;top:0;z-index:100}
+       .nav button{flex:1;padding:1.4rem 1rem;border:none;background:#FFF;color:#4A5568;font-weight:700;font-size:1rem;cursor:pointer;border-bottom:3px solid transparent}
+       .nav button.active{color:#0A1F44;border-bottom:3px solid #C9A961;background:#FFFEF9}
+       .contenido{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
+       .seccion{display:none}
+       .seccion.active{display:block}
+       .card{background:#FFF;padding:2.5rem;margin-bottom:2rem;border-radius:12px;box-shadow:0 4px 20px rgba(10,31,68,.08);border:1px solid #DDE1E7}
+       .card h2{color:#0A1F44;margin:0 0 1.5rem;font-size:2rem;font-weight:800;border-left:4px solid #C9A961;padding-left:1rem}
+       .btn-ley{display:block;width:100%;padding:1.3rem;margin:1rem 0;background:#FFF;border:1.5px solid #DDE1E7;color:#0A1F44;border-radius:10px;font-weight:700;font-size:1.05rem;cursor:pointer;text-align:left}
+       .btn-ley:hover{border-color:#C9A961;background:#FFFEF9}
+       .btn-ley:active{background:#0A1F44;color:#C9A961}
+       .articulo{background:#F5F6F8;padding:1.8rem;margin:1.5rem 0;border-left:4px solid #C9A961;border-radius:8px;line-height:2}
+       .articulo b{color:#0A1F44}
+       .buscador{width:100%;padding:1.3rem;border:1.5px solid #DDE1E7;border-radius:10px;font-size:1.05rem;margin:2rem 0;box-sizing:border-box}
+       .buscador:focus{outline:none;border-color:#C9A961}
+       .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:2rem}
+        p{font-size:1.1rem;color:#4A5568}
     </style>
 </head>
 <body>
-    <header class="header">
-        <button class="config-btn" id="btnCambiarLogo"><i class="fas fa-cog"></i>Configurar</button>
+    <div class="header">
+        <h1>LexSV-Pro</h1>
+        <p>DR. TONNY RAMIREZ | DESPACHO JURÍDICO DIGITAL | SANTA TECLA, EL SALVADOR</p>
+    </div>
 
-        <div class="logo-container">
-            <img id="logoBeagle" class="logo" src="" alt="Logo LexSV-Pro" style="display:none">
-            <div id="logoDefault" class="logo-default"><i class="fas fa-balance-scale"></i></div>
-        </div>
+    <div class="nav">
+        <button class="nav-btn active" onclick="mostrar('inicio',this)">Inicio</button>
+        <button class="nav-btn" onclick="mostrar('casos',this)">Casos</button>
+        <button class="nav-btn" onclick="mostrar('leyes',this)">Leyes SV</button>
+        <button class="nav-btn" onclick="mostrar('plazos',this)">Plazos</button>
+        <button class="nav-btn" onclick="mostrar('ia',this)">IA Legal</button>
+    </div>
 
-        <h1 class="titulo">LexSV-Pro</h1>
-        <p class="nombre-dr">Dr. Tonny Ramirez</p>
-        <p class="sub">Despacho Jurídico Digital | Santa Tecla, El Salvador</p>
-    </header>
-
-    <div id="modalLogo" class="modal">
-        <div class="modal-content">
-            <h3 class="modal-titulo">Configurar Identidad Visual</h3>
-            <p style="color:var(--gris-texto);margin-bottom:2rem;font-size:1.1rem;line-height:1.9;text-align:center">Cargue el logotipo de su despacho. La imagen se almacena localmente en su dispositivo de forma segura.</p>
-            <input type="file" id="inputLogo" accept="image/*" style="display:none">
-            <label for="inputLogo" class="file-input">
-                <div style="font-size:3.5rem;margin-bottom:1rem;color:var(--dorado)"><i class="fas fa-cloud-upload-alt"></i></div>
-                <strong style="font-size:1.25rem;color:var(--azul)">Seleccionar Archivo de Imagen</strong><br>
-                <span style="font-size:1rem;color:var(--gris-texto);margin-top:.8rem;display:block">Formatos: JPG, PNG, WEBP - Máximo 5MB</span>
-            </label>
-            <img id="previewImg" style="width:100%;max-width:260px;margin:2rem auto;display:none;border-radius:50%;border:4px solid var(--dorado);box-shadow:0 10px 30px rgba(0,0,0,.2)">
-            <div class="modal-btns">
-                <button class="modal-btn btn-cancelar" id="btnCancelar"><i class="fas fa-times"></i> Cancelar</button>
-                <button class="modal-btn btn-guardar" id="btnGuardarLogo"><i class="fas fa-check"></i> Guardar</button>
+    <div class="contenido">
+        <div id="inicio" class="seccion active">
+            <div class="card">
+                <h2>Bienvenido Dr. Ramirez</h2>
+                <p><strong>Sistema jurídico profesional.</strong> Desarrollado exclusivamente para su despacho. Operación 100% offline. Cumple Ley de Protección de Datos Personales de El Salvador. Sus expedientes permanecen en su dispositivo.</p>
+            </div>
+            <div class="card">
+                <h2>Panel de Control</h2>
+                <div class="grid">
+                    <button class="btn-ley" onclick="mostrar('casos',document.querySelector('[onclick*=casos]'))">Nuevo Expediente</button>
+                    <button class="btn-ley" onclick="mostrar('plazos',document.querySelector('[onclick*=plazos]'))">Calcular Plazo Procesal</button>
+                    <button class="btn-ley" onclick="mostrar('leyes',document.querySelector('[onclick*=leyes]'))">Consultar Códigos</button>
+                    <button class="btn-ley" onclick="mostrar('ia',document.querySelector('[onclick*=ia]'))">Asistente IA</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <nav class="nav">
-        <button class="nav-btn active" onclick="mostrar('inicio',this)"><i class="fas fa-home"></i>Inicio</button>
-        <button class="nav-btn" onclick="mostrar('casos',this)"><i class="fas fa-folder"></i>Casos</button>
-        <button class="nav-btn" onclick="mostrar('leyes',this)"><i class="fas fa-balance-scale"></i>Leyes SV</button>
-        <button class="nav-btn" onclick="mostrar('plazos',this)"><i class="fas fa-clock"></i>Plazos</button>
-        <button class="nav-btn" onclick="mostrar('ia',this)"><i class="fas fa-gavel"></i>IA Legal</button>
-    </nav>
-
-    <div id="inicio" class="seccion active">
-        <div class="card">
-            <h3 class="card-titulo"><i class="fas fa-shield-halved"></i>Bienvenido Dr. Ramirez</h3>
-            <p><strong>Sistema jurídico profesional.</strong> Desarrollado exclusivamente para su despacho. Operación 100% offline. Cifrado AES-256. Cumple con la Ley de Protección de Datos Personales de El Salvador. <strong style="color:var(--dorado)">Sus expedientes nunca abandonan su dispositivo.</strong></p>
-        </div>
-        <div class="card">
-            <h3 class="card-titulo"><i class="fas fa-th"></i>Panel de Control</h3>
-            <div class="btn-grid">
-                <div class="btn-ley" onclick="mostrar('casos',document.querySelector('[onclick*=casos]'))"><i class="fas fa-folder-plus"></i>Nuevo Expediente</div>
-                <div class="btn-ley" onclick="mostrar('plazos',document.querySelector('[onclick*=plazos]'))"><i class="fas fa-calendar-check"></i>Calcular Plazo Procesal</div>
-                <div class="btn-ley" onclick="mostrar('leyes',document.querySelector('[onclick*=leyes]'))"><i class="fas fa-book"></i>Consultar Códigos</div>
-                <div class="btn-ley" onclick="mostrar('ia',document.querySelector('[onclick*=ia]'))"><i class="fas fa-brain"></i>Asistente IA</div>
+        <div id="casos" class="seccion">
+            <div class="card">
+                <h2>Gestión de Expedientes</h2>
+                <p>Sistema de gestión de casos con almacenamiento local seguro. Administre clientes, audiencias, documentos y notas.</p>
+                <button class="btn-ley" style="margin-top:2rem;max-width:350px">+ Crear Nuevo Expediente</button>
+                <p style="margin-top:2rem;color:#4A5568;font-size:1rem"><em>Módulo en desarrollo. Próxima actualización: Base de datos IndexedDB con encriptación.</em></p>
             </div>
         </div>
-    </div>
 
-    <div id="casos" class="seccion">
-        <div class="card">
-            <h3 class="card-titulo"><i class="fas fa-briefcase"></i>Gestión de Expedientes</h3>
-            <p>Sistema de gestión de casos con almacenamiento local seguro. Administre clientes, audiencias, documentos y notas. Todo cifrado en su dispositivo mediante AES-256.</p>
-            <div class="btn-ley" style="margin-top:2.5rem;max-width:380px"><i class="fas fa-plus-circle"></i> Crear Nuevo Expediente</div>
-            <p style="margin-top:2.5rem;color:var(--gris-texto);font-size:1.05rem"><i class="fas fa-info-circle"></i> <em>Módulo en desarrollo. Próxima actualización: Base de datos IndexedDB con encriptación avanzada.</em></p>
-        </div>
-    </div>
-
-    <div id="leyes" class="seccion">
-        <div class="card">
-            <h3 class="card-titulo"><i class="fas fa-landmark"></i>Códigos y Leyes de El Salvador</h3>
-            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo o palabra clave: ej. 'homicidio', 'Art. 146', 'divorcio'...">
-            <div class="btn-grid">
-                <div class="btn-ley" onclick="verLey('cpcm')"><i class="fas fa-file-contract"></i>CPCM</div>
-                <div class="btn-ley" onclick="verLey('cp')"><i class="fas fa-scale-balanced"></i>Código Penal</div>
-                <div class="btn-ley" onclick="verLey('ct')"><i class="fas fa-hard-hat"></i>Código de Trabajo</div>
-                <div class="btn-ley" onclick="verLey('cf')"><i class="fas fa-heart"></i>Código de Familia</div>
-                <div class="btn-ley" onclick="verLey('cc')"><i class="fas fa-chart-line"></i>Código de Comercio</div>
-                <div class="btn-ley" onclick="verLey('cn')"><i class="fas fa-university"></i>Constitución</div>
-                <div class="btn-ley" onclick="verLey('lpa')"><i class="fas fa-building"></i>Ley Proc. Adm.</div>
-                <div class="btn-ley" onclick="verLey('lpdp')"><i class="fas fa-user-shield"></i>Ley Prot. Datos</div>
+        <div id="leyes" class="seccion">
+            <div class="card">
+                <h2>Códigos y Leyes de El Salvador</h2>
+                <input type="text" class="buscador" id="buscarInput" placeholder="Buscar: homicidio, Art. 146, divorcio..." onkeyup="buscar()">
+                <div class="grid">
+                    <button class="btn-ley" onclick="verLey('cpcm')">CPCM</button>
+                    <button class="btn-ley" onclick="verLey('cp')">Código Penal</button>
+                    <button class="btn-ley" onclick="verLey('ct')">Código de Trabajo</button>
+                    <button class="btn-ley" onclick="verLey('cf')">Código de Familia</button>
+                    <button class="btn-ley" onclick="verLey('cc')">Código de Comercio</button>
+                    <button class="btn-ley" onclick="verLey('cn')">Constitución</button>
+                    <button class="btn-ley" onclick="verLey('lpa')">Ley Proc. Adm.</button>
+                    <button class="btn-ley" onclick="verLey('lpdp')">Ley Prot. Datos</button>
+                </div>
+                <div id="resultado-leyes"></div>
             </div>
-            <div id="contenido-ley"></div>
         </div>
-    </div>
 
-    <div id="plazos" class="seccion">
-        <div class="card">
-            <h3 class="card-titulo"><i class="fas fa-hourglass-half"></i>Plazos Procesales CPCM</h3>
-            <div class="articulo"><strong>Art. 146 CPCM:</strong> Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario.</div>
-            <div class="articulo"><strong>Art. 147 CPCM:</strong> Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles.</div>
-            <div class="articulo"><strong>Art. 224 CPCM:</strong> Término para contestar demanda: 20 días hábiles.</div>
-            <div class="articulo"><strong>Art. 272 CPCM:</strong> Término para apelar: 5 días hábiles desde la notificación.</div>
-            <div class="articulo"><strong>Art. 524 CPCM:</strong> Término para interponer casación: 15 días hábiles.</div>
-            <p style="margin-top:2.5rem;color:var(--dorado);font-weight:700;font-size:1.2rem"><i class="fas fa-tools"></i> Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador.</p>
+        <div id="plazos" class="seccion">
+            <div class="card">
+                <h2>Plazos Procesales CPCM</h2>
+                <div class="articulo"><b>Art. 146 CPCM:</b> Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario.</div>
+                <div class="articulo"><b>Art. 147 CPCM:</b> Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles.</div>
+                <div class="articulo"><b>Art. 224 CPCM:</b> Término para contestar demanda: 20 días hábiles.</div>
+                <div class="articulo"><b>Art. 272 CPCM:</b> Término para apelar: 5 días hábiles desde la notificación.</div>
+                <div class="articulo"><b>Art. 524 CPCM:</b> Término para interponer casación: 15 días hábiles.</div>
+            </div>
         </div>
-    </div>
 
-    <div id="ia" class="seccion">
-        <div class="card">
-            <h3 class="card-titulo"><i class="fas fa-robot"></i>Asistente IA Legal - LexSV</h3>
-            <p>Inteligencia artificial offline. Consulta los 8 códigos cargados y genera borradores de escritos basados en legislación salvadoreña vigente.</p>
-            <textarea class="ia-textarea" id="preguntaIA" placeholder="Ej: Redacte un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia. O: ¿Cuál es el plazo para apelar según CPCM?"></textarea>
-            <button class="ia-btn" id="btnConsultarIA">Ejecutar Consulta IA</button>
-            <div id="respuestaIA" class="ia-respuesta"></div>
+        <div id="ia" class="seccion">
+            <div class="card">
+                <h2>Asistente IA Legal</h2>
+                <p>Inteligencia artificial offline. Consulta los 8 códigos cargados y genera borradores de escritos basados en legislación salvadoreña vigente.</p>
+                <textarea class="buscador" id="preguntaIA" placeholder="Ej: Redacte un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia" style="min-height:150px;resize:vertical"></textarea>
+                <button class="btn-ley" onclick="consultarIA()" style="max-width:300px">Ejecutar Consulta IA</button>
+                <div id="respuestaIA"></div>
+            </div>
         </div>
     </div>
 
@@ -193,7 +114,6 @@
                 {art:"CPCM Art. 1", txt:"Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal."},
                 {art:"CPCM Art. 146", txt:"Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario."},
                 {art:"CPCM Art. 147", txt:"Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles."},
-                {art:"CPCM Art. 217", txt:"La demanda deberá contener: nombre del juez, nombre y generales de las partes, hechos, fundamentos de derecho y petitorio claro."},
                 {art:"CPCM Art. 224", txt:"El demandado tiene 20 días hábiles para contestar la demanda desde su notificación."},
                 {art:"CPCM Art. 272", txt:"El recurso de apelación deberá interponerse dentro de 5 días hábiles siguientes a la notificación."},
                 {art:"CPCM Art. 524", txt:"El recurso de casación deberá interponerse dentro de 15 días hábiles."}
@@ -240,8 +160,7 @@
             ]
         };
 
-        // FUNCIONES PRINCIPALES - COMPATIBLES CON SAFARI IOS
-        function mostrar(id, elemento) {
+        function mostrar(id, boton) {
             var secciones = document.getElementsByClassName('seccion');
             for(var i=0; i<secciones.length; i++) {
                 secciones[i].classList.remove('active');
@@ -251,24 +170,23 @@
                 botones[i].classList.remove('active');
             }
             document.getElementById(id).classList.add('active');
-            if(elemento) elemento.classList.add('active');
-            window.scrollTo({top:0,behavior:'smooth'});
+            if(boton) boton.classList.add('active');
+            window.scrollTo(0,0);
         }
 
         function verLey(codigo) {
             var ley = leyes[codigo];
             var html = '';
             for(var i=0; i<ley.length; i++) {
-                html += '<div class="articulo"><strong>' + ley[i].art + '.-</strong> ' + ley[i].txt + '</div>';
+                html += '<div class="articulo"><b>' + ley[i].art + '.-</b> ' + ley[i].txt + '</div>';
             }
-            document.getElementById('contenido-ley').innerHTML = html;
-            document.getElementById('contenido-ley').scrollIntoView({behavior:'smooth',block:'start'});
+            document.getElementById('resultado-leyes').innerHTML = html;
         }
 
         function buscar() {
-            var texto = document.getElementById('buscarLey').value.toLowerCase();
+            var texto = document.getElementById('buscarInput').value.toLowerCase();
             if(texto.length < 3) {
-                document.getElementById('contenido-ley').innerHTML = '<p style="text-align:center;color:var(--gris-texto);padding:3rem;font-size:1.15rem">Ingrese al menos 3 caracteres para iniciar la búsqueda en los 8 códigos...</p>';
+                document.getElementById('resultado-leyes').innerHTML = '<p style="text-align:center;color:#4A5568;padding:2rem">Ingrese al menos 3 caracteres para iniciar la búsqueda...</p>';
                 return;
             }
             var resultados = '';
@@ -276,21 +194,18 @@
                 for(var i=0; i<leyes[key].length; i++) {
                     var articulo = leyes[key][i];
                     if(articulo.txt.toLowerCase().indexOf(texto) > -1 || articulo.art.toLowerCase().indexOf(texto) > -1) {
-                        resultados += '<div class="articulo"><strong>' + articulo.art + '.-</strong> ' + articulo.txt + '</div>';
+                        resultados += '<div class="articulo"><b>' + articulo.art + '.-</b> ' + articulo.txt + '</div>';
                     }
                 }
             }
-            document.getElementById('contenido-ley').innerHTML = resultados || '<p style="text-align:center;color:var(--gris-texto);padding:3rem;font-size:1.15rem">No se encontraron resultados para "' + texto + '"</p>';
+            document.getElementById('resultado-leyes').innerHTML = resultados || '<p style="text-align:center;color:#4A5568;padding:2rem">No se encontraron resultados para "' + texto + '"</p>';
         }
 
         function consultarIA() {
             var pregunta = document.getElementById('preguntaIA').value.toLowerCase();
             var resp = document.getElementById('respuestaIA');
-            resp.style.display = 'block';
-
-            if(pregunta.indexOf('divorcio') > -1 && pregunta.indexOf('mutuo') > -1) {
-                resp.innerHTML = '<strong style="color:var(--azul);font-size:1.4rem">Modelo: Demanda de Divorcio por Mutuo Consentimiento</strong><br><strong>Fundamento Legal:</strong> Código de Familia Art. 106<br><br><strong>SEÑOR JUEZ DE FAMILIA DE SANTA TECLA</strong><br><br>Nosotros, [NOMBRE ESPOSO] y [NOMBRE ESPOSA], mayores de edad, casados entre sí, del domicilio de Santa Tecla, con DUI... y... respectivamente, actuando en nombre propio, a Usted respetuosamente EXPONEMOS:<br><br><strong>I. HECHOS:</strong><br>1. Que contrajimos matrimonio civil el día [FECHA] ante los oficios de...<br>2. Que de dicha unión [no procreamos hijos] / [procreamos a...]<br>3. Que por convenir a nuestros intereses personales, hemos decidido disolver el vínculo matrimonial que nos une...<br><br><strong>II. FUNDAMENTOS DE DERECHO:</strong><br>Código de Familia Art. 106: "El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo..."<br><br><strong>III. PETITORIO:</strong><br>Por lo expuesto, PEDIMOS: Se admita la presente demanda, se le dé el trámite de ley y en sentencia definitiva se decrete el divorcio por mutuo consentimiento...<br><br><em style="color:var(--dorado);font-weight:700">Nota: Este es un borrador generado por LexSV-Pro. Revise con legislación vigente y ajuste datos específicos del caso.</em>';
-            } else if(pregunta.indexOf('plazo') > -1 || pregunta.indexOf('apel') > -1 || pregunta.indexOf('cpcm') > -1 || pregunta.indexOf('término') > -1) {
-                resp.innerHTML = '<strong style="color:var(--azul);font-size:1.4rem">Plazos Procesales - CPCM</strong><br><br><strong>Reglas Fundamentales Art. 146-147 CPCM:</strong><br>1. Los plazos son <strong>perentorios e improrrogables</strong><br>2. Se cuentan desde el <strong>día siguiente</strong> a la notificación<br>3. <strong>No corren</strong> días inhábiles, sábados, domingos ni feriados oficiales<br><br><strong>Plazos Relevantes:</strong><br>- <strong>Contestar demanda:</strong> 20 días hábiles - Art. 224 CPCM<br>- <strong>Apelación:</strong> 5 días hábiles - Art. 272 CPCM<br>- <strong>Casación:</strong> 15 días hábiles - Art. 524 CPCM<br>- <strong>Revocatoria:</strong> 3 días hábiles - Art. 503 CPCM<br><br><em style="color:var(--dorado);font-weight:700">Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador</em>';
-            } else if(pregunta.indexOf('homicidio') > -1 || pregunta.indexOf('penal') > -1 || pregunta.indexOf('hurto') > -1 || pregunta.indexOf('estafa') > -1) {
-                resp.innerHTML = '<strong style="color:var(--azul);font-size:1.4rem">Código Penal de El Salvador - Delitos</strong><br><br><strong>CP Art. 114 - Homicidio Simple:</strong> El que matare a otro será sancionado con prisión de 10 a 20 años.<br><br><strong>CP Art. 115 - Homicidio Agravado:</strong> Prisión de 20 a 30 años cuando concurra alev
+            resp.innerHTML = '<div class="articulo"><b>LexSV-Pro IA:</b><br><br>Esta función está en desarrollo. Próximamente generará borradores de escritos basados en los 8 códigos cargados.<br><br>Por ahora puede consultar los artículos directamente en la pestaña "Leyes SV".</div>';
+        }
+    </script>
+</body>
+</html>
