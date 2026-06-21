@@ -2,76 +2,60 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LexSV-Pro | Dr. Tonny Ramirez</title>
     <meta name="theme-color" content="#0A1F44">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root{--azul:#0A1F44;--azul-oscuro:#061529;--dorado:#C9A961;--dorado-hover:#B8941F;--blanco:#FFF;--gris:#F5F6F8;--texto:#1A1D29;--borde:#DDE1E7;--gris-texto:#4A5568}
+        :root{--azul:#0A1F44;--azul-oscuro:#061529;--dorado:#C9A961;--blanco:#FFF;--gris:#F5F6F8;--texto:#1A1D29;--borde:#DDE1E7;--gris-texto:#4A5568}
         *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-        html{scroll-behavior:smooth}
-        body{background:var(--gris);color:var(--texto);font-family:'Inter',-apple-system,sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased}
-        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-     .header{background:linear-gradient(180deg,var(--azul) 0%,var(--azul-oscuro) 100%);padding:3.5rem 1.5rem;text-align:center;position:relative;border-bottom:3px solid var(--dorado)}
-     .config-btn{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:1.5px solid var(--dorado);color:var(--dorado);padding:.9rem 1.5rem;border-radius:8px;font-weight:700;cursor:pointer;font-size:.95rem;transition:all.2s;letter-spacing:.5px}
-     .config-btn:active{transform:scale(.96);background:rgba(201,169,97,.1)}
-     .config-btn i{margin-right:.5rem}
-     .logo{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;object-fit:cover;border:4px solid var(--dorado);box-shadow:0 10px 40px rgba(0,0,0,.3);background:var(--azul-oscuro);display:block}
-     .logo-default{width:160px;height:160px;margin:0 auto 2rem;border-radius:50%;border:4px solid var(--dorado);background:var(--azul-oscuro);display:flex;align-items:center;justify-content:center;font-size:5rem;box-shadow:0 10px 40px rgba(0,0,0,.3);color:var(--dorado)}
-     .titulo{color:var(--dorado);font-size:3.5rem;font-weight:900;letter-spacing:-1px;margin-bottom:.8rem;font-family:'Playfair Display',serif}
-     .nombre-dr{color:var(--blanco);font-size:1.5rem;font-weight:600;margin-bottom:.5rem;letter-spacing:1.5px;text-transform:uppercase}
-     .sub{color:rgba(255,255,255,.8);font-size:1.05rem;font-weight:400;letter-spacing:.8px}
-     .nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 2px 20px rgba(0,0,0,.06);z-index:100;border-bottom:1px solid var(--borde)}
-     .nav-btn{flex:1;padding:1.6rem 1rem;border:none;background:var(--blanco);color:var(--gris-texto);font-weight:700;font-size:1rem;cursor:pointer;border-bottom:3px solid transparent;transition:all.2s;letter-spacing:.3px}
-     .nav-btn i{display:block;font-size:1.6rem;margin-bottom:.4rem;color:#94A3B8;transition:all.2s}
-     .nav-btn:active{transform:scale(.98)}
-     .nav-btn.active{color:var(--azul);border-bottom:3px solid var(--dorado);background:linear-gradient(180deg,#FFFEF9 0%,transparent 100%)}
-     .nav-btn.active i{color:var(--dorado)}
-     .seccion{display:none;padding:3.5rem 1.5rem;max-width:1300px;margin:0 auto}
-     .seccion.active{display:block;animation:fadeIn.4s ease-out}
-     .card{background:var(--blanco);margin:0 0 2.5rem;padding:3rem;border-radius:16px;box-shadow:0 4px 25px rgba(10,31,68,.06);border:1px solid var(--borde)}
-     .card-titulo{color:var(--azul);margin-bottom:2rem;font-size:2.1rem;font-weight:800;display:flex;align-items:center;gap:1.2rem;font-family:'Playfair Display',serif;letter-spacing:-.5px}
-     .card-titulo::before{content:'';width:5px;height:40px;background:var(--dorado);border-radius:2px}
-     .card-titulo i{color:var(--dorado);font-size:2.2rem}
-     .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem;margin-top:2.5rem}
-     .btn-ley{background:var(--blanco);border:1.5px solid var(--borde);color:var(--azul);padding:2rem;border-radius:12px;font-weight:700;text-align:left;cursor:pointer;transition:all.25s;box-shadow:0 2px 10px rgba(10,31,68,.04);font-size:1.1rem;display:flex;align-items:center;gap:1rem}
-     .btn-ley:hover{border-color:var(--dorado);box-shadow:0 6px 20px rgba(10,31,68,.1);transform:translateY(-2px)}
-     .btn-ley:active{transform:scale(.98);background:var(--azul);color:var(--dorado)}
-     .btn-ley i{font-size:1.8rem;color:var(--dorado);width:40px;text-align:center}
-     .articulo{background:var(--gris);padding:2rem;border-radius:12px;margin:1.8rem 0;border-left:4px solid var(--dorado);font-size:1.1rem;line-height:2}
-     .articulo strong{color:var(--azul);font-weight:700;font-family:'Playfair Display',serif;font-size:1.15rem}
-     .buscador{width:100%;padding:1.5rem;border:1.5px solid var(--borde);border-radius:12px;margin:2.5rem 0;font-size:1.1rem;transition:.2s;background:var(--blanco);font-weight:500}
-     .buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 4px rgba(201,169,97,.1)}
-     .ia-textarea{width:100%;min-height:200px;padding:1.5rem;border:1.5px solid var(--borde);border-radius:12px;font-size:1.05rem;margin:2rem 0;font-family:'Inter',sans-serif;resize:vertical;background:var(--blanco)}
-     .ia-textarea:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 4px rgba(201,169,97,.1)}
-     .ia-btn{background:var(--azul);color:var(--dorado);border:2px solid var(--dorado);padding:1.4rem 3rem;border-radius:12px;font-weight:800;font-size:1.1rem;cursor:pointer;transition:all.2s;letter-spacing:.5px}
-     .ia-btn:active{transform:scale(.96);background:var(--dorado);color:var(--azul)}
-     .ia-respuesta{background:var(--gris);padding:2.5rem;border-radius:16px;margin-top:2.5rem;border-left:4px solid var(--azul);display:none;line-height:2;font-size:1.1rem}
-     .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.92);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px);padding:1rem}
-     .modal.active{display:flex;animation:fadeIn.3s}
-     .modal-content{background:var(--blanco);padding:3.5rem;border-radius:20px;max-width:560px;width:100%;box-shadow:0 25px 80px rgba(0,0,0,.5);max-height:90vh;overflow-y:auto}
-     .modal-titulo{color:var(--azul);font-size:2.2rem;font-weight:800;margin-bottom:1.8rem;font-family:'Playfair Display',serif;text-align:center}
-     .file-input{width:100%;padding:3rem;border:2px dashed var(--dorado);border-radius:16px;text-align:center;cursor:pointer;margin:2rem 0;background:#FFFEF9;transition:.2s}
-     .file-input:active{background:#FFFBF0;transform:scale(.99)}
-     .modal-btns{display:flex;gap:1.2rem;margin-top:3rem}
-     .modal-btn{flex:1;padding:1.3rem;border:none;border-radius:12px;font-weight:800;cursor:pointer;font-size:1.1rem;transition:all.2s}
-     .btn-guardar{background:var(--azul);color:var(--dorado);border:2px solid var(--dorado)}
-     .btn-guardar:active{transform:scale(.96)}
-     .btn-cancelar{background:var(--gris);color:var(--gris-texto);border:1.5px solid var(--borde)}
-     .btn-cancelar:active{transform:scale(.96)}
-        p{font-size:1.15rem;color:var(--gris-texto);font-weight:500}
-        @media (max-width:768px){.titulo{font-size:2.8rem}.nombre-dr{font-size:1.3rem}.nav-btn{font-size:.9rem;padding:1.4rem.5rem}.nav-btn i{font-size:1.4rem}.card{padding:2.2rem}.card-titulo{font-size:1.8rem}}
+        body{background:var(--gris);color:var(--texto);font-family:'Inter',sans-serif;line-height:1.8}
+    .header{background:linear-gradient(180deg,var(--azul) 0%,var(--azul-oscuro) 100%);padding:3rem 1.5rem;text-align:center;border-bottom:3px solid var(--dorado);position:relative}
+    .config-btn{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:1.5px solid var(--dorado);color:var(--dorado);padding:.9rem 1.5rem;border-radius:8px;font-weight:700;cursor:pointer;font-size:.95rem}
+    .config-btn:active{transform:scale(.96)}
+    .logo{width:150px;height:150px;margin:0 auto 1.8rem;border-radius:50%;object-fit:cover;border:4px solid var(--dorado);background:var(--azul-oscuro);display:block}
+    .logo-default{width:150px;height:150px;margin:0 auto 1.8rem;border-radius:50%;border:4px solid var(--dorado);background:var(--azul-oscuro);display:flex;align-items:center;justify-content:center;font-size:4.5rem;color:var(--dorado)}
+    .titulo{color:var(--dorado);font-size:3.2rem;font-weight:900;margin-bottom:.8rem;font-family:'Playfair Display',serif}
+    .nombre-dr{color:var(--blanco);font-size:1.4rem;font-weight:600;margin-bottom:.5rem;letter-spacing:1.5px;text-transform:uppercase}
+    .sub{color:rgba(255,255,255,.8);font-size:1rem}
+    .nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 2px 20px rgba(0,0,0,.06);z-index:100;border-bottom:1px solid var(--borde)}
+    .nav-btn{flex:1;padding:1.5rem 1rem;border:none;background:var(--blanco);color:var(--gris-texto);font-weight:700;font-size:.95rem;cursor:pointer;border-bottom:3px solid transparent}
+    .nav-btn i{display:block;font-size:1.5rem;margin-bottom:.4rem;color:#94A3B8}
+    .nav-btn.active{color:var(--azul);border-bottom:3px solid var(--dorado);background:#FFFEF9}
+    .nav-btn.active i{color:var(--dorado)}
+    .seccion{display:none;padding:3rem 1.5rem;max-width:1200px;margin:0 auto}
+    .seccion.active{display:block}
+    .card{background:var(--blanco);margin:0 0 2.5rem;padding:2.5rem;border-radius:16px;box-shadow:0 4px 25px rgba(10,31,68,.06);border:1px solid var(--borde)}
+    .card-titulo{color:var(--azul);margin-bottom:2rem;font-size:2rem;font-weight:800;display:flex;align-items:center;gap:1.2rem;font-family:'Playfair Display',serif}
+    .card-titulo::before{content:'';width:5px;height:40px;background:var(--dorado);border-radius:2px}
+    .card-titulo i{color:var(--dorado);font-size:2rem}
+    .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:2rem}
+    .btn-ley{background:var(--blanco);border:1.5px solid var(--borde);color:var(--azul);padding:1.8rem;border-radius:12px;font-weight:700;cursor:pointer;transition:all.25s;box-shadow:0 2px 10px rgba(10,31,68,.04);font-size:1.05rem;display:flex;align-items:center;gap:1rem;text-align:left}
+    .btn-ley:active{transform:scale(.98);background:var(--azul);color:var(--dorado)}
+    .btn-ley i{font-size:1.6rem;color:var(--dorado);width:35px;text-align:center}
+    .articulo{background:var(--gris);padding:1.8rem;border-radius:12px;margin:1.5rem 0;border-left:4px solid var(--dorado);font-size:1.05rem;line-height:2}
+    .articulo strong{color:var(--azul);font-weight:700;font-family:'Playfair Display',serif}
+    .buscador{width:100%;padding:1.3rem;border:1.5px solid var(--borde);border-radius:12px;margin:2rem 0;font-size:1.05rem;background:var(--blanco)}
+    .buscador:focus{outline:none;border-color:var(--dorado)}
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.92);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+    .modal.active{display:flex}
+    .modal-content{background:var(--blanco);padding:3rem;border-radius:20px;max-width:520px;width:100%}
+    .modal-titulo{color:var(--azul);font-size:2rem;font-weight:800;margin-bottom:1.8rem;font-family:'Playfair Display',serif;text-align:center}
+    .file-input{width:100%;padding:2.5rem;border:2px dashed var(--dorado);border-radius:16px;text-align:center;cursor:pointer;margin:2rem 0;background:#FFFEF9}
+    .modal-btns{display:flex;gap:1.2rem;margin-top:2.5rem}
+    .modal-btn{flex:1;padding:1.2rem;border:none;border-radius:12px;font-weight:800;cursor:pointer;font-size:1.05rem}
+    .btn-guardar{background:var(--azul);color:var(--dorado);border:2px solid var(--dorado)}
+    .btn-cancelar{background:var(--gris);color:var(--gris-texto);border:1.5px solid var(--borde)}
+        p{font-size:1.1rem;color:var(--gris-texto)}
+        @media (max-width:768px){.titulo{font-size:2.5rem}.nav-btn{font-size:.85rem;padding:1.3rem.5rem}.card{padding:2rem}}
     </style>
 </head>
 <body>
     <header class="header">
-        <button class="config-btn" id="btnCambiarLogo"><i class="fas fa-cog"></i>Configurar</button>
+        <button class="config-btn" onclick="abrirModal()"><i class="fas fa-cog"></i>Configurar</button>
         <div class="logo-container">
-            <img id="logoBeagle" class="logo" src="" alt="Logo LexSV-Pro" style="display:none">
+            <img id="logoBeagle" class="logo" src="" alt="Logo" style="display:none">
             <div id="logoDefault" class="logo-default"><i class="fas fa-balance-scale"></i></div>
         </div>
         <h1 class="titulo">LexSV-Pro</h1>
@@ -82,17 +66,17 @@
     <div id="modalLogo" class="modal">
         <div class="modal-content">
             <h3 class="modal-titulo">Configurar Identidad Visual</h3>
-            <p style="color:var(--gris-texto);margin-bottom:2rem;font-size:1.1rem;line-height:1.9;text-align:center">Cargue el logotipo de su despacho. La imagen se almacena localmente en su dispositivo de forma segura.</p>
+            <p style="color:var(--gris-texto);margin-bottom:2rem;font-size:1.05rem;text-align:center">Cargue el logotipo de su despacho. Se almacena localmente de forma segura.</p>
             <input type="file" id="inputLogo" accept="image/*" style="display:none">
             <label for="inputLogo" class="file-input">
-                <div style="font-size:3.5rem;margin-bottom:1rem;color:var(--dorado)"><i class="fas fa-cloud-upload-alt"></i></div>
-                <strong style="font-size:1.25rem;color:var(--azul)">Seleccionar Archivo de Imagen</strong><br>
-                <span style="font-size:1rem;color:var(--gris-texto);margin-top:.8rem;display:block">Formatos: JPG, PNG, WEBP - Máximo 5MB</span>
+                <div style="font-size:3rem;margin-bottom:1rem;color:var(--dorado)"><i class="fas fa-cloud-upload-alt"></i></div>
+                <strong style="font-size:1.2rem;color:var(--azul)">Seleccionar Archivo de Imagen</strong><br>
+                <span style="font-size:.95rem;color:var(--gris-texto);margin-top:.8rem;display:block">JPG, PNG, WEBP - Máximo 5MB</span>
             </label>
-            <img id="previewImg" style="width:100%;max-width:260px;margin:2rem auto;display:none;border-radius:50%;border:4px solid var(--dorado);box-shadow:0 10px 30px rgba(0,0,0,.2)">
+            <img id="previewImg" style="width:100%;max-width:240px;margin:2rem auto;display:none;border-radius:50%;border:4px solid var(--dorado)">
             <div class="modal-btns">
-                <button class="modal-btn btn-cancelar" id="btnCancelar"><i class="fas fa-times"></i> Cancelar</button>
-                <button class="modal-btn btn-guardar" id="btnGuardarLogo"><i class="fas fa-check"></i> Guardar</button>
+                <button class="modal-btn btn-cancelar" onclick="cerrarModal()"><i class="fas fa-times"></i> Cancelar</button>
+                <button class="modal-btn btn-guardar" onclick="guardarLogo()"><i class="fas fa-check"></i> Guardar</button>
             </div>
         </div>
     </div>
@@ -113,10 +97,10 @@
         <div class="card">
             <h3 class="card-titulo"><i class="fas fa-th"></i>Panel de Control</h3>
             <div class="btn-grid">
-                <div class="btn-ley" onclick="mostrar('casos',document.querySelector('[onclick*=casos]'))"><i class="fas fa-folder-plus"></i>Nuevo Expediente</div>
-                <div class="btn-ley" onclick="mostrar('plazos',document.querySelector('[onclick*=plazos]'))"><i class="fas fa-calendar-check"></i>Calcular Plazo Procesal</div>
-                <div class="btn-ley" onclick="mostrar('leyes',document.querySelector('[onclick*=leyes]'))"><i class="fas fa-book"></i>Consultar Códigos</div>
-                <div class="btn-ley" onclick="mostrar('ia',document.querySelector('[onclick*=ia]'))"><i class="fas fa-brain"></i>Asistente IA</div>
+                <div class="btn-ley" onclick="mostrar('casos',document.querySelectorAll('.nav-btn')[1])"><i class="fas fa-folder-plus"></i>Nuevo Expediente</div>
+                <div class="btn-ley" onclick="mostrar('plazos',document.querySelectorAll('.nav-btn')[3])"><i class="fas fa-calendar-check"></i>Calcular Plazo Procesal</div>
+                <div class="btn-ley" onclick="mostrar('leyes',document.querySelectorAll('.nav-btn')[2])"><i class="fas fa-book"></i>Consultar Códigos</div>
+                <div class="btn-ley" onclick="mostrar('ia',document.querySelectorAll('.nav-btn')[4])"><i class="fas fa-brain"></i>Asistente IA</div>
             </div>
         </div>
     </div>
@@ -125,15 +109,15 @@
         <div class="card">
             <h3 class="card-titulo"><i class="fas fa-briefcase"></i>Gestión de Expedientes</h3>
             <p>Sistema de gestión de casos con almacenamiento local seguro. Administre clientes, audiencias, documentos y notas.</p>
-            <div class="btn-ley" style="margin-top:2.5rem;max-width:380px"><i class="fas fa-plus-circle"></i> Crear Nuevo Expediente</div>
-            <p style="margin-top:2.5rem;color:var(--gris-texto);font-size:1.05rem"><i class="fas fa-info-circle"></i> <em>Módulo en desarrollo. Próxima actualización: Base de datos IndexedDB con encriptación.</em></p>
+            <div class="btn-ley" style="margin-top:2rem;max-width:350px"><i class="fas fa-plus-circle"></i> Crear Nuevo Expediente</div>
+            <p style="margin-top:2rem;color:var(--gris-texto);font-size:1rem"><i class="fas fa-info-circle"></i> <em>Módulo en desarrollo. Próxima actualización: Base de datos IndexedDB con encriptación.</em></p>
         </div>
     </div>
 
     <div id="leyes" class="seccion">
         <div class="card">
             <h3 class="card-titulo"><i class="fas fa-landmark"></i>Códigos y Leyes de El Salvador</h3>
-            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo o palabra clave: ej. 'homicidio', 'Art. 146', 'divorcio'...">
+            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar: homicidio, Art. 146, divorcio..." onkeyup="buscar()">
             <div class="btn-grid">
                 <div class="btn-ley" onclick="verLey('cpcm')"><i class="fas fa-file-contract"></i>CPCM</div>
                 <div class="btn-ley" onclick="verLey('cp')"><i class="fas fa-scale-balanced"></i>Código Penal</div>
@@ -163,9 +147,9 @@
         <div class="card">
             <h3 class="card-titulo"><i class="fas fa-robot"></i>Asistente IA Legal - LexSV</h3>
             <p>Inteligencia artificial offline. Consulta los 8 códigos cargados y genera borradores de escritos basados en legislación salvadoreña vigente.</p>
-            <textarea class="ia-textarea" id="preguntaIA" placeholder="Ej: Redacte un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia"></textarea>
-            <button class="ia-btn" id="btnConsultarIA">Ejecutar Consulta IA</button>
-            <div id="respuestaIA" class="ia-respuesta"></div>
+            <textarea class="buscador" id="preguntaIA" placeholder="Ej: Redacte un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia" style="min-height:150px;resize:vertical"></textarea>
+            <button class="btn-ley" onclick="consultarIA()" style="max-width:300px"><i class="fas fa-play"></i>Ejecutar Consulta IA</button>
+            <div id="respuestaIA"></div>
         </div>
     </div>
 
@@ -175,6 +159,7 @@
                 {art:"CPCM Art. 1", txt:"Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal."},
                 {art:"CPCM Art. 146", txt:"Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario."},
                 {art:"CPCM Art. 147", txt:"Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles."},
+                {art:"CPCM Art. 217", txt:"La demanda deberá contener: nombre del juez, nombre y generales de las partes, hechos, fundamentos de derecho y petitorio claro."},
                 {art:"CPCM Art. 224", txt:"El demandado tiene 20 días hábiles para contestar la demanda desde su notificación."},
                 {art:"CPCM Art. 272", txt:"El recurso de apelación deberá interponerse dentro de 5 días hábiles siguientes a la notificación."},
                 {art:"CPCM Art. 524", txt:"El recurso de casación deberá interponerse dentro de 15 días hábiles."}
@@ -265,11 +250,33 @@
         function consultarIA() {
             var pregunta = document.getElementById('preguntaIA').value.toLowerCase();
             var resp = document.getElementById('respuestaIA');
-            resp.style.display = 'block';
             resp.innerHTML = '<div class="articulo"><strong>LexSV-Pro IA:</strong><br><br>Función de inteligencia artificial en desarrollo. Próximamente generará borradores de escritos basados en los 8 códigos cargados.<br><br>Por ahora puede consultar los artículos directamente en la pestaña "Leyes SV".</div>';
         }
 
-        // Configuración del Logo
+        function abrirModal() {
+            document.getElementById('modalLogo').classList.add('active');
+        }
+
+        function cerrarModal() {
+            document.getElementById('modalLogo').classList.remove('active');
+            document.getElementById('previewImg').style.display = 'none';
+            document.getElementById('inputLogo').value = '';
+        }
+
+        function guardarLogo() {
+            var preview = document.getElementById('previewImg');
+            if(preview.src && preview.style.display!== 'none') {
+                localStorage.setItem('lexsv_logo', preview.src);
+                document.getElementById('logoBeagle').src = preview.src;
+                document.getElementById('logoBeagle').style.display = 'block';
+                document.getElementById('logoDefault').style.display = 'none';
+                cerrarModal();
+                alert('Logotipo guardado correctamente.');
+            } else {
+                alert('Por favor seleccione una imagen primero.');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             var logoGuardado = localStorage.getItem('lexsv_logo');
             if(logoGuardado) {
@@ -277,17 +284,6 @@
                 document.getElementById('logoBeagle').style.display = 'block';
                 document.getElementById('logoDefault').style.display = 'none';
             }
-
-            document.getElementById('btnCambiarLogo').onclick = function() {
-                document.getElementById('modalLogo').classList.add('active');
-            };
-
-            document.getElementById('btnCancelar').onclick = function() {
-                document.getElementById('modalLogo').classList.remove('active');
-                document.getElementById('previewImg').style.display = 'none';
-                document.getElementById('inputLogo').value = '';
-            };
-
             document.getElementById('inputLogo').onchange = function(e) {
                 var file = e.target.files[0];
                 if(file && file.size < 5242880) {
@@ -301,24 +297,7 @@
                     alert('La imagen debe pesar menos de 5MB');
                 }
             };
-
-            document.getElementById('btnGuardarLogo').onclick = function() {
-                var preview = document.getElementById('previewImg');
-                if(preview.src && preview.style.display!== 'none') {
-                    localStorage.setItem('lexsv_logo', preview.src);
-                    document.getElementById('logoBeagle').src = preview.src;
-                    document.getElementById('logoBeagle').style.display = 'block';
-                    document.getElementById('logoDefault').style.display = 'none';
-                    document.getElementById('modalLogo').classList.remove('active');
-                    alert('Logotipo guardado correctamente.');
-                } else {
-                    alert('Por favor seleccione una imagen primero.');
-                }
-            };
-
-            document.getElementById('btnConsultarIA').onclick = consultarIA;
-            document.getElementById('buscarLey').onkeyup = buscar;
         });
     </script>
 </body>
-</html
+</html>
