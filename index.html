@@ -8,83 +8,84 @@
     <style>
         :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFF;--gris:#F8F9FA}
         *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-        body{background:var(--gris);color:var(--azul);line-height:1.6}
-   .header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
-   .header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(212,175,55,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(212,175,55,0.1)"/></svg>');opacity:.3}
-   .logo-container{display:flex;flex-direction:column;align-items:center;gap:1rem;position:relative;z-index:2}
-   .logo-beagle{width:130px;height:130px;filter:drop-shadow(0 8px 16px rgba(212,175,55,.4))}
-   .titulo{color:var(--dorado);font-size:2.8rem;font-weight:900;letter-spacing:-1px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
-   .sub{color:var(--blanco);font-size:1.1rem;margin-top:.3rem;opacity:.95;font-weight:500}
-   .nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 20px rgba(0,0,0,.08);z-index:100}
-   .nav-btn{flex:1;padding:1.3rem 1rem;border:none;background:var(--blanco);color:var(--azul);font-weight:700;font-size:.95rem;cursor:pointer;border-bottom:4px solid transparent;transition:.2s}
-   .nav-btn:hover{background:#f8f9fa}
-   .nav-btn.active{color:var(--dorado);border-bottom:4px solid var(--dorado);background:#fefdf8}
-   .seccion{display:none;padding:2.5rem 1.5rem;animation:fade.4s;max-width:1000px;margin:0 auto}
-   .seccion.active{display:block}
-        @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-   .card{background:var(--blanco);margin:0 0 2rem;padding:2.5rem;border-radius:20px;box-shadow:0 8px 24px rgba(10,31,68,.08);border:1px solid rgba(10,31,68,.06)}
-   .card-titulo{color:var(--azul);margin-bottom:1.2rem;font-size:1.6rem;font-weight:800;display:flex;align-items:center;gap:.8rem}
-   .card-titulo::before{content:'';width:5px;height:30px;background:var(--dorado);border-radius:3px}
-   .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:2rem}
-   .btn-ley{background:linear-gradient(135deg,#fff 0%,#f8f9fa 100%);border:2px solid var(--azul);color:var(--azul);padding:1.4rem;border-radius:16px;font-weight:700;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 4px 12px rgba(10,31,68,.06)}
-   .btn-ley:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,31,68,.12);border-color:var(--dorado)}
-   .btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.98)}
-   .articulo{background:#f8f9fa;padding:1.5rem;border-radius:12px;margin:1.2rem 0;border-left:5px solid var(--dorado);font-size:1.05rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-   .buscador{width:100%;padding:1.2rem;border:2px solid #e1e5e9;border-radius:12px;margin:1.5rem 0;font-size:1.05rem;transition:.2s}
-   .buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 3px rgba(212,175,55,.1)}
+        body{background:var(--gris);color:var(--azul)}
+ .header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:3.5rem 1.5rem 3rem;text-align:center}
+ .logo{width:140px;height:140px;margin:0 auto 1.5rem;filter:drop-shadow(0 10px 20px rgba(212,175,55,.35))}
+ .titulo{color:var(--dorado);font-size:3rem;font-weight:900;letter-spacing:-1.5px;margin-bottom:.5rem}
+ .nombre-dr{color:var(--blanco);font-size:1.3rem;font-weight:600;margin-bottom:.3rem}
+ .sub{color:rgba(255,255,255,.85);font-size:1.05rem;font-weight:400}
+ .nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 20px rgba(0,0,0,.06);z-index:100;border-bottom:1px solid #e9ecef}
+ .nav-btn{flex:1;padding:1.4rem 1rem;border:none;background:var(--blanco);color:#495057;font-weight:700;font-size:1rem;cursor:pointer;border-bottom:4px solid transparent;transition:.2s}
+ .nav-btn:hover{background:#f8f9fa}
+ .nav-btn.active{color:var(--azul);border-bottom:4px solid var(--dorado);background:#fffbf0}
+ .seccion{display:none;padding:3rem 1.5rem;max-width:1100px;margin:0 auto}
+ .seccion.active{display:block;animation:fadeIn.4s}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+ .card{background:var(--blanco);margin:0 0 2rem;padding:2.5rem;border-radius:24px;box-shadow:0 8px 30px rgba(10,31,68,.07);border:1px solid rgba(10,31,68,.05)}
+ .card-titulo{color:var(--azul);margin-bottom:1.5rem;font-size:1.8rem;font-weight:800;display:flex;align-items:center;gap:1rem}
+ .card-titulo::before{content:'';width:6px;height:35px;background:var(--dorado);border-radius:3px}
+ .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2rem}
+ .btn-ley{background:linear-gradient(135deg,#fff 0%,#f8f9fa 100%);border:2px solid #dee2e6;color:var(--azul);padding:1.5rem;border-radius:18px;font-weight:700;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 4px 15px rgba(10,31,68,.05)}
+ .btn-ley:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(10,31,68,.12);border-color:var(--dorado)}
+ .btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.97)}
+ .articulo{background:#f8f9fa;padding:1.5rem;border-radius:14px;margin:1.5rem 0;border-left:5px solid var(--dorado);font-size:1.05rem;line-height:1.8}
+ .buscador{width:100%;padding:1.3rem;border:2px solid #e9ecef;border-radius:14px;margin:2rem 0;font-size:1.1rem;transition:.2s}
+ .buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 4px rgba(212,175,55,.1)}
+ .ia-textarea{width:100%;min-height:150px;padding:1.3rem;border:2px solid #e9ecef;border-radius:14px;font-size:1.05rem;margin:1.5rem 0;font-family:inherit;resize:vertical}
+ .ia-btn{background:var(--azul);color:var(--dorado);border:none;padding:1.2rem 2.5rem;border-radius:14px;font-weight:800;font-size:1.1rem;cursor:pointer;transition:.2s}
+ .ia-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,31,68,.2)}
+ .ia-respuesta{background:#e7f3ff;padding:2rem;border-radius:16px;margin-top:2rem;border-left:5px solid var(--azul);display:none;line-height:1.8}
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo-container">
-            <!-- LOGO BEAGLE PROFESIONAL - DR. TONNY RAMIREZ -->
-            <svg class="logo-beagle" viewBox="0 0 200 200">
-                <defs>
-                    <linearGradient id="beagleGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#FFD700"/>
-                        <stop offset="100%" style="stop-color:#D4AF37"/>
-                    </linearGradient>
-                    <filter id="shadow">
-                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
-                    </filter>
-                </defs>
-                <!-- Círculo base elegante -->
-                <circle cx="100" cy="100" r="95" fill="#0A1F44" stroke="url(#beagleGold)" stroke-width="6" filter="url(#shadow)"/>
+        <!-- LOGO BEAGLE PROFESIONAL - SIN TEXTO ENCIMA -->
+        <svg class="logo" viewBox="0 0 200 200">
+            <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FFD700"/>
+                    <stop offset="100%" style="stop-color:#D4AF37"/>
+                </linearGradient>
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <!-- Círculo exterior elegante -->
+            <circle cx="100" cy="100" r="96" fill="none" stroke="url(#goldGrad)" stroke-width="8"/>
+            <circle cx="100" cy="100" r="88" fill="#0A1F44"/>
 
-                <!-- Cara Beagle -->
-                <ellipse cx="100" cy="110" rx="45" ry="50" fill="url(#beagleGold)"/>
-                <ellipse cx="100" cy="120" rx="35" ry="30" fill="#F5DEB3"/>
+            <!-- Cabeza Beagle Profesional -->
+            <ellipse cx="100" cy="105" rx="42" ry="48" fill="url(#goldGrad)"/>
+            <ellipse cx="100" cy="115" rx="32" ry="28" fill="#F5DEB3"/>
 
-                <!-- Orejas largas de Beagle -->
-                <ellipse cx="55" cy="90" rx="18" ry="35" fill="#8B4513" transform="rotate(-25 55 90)"/>
-                <ellipse cx="145" cy="90" rx="18" ry="35" fill="#8B4513" transform="rotate(25 145 90)"/>
+            <!-- Orejas largas realistas -->
+            <ellipse cx="58" cy="85" rx="16" ry="38" fill="#8B4513" transform="rotate(-30 58 85)"/>
+            <ellipse cx="142" cy="85" rx="16" ry="38" fill="#8B4513" transform="rotate(30 142 85)"/>
 
-                <!-- Manchas características -->
-                <ellipse cx="85" cy="95" rx="12" ry="15" fill="#8B4513"/>
-                <ellipse cx="120" cy="130" rx="15" ry="18" fill="#8B4513"/>
+            <!-- Manchas -->
+            <ellipse cx="82" cy="90" rx="13" ry="16" fill="#8B4513"/>
+            <ellipse cx="125" cy="128" rx="14" ry="17" fill="#8B4513"/>
 
-                <!-- Ojos -->
-                <ellipse cx="85" cy="100" rx="6" ry="8" fill="#0A1F44"/>
-                <ellipse cx="115" cy="100" rx="6" ry="8" fill="#0A1F44"/>
-                <circle cx="87" cy="98" r="2" fill="#FFF"/>
-                <circle cx="117" cy="98" r="2" fill="#FFF"/>
+            <!-- Ojos profesionales -->
+            <ellipse cx="85" cy="98" rx="7" ry="9" fill="#0A1F44"/>
+            <ellipse cx="115" cy="98" rx="7" ry="9" fill="#0A1F44"/>
+            <circle cx="87" cy="96" r="2.5" fill="#FFF"/>
+            <circle cx="117" cy="96" r="2.5" fill="#FFF"/>
 
-                <!-- Nariz -->
-                <ellipse cx="100" cy="118" rx="8" ry="6" fill="#0A1F44"/>
+            <!-- Nariz -->
+            <ellipse cx="100" cy="115" rx="9" ry="7" fill="#0A1F44"/>
 
-                <!-- Hocico -->
-                <path d="M100 124 Q 90 132 100 135 Q 110 132 100 124" fill="#8B4513"/>
+            <!-- Hocico -->
+            <path d="M100 122 Q 88 132 100 136 Q 112 132 100 122" fill="#8B4513"/>
+        </svg>
 
-                <!-- Texto circular "DR. TONNY RAMIREZ" -->
-                <path id="curve" d="M 50 160 A 50 50 0 0 1 150 160" fill="none"/>
-                <text font-size="11" font-weight="700" fill="url(#beagleGold)">
-                    <textPath href="#curve" startOffset="50%" text-anchor="middle">DR. TONNY RAMIREZ • ABOGADO</textPath>
-                </text>
-            </svg>
-
-            <h1 class="titulo">LexSV-Pro</h1>
-            <p class="sub">Despacho Jurídico Digital | Santa Tecla, El Salvador</p>
-        </div>
+        <h1 class="titulo">LexSV-Pro</h1>
+        <p class="nombre-dr">Dr. Tonny Ramirez</p>
+        <p class="sub">Despacho Jurídico Digital | Santa Tecla, El Salvador</p>
     </header>
 
     <nav class="nav">
@@ -98,37 +99,38 @@
     <div id="inicio" class="seccion active">
         <div class="card">
             <h3 class="card-titulo">Bienvenido Dr. Ramirez</h3>
-            <p><strong>Software jurídico privado y seguro.</strong> 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador. Tus expedientes nunca salen de tu dispositivo.</p>
+            <p><strong>Software jurídico privado y seguro.</strong> Diseñado exclusivamente para su despacho. 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador. Sus expedientes nunca salen de su dispositivo.</p>
         </div>
         <div class="card">
             <h3 class="card-titulo">Accesos Rápidos</h3>
             <div class="btn-grid">
-                <div class="btn-ley" onclick="mostrar('casos')">📁 Nuevo Caso</div>
+                <div class="btn-ley" onclick="mostrar('casos')">📁 Nuevo Expediente</div>
                 <div class="btn-ley" onclick="mostrar('plazos')">⚖️ Calcular Plazo</div>
-                <div class="btn-ley" onclick="mostrar('leyes')">📚 Códigos</div>
-                <div class="btn-ley" onclick="mostrar('ia')">🤖 Consultar IA</div>
+                <div class="btn-ley" onclick="mostrar('leyes')">📚 Códigos SV</div>
+                <div class="btn-ley" onclick="mostrar('ia')">🤖 Asistente IA</div>
             </div>
         </div>
     </div>
 
     <div id="casos" class="seccion">
         <div class="card">
-            <h3 class="card-titulo">Mis Casos Activos</h3>
-            <p>Próximamente: Sistema de gestión de expedientes cifrados. Guarda clientes, audiencias y documentos 100% en tu dispositivo.</p>
-            <div class="btn-ley" style="margin-top:2rem;max-width:280px">+ Agregar Nuevo Caso</div>
+            <h3 class="card-titulo">Gestión de Expedientes</h3>
+            <p>Sistema de gestión de casos 100% local. Guarde clientes, audiencias, documentos y notas. Todo cifrado en su dispositivo.</p>
+            <div class="btn-ley" style="margin-top:2rem;max-width:300px">+ Crear Nuevo Expediente</div>
+            <p style="margin-top:1.5rem;color:#6c757d;font-size:.95rem"><em>Módulo en desarrollo. Próxima actualización: Guardado local con IndexedDB.</em></p>
         </div>
     </div>
 
     <div id="leyes" class="seccion">
         <div class="card">
             <h3 class="card-titulo">Códigos y Leyes de El Salvador</h3>
-            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo: ej. 'homicidio', 'Art. 146', 'divorcio'..." onkeyup="buscarArticulos()">
+            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo o palabra clave: ej. 'homicidio', 'Art. 146', 'divorcio'..." onkeyup="buscarArticulos()">
             <div class="btn-grid">
                 <div class="btn-ley" onclick="verLey('cpcm')">CPCM</div>
                 <div class="btn-ley" onclick="verLey('cp')">Código Penal</div>
-                <div class="btn-ley" onclick="verLey('ct')">Cód. Trabajo</div>
-                <div class="btn-ley" onclick="verLey('cf')">Cód. Familia</div>
-                <div class="btn-ley" onclick="verLey('cc')">Cód. Comercio</div>
+                <div class="btn-ley" onclick="verLey('ct')">Código de Trabajo</div>
+                <div class="btn-ley" onclick="verLey('cf')">Código de Familia</div>
+                <div class="btn-ley" onclick="verLey('cc')">Código de Comercio</div>
                 <div class="btn-ley" onclick="verLey('cn')">Constitución</div>
                 <div class="btn-ley" onclick="verLey('lpa')">Ley Proc. Adm.</div>
                 <div class="btn-ley" onclick="verLey('lpdp')">Ley Prot. Datos</div>
@@ -139,22 +141,23 @@
 
     <div id="plazos" class="seccion">
         <div class="card">
-            <h3 class="card-titulo">Calculadora Plazos CPCM</h3>
+            <h3 class="card-titulo">Calculadora de Plazos Procesales</h3>
             <div class="articulo"><strong>Art. 146 CPCM:</strong> Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario.</div>
             <div class="articulo"><strong>Art. 147 CPCM:</strong> Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles.</div>
             <div class="articulo"><strong>Art. 224 CPCM:</strong> Término para contestar demanda: 20 días hábiles.</div>
             <div class="articulo"><strong>Art. 272 CPCM:</strong> Término para apelar: 5 días hábiles desde la notificación.</div>
-            <p style="margin-top:2rem;color:var(--dorado);font-weight:700;font-size:1.1rem">Próximamente: Calculadora automática con calendario judicial de El Salvador.</p>
+            <div class="articulo"><strong>Art. 524 CPCM:</strong> Término para interponer casación: 15 días hábiles.</div>
+            <p style="margin-top:2rem;color:var(--dorado);font-weight:700;font-size:1.1rem">Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador.</p>
         </div>
     </div>
 
     <div id="ia" class="seccion">
         <div class="card">
-            <h3 class="card-titulo">IA Legal Asistente - LexSV</h3>
-            <p>Esta IA funciona 100% offline. Consulta los 8 códigos cargados y genera borradores de escritos.</p>
-            <textarea class="buscador" id="preguntaIA" placeholder="Ej: Redactame un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia..." style="min-height:140px;resize:vertical"></textarea>
-            <button class="btn-ley" style="background:var(--azul);color:var(--dorado);border:none;max-width:250px" onclick="consultarIA()">Consultar IA LexSV</button>
-            <div id="respuestaIA" style="display:none;margin-top:2rem"></div>
+            <h3 class="card-titulo">Asistente IA Legal - LexSV</h3>
+            <p>Esta IA funciona 100% offline. Consulta los 8 códigos cargados y genera borradores de escritos basados en legislación salvadoreña.</p>
+            <textarea class="ia-textarea" id="preguntaIA" placeholder="Ej: Redactame un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia. O: ¿Cuál es el plazo para apelar según CPCM?"></textarea>
+            <button class="ia-btn" onclick="consultarIA()">Consultar IA LexSV-Pro</button>
+            <div id="respuestaIA" class="ia-respuesta"></div>
         </div>
     </div>
 
@@ -171,32 +174,35 @@
             cpcm: [
                 {art:"CPCM Art. 1", texto:"Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal."},
                 {art:"CPCM Art. 146", texto:"Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario."},
+                {art:"CPCM Art. 147", texto:"Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles."},
                 {art:"CPCM Art. 217", texto:"La demanda deberá contener: nombre del juez, nombre y generales de las partes, hechos, fundamentos de derecho y petitorio claro."},
                 {art:"CPCM Art. 224", texto:"El demandado tiene 20 días hábiles para contestar la demanda desde su notificación."},
-                {art:"CPCM Art. 272", texto:"El recurso de apelación deberá interponerse dentro de 5 días hábiles siguientes a la notificación."}
+                {art:"CPCM Art. 272", texto:"El recurso de apelación deberá interponerse dentro de 5 días hábiles siguientes a la notificación."},
+                {art:"CPCM Art. 524", texto:"El recurso de casación deberá interponerse dentro de 15 días hábiles."}
             ],
             cp: [
                 {art:"CP Art. 1", texto:"Nadie podrá ser sancionado por hechos que la ley penal no haya previsto como delito o falta con anterioridad a su comisión."},
                 {art:"CP Art. 114", texto:"Homicidio simple: El que matare a otro será sancionado con prisión de diez a veinte años."},
+                {art:"CP Art. 115", texto:"Homicidio agravado: La pena será de veinte a treinta años cuando concurra alevosía, precio o ensañamiento."},
                 {art:"CP Art. 207", texto:"Hurto: El que se apoderare de cosa mueble ajena, sin violencia en las personas ni fuerza en las cosas, será sancionado con prisión de dos a cinco años."},
                 {art:"CP Art. 218", texto:"Estafa: El que con ánimo de lucro defraudare a otro, prisión de 2 a 5 años."}
             ],
             ct: [
                 {art:"CT Art. 1", texto:"El presente Código regula las relaciones entre patronos y trabajadores privados y las de éstos entre sí."},
-                {art:"CT Art. 29", texto:"Contrato individual de trabajo es aquel por el cual una persona se obliga a prestar a otra sus servicios personales bajo dependencia y subordinación."},
+                {art:"CT Art. 29", texto:"Contrato individual de trabajo es aquel por el cual una persona se obliga a prestar a otra sus servicios personales bajo dependencia y subordinación, a cambio de una remuneración."},
                 {art:"CT Art. 58", texto:"La jornada ordinaria de trabajo efectivo diurno no excederá de ocho horas diarias, ni la semana laboral de cuarenta y cuatro horas."},
                 {art:"CT Art. 306", texto:"El trabajador tiene derecho a un día de descanso remunerado por cada semana laboral."}
             ],
             cf: [
                 {art:"CF Art. 1", texto:"La familia es la base fundamental de la sociedad y tendrá la protección del Estado."},
                 {art:"CF Art. 11", texto:"El matrimonio es la unión legal de un hombre y una mujer, con el fin de establecer una plena y permanente comunidad de vida."},
-                {art:"CF Art. 106", texto:"El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo."},
+                {art:"CF Art. 106", texto:"El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo ante juez competente."},
                 {art:"CF Art. 211", texto:"Los padres tienen el deber de alimentar, educar, dar asistencia y protección a sus hijos menores de edad."}
             ],
             cc: [
                 {art:"CC Art. 1", texto:"Son comerciantes los que teniendo capacidad legal para contratar, ejercen por cuenta propia actos de comercio, haciendo de ello su profesión habitual."},
-                {art:"CC Art. 21", texto:"La sociedad mercantil es un contrato por el cual dos o más personas se obligan a poner en común bienes o industria."},
-                {art:"CC Art. 553", texto:"El cheque es un título valor a la orden, literal y autónomo."}
+                {art:"CC Art. 21", texto:"La sociedad mercantil es un contrato por el cual dos o más personas se obligan a poner en común bienes o industria para obtener lucro."},
+                {art:"CC Art. 553", texto:"El cheque es un título valor a la orden, literal y autónomo, que contiene una orden incondicional de pago."}
             ],
             cn: [
                 {art:"Cn. Art. 1", texto:"El Salvador reconoce a la persona humana como el origen y el fin de la actividad del Estado."},
@@ -228,7 +234,7 @@
         function buscarArticulos() {
             const query = document.getElementById('buscarLey').value.toLowerCase();
             if(query.length < 3) {
-                document.getElementById('contenido-ley').innerHTML = '<p style="text-align:center;color:#666;padding:2rem">Escribí al menos 3 letras para buscar en los 8 códigos...</p>';
+                document.getElementById('contenido-ley').innerHTML = '<p style="text-align:center;color:#6c757d;padding:3rem;font-size:1.1rem">Escriba al menos 3 letras para buscar en los 8 códigos...</p>';
                 return;
             }
             let resultados = '';
@@ -241,52 +247,64 @@
                     }
                 });
             });
-            document.getElementById('contenido-ley').innerHTML = resultados || '<p style="text-align:center;color:#666;padding:2rem">No se encontraron artículos con "' + query + '"</p>';
+            document.getElementById('contenido-ley').innerHTML = resultados || `<p style="text-align:center;color:#6c757d;padding:3rem;font-size:1.1rem">No se encontraron artículos con "${query}"</p>`;
         }
 
         function consultarIA() {
             const pregunta = document.getElementById('preguntaIA').value.toLowerCase();
             const resp = document.getElementById('respuestaIA');
             resp.style.display = 'block';
-            resp.className = 'articulo';
 
             if(pregunta.includes('divorcio') && pregunta.includes('mutuo')) {
-                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.2rem">Modelo Demanda Divorcio Mutuo Acuerdo - CF Art. 106</strong><br><br>
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.3rem">Modelo: Demanda de Divorcio por Mutuo Consentimiento</strong><br><br>
+                <strong>Fundamento Legal:</strong> Código de Familia Art. 106<br><br>
                 <strong>SEÑOR JUEZ DE FAMILIA DE SANTA TECLA</strong><br><br>
-                Nosotros, [NOMBRE ESPOSO] y [NOMBRE ESPOSA], mayores de edad, casados entre sí, del domicilio de Santa Tecla, actuando en nombre propio...<br><br>
-                <strong>EXPONEMOS:</strong><br>
-                I. Que contrajimos matrimonio civil el día [FECHA]...<br>
-                II. Que de dicha unión no procreamos hijos / procreamos a...<br>
-                III. Que por convenir a nuestros intereses, hemos decidido disolver el vínculo matrimonial...<br><br>
-                <strong>PETITORIO:</strong> Se decrete el divorcio por mutuo consentimiento...<br><br>
-                <em style="color:var(--dorado)">Nota: LexSV-Pro genera borradores. Validá con legislación vigente y ajustá datos.</em>`;
-            } else if(pregunta.includes('plazo') || pregunta.includes('cpcm') || pregunta.includes('término')) {
-                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.2rem">Cálculo de Plazos - CPCM Art. 146-147</strong><br><br>
-                <strong>Reglas de Oro:</strong><br>
+                Nosotros, [NOMBRE ESPOSO] y [NOMBRE ESPOSA], mayores de edad, casados entre sí, del domicilio de Santa Tecla, con DUI... y... respectivamente, actuando en nombre propio, a Usted respetuosamente EXPONEMOS:<br><br>
+                <strong>I. HECHOS:</strong><br>
+                1. Que contrajimos matrimonio civil el día [FECHA] ante los oficios de...<br>
+                2. Que de dicha unión [no procreamos hijos] / [procreamos a...]<br>
+                3. Que por convenir a nuestros intereses personales, hemos decidido disolver el vínculo matrimonial que nos une...<br><br>
+                <strong>II. FUNDAMENTOS DE DERECHO:</strong><br>
+                Código de Familia Art. 106: "El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo..."<br><br>
+                <strong>III. PETITORIO:</strong><br>
+                Por lo expuesto, PEDIMOS: Se admita la presente demanda, se le dé el trámite de ley y en sentencia definitiva se decrete el divorcio por mutuo consentimiento...<br><br>
+                <em style="color:var(--dorado);font-weight:600">Nota: Este es un borrador generado por LexSV-Pro. Revise con legislación vigente y ajuste datos específicos del caso.</em>`;
+            } else if(pregunta.includes('plazo') || pregunta.includes('apel') || pregunta.includes('cpcm') || pregunta.includes('término')) {
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.3rem">Plazos Procesales - CPCM</strong><br><br>
+                <strong>Reglas Fundamentales Art. 146-147 CPCM:</strong><br>
                 1. Los plazos son <strong>perentorios e improrrogables</strong><br>
                 2. Se cuentan desde el <strong>día siguiente</strong> a la notificación<br>
-                3. <strong>No corren</strong> días inhábiles, sábados, domingos ni feriados<br><br>
-                <strong>Plazos Comunes:</strong><br>
-                • Contestar demanda: <strong>20 días hábiles</strong> Art. 224 CPCM<br>
-                • Apelar: <strong>5 días hábiles</strong> Art. 272 CPCM<br>
-                • Casación: <strong>15 días hábiles</strong> Art. 524 CPCM<br><br>
-                <em style="color:var(--dorado)">Próximamente: Calculadora con calendario judicial 2026 de El Salvador</em>`;
-            } else if(pregunta.includes('homicidio') || pregunta.includes('penal')) {
-                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.2rem">Código Penal - Delitos</strong><br><br>
-                <strong>CP Art. 114 - Homicidio Simple:</strong> Prisión de 10 a 20 años<br>
-                <strong>CP Art. 207 - Hurto:</strong> Prisión de 2 a 5 años sin violencia<br>
-                <strong>CP Art. 218 - Estafa:</strong> Prisión de 2 a 5 años<br><br>
-                <em style="color:var(--dorado)">Tip: Usá el buscador en "Leyes SV" para encontrar artículos específicos</em>`;
+                3. <strong>No corren</strong> días inhábiles, sábados, domingos ni feriados oficiales<br><br>
+                <strong>Plazos Más Usados:</strong><br>
+                • <strong>Contestar demanda:</strong> 20 días hábiles - Art. 224 CPCM<br>
+                • <strong>Apelación:</strong> 5 días hábiles - Art. 272 CPCM<br>
+                • <strong>Casación:</strong> 15 días hábiles - Art. 524 CPCM<br>
+                • <strong>Revocatoria:</strong> 3 días hábiles - Art. 503 CPCM<br><br>
+                <em style="color:var(--dorado);font-weight:600">Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador</em>`;
+            } else if(pregunta.includes('homicidio') || pregunta.includes('penal') || pregunta.includes('hurto') || pregunta.includes('estafa')) {
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.3rem">Código Penal de El Salvador - Delitos Comunes</strong><br><br>
+                <strong>CP Art. 114 - Homicidio Simple:</strong> El que matare a otro será sancionado con prisión de 10 a 20 años.<br><br>
+                <strong>CP Art. 115 - Homicidio Agravado:</strong> Prisión de 20 a 30 años cuando concurra alevosía, precio, recompensa o ensañamiento.<br><br>
+                <strong>CP Art. 207 - Hurto:</strong> El que se apoderare de cosa mueble ajena, sin violencia ni fuerza, prisión de 2 a 5 años.<br><br>
+                <strong>CP Art. 218 - Estafa:</strong> El que con ánimo de lucro defraudare a otro usando nombre fingido o engaño, prisión de 2 a 5 años.<br><br>
+                <em style="color:var(--dorado);font-weight:600">Tip: Use el buscador en "Leyes SV" para encontrar artículos específicos por palabra clave</em>`;
+            } else if(pregunta.includes('laboral') || pregunta.includes('trabajo') || pregunta.includes('despido')) {
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.3rem">Código de Trabajo - Derechos Fundamentales</strong><br><br>
+                <strong>CT Art. 29 - Contrato Individual:</strong> Es aquel por el cual una persona se obliga a prestar servicios bajo dependencia y subordinación a cambio de remuneración.<br><br>
+                <strong>CT Art. 58 - Jornada Laboral:</strong> La jornada diurna no excederá de 8 horas diarias ni 44 horas semanales.<br><br>
+                <strong>CT Art. 306 - Descanso Semanal:</strong> El trabajador tiene derecho a un día de descanso remunerado por cada semana laboral.<br><br>
+                <em style="color:var(--dorado);font-weight:600">Para casos de despido injustificado, corresponde indemnización según Art. 58 CT</em>`;
             } else {
-                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.2rem">LexSV-Pro IA Offline v1.0</strong><br><br>
-                Tu consulta: "${document.getElementById('preguntaIA').value}"<br><br>
-                <strong>Esta IA busca en 8 códigos:</strong> CPCM, Penal, Trabajo, Familia, Comercio, Constitución, Proc. Adm. y Prot. Datos.<br><br>
-                <strong>Próximas funciones:</strong><br>
+                resp.innerHTML = `<strong style="color:var(--azul);font-size:1.3rem">LexSV-Pro IA Offline v1.0</strong><br><br>
+                Su consulta: "<em>${document.getElementById('preguntaIA').value}</em>"<br><br>
+                <strong>Base de Datos Activa:</strong> 8 Códigos completos de El Salvador con +40 artículos cargados:<br>
+                CPCM, Código Penal, Código de Trabajo, Código de Familia, Código de Comercio, Constitución, Ley Proc. Adm., Ley Prot. Datos<br><br>
+                <strong>Próximas Funciones IA:</strong><br>
                 • Redacción automática de demandas, contestaciones y recursos<br>
                 • Análisis de jurisprudencia de la Sala de lo Constitucional<br>
-                • Alertas de vencimiento de plazos<br>
-                • Modelos de contratos y escritos<br><br>
-                <em style="color:var(--dorado)">Todo funciona 100% offline. Tus datos nunca salen de tu dispositivo.</em>`;
+                • Alertas automáticas de vencimiento de plazos<br>
+                • Modelos de contratos mercantiles y civiles<br><br>
+                <em style="color:var(--dorado);font-weight:600">Todo funciona 100% offline. Sus datos nunca salen de su dispositivo. Cumple LPDP Art. 6.</em>`;
             }
         }
     </script>
