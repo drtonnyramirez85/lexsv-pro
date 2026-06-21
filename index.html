@@ -6,44 +6,129 @@
     <title>LexSV-Pro | Dr. Tonny Ramirez</title>
     <meta name="theme-color" content="#0A1F44">
     <style>
-        :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFFFFF;--gris:#F5F5F7}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,sans-serif;background:var(--gris)}
-        .header{background:var(--azul);padding:2rem 1rem;text-align:center;box-shadow:0 4px 20px rgba(10,31,68,.3)}
-        .logo{width:90px;height:90px;margin:0 auto 1rem;filter:drop-shadow(0 4px 8px rgba(212,175,55,.4))}
-        .titulo{color:var(--dorado);font-size:2.2rem;font-weight:700}
-        .sub{color:var(--blanco);font-size:.95rem;margin-top:.5rem;opacity:.9}
-        .grid{display:grid;gap:1rem;padding:2rem 1.5rem;max-width:500px;margin:0 auto}
-        .btn{background:var(--blanco);border:2px solid var(--azul);color:var(--azul);padding:1.3rem;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(10,31,68,.1)}
-        .btn:active{background:var(--azul);color:var(--dorado)}
-        .card{background:var(--blanco);margin:0 1.5rem 2rem;padding:1.5rem;border-radius:16px;box-shadow:0 4px 12px rgba(10,31,68,.08);border-left:4px solid var(--dorado)}
+        :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFF;--gris:#F5F5F7}
+        *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,sans-serif}
+        body{background:var(--gris);color:var(--azul)}
+       .header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:2rem 1rem 1.5rem;text-align:center;box-shadow:0 4px 20px rgba(10,31,68,.3)}
+       .logo{width:100px;height:100px;margin:0 auto 1rem}
+       .titulo{color:var(--dorado);font-size:2.3rem;font-weight:800;letter-spacing:-1px}
+       .sub{color:var(--blanco);font-size:1rem;margin-top:.5rem;opacity:.95}
+       .nav{position:sticky;top:0;background:var(--blanco);display:flex;overflow-x:auto;box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:100}
+       .nav-btn{flex:1;padding:1rem.5rem;border:none;background:var(--blanco);color:var(--azul);font-weight:600;font-size:.9rem;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+       .nav-btn.active{color:var(--dorado);border-bottom:3px solid var(--dorado)}
+       .seccion{display:none;padding:1.5rem;animation:fade.3s}
+       .seccion.active{display:block}
+        @keyframes fade{from{opacity:0}to{opacity:1}}
+       .card{background:var(--blanco);margin:0 0 1rem;padding:1.5rem;border-radius:16px;box-shadow:0 4px 12px rgba(10,31,68,.08);border-left:4px solid var(--dorado)}
+       .btn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+       .btn-ley{background:var(--gris);border:2px solid var(--azul);color:var(--azul);padding:1rem;border-radius:12px;font-weight:600;text-align:center;cursor:pointer}
+       .btn-ley:active{background:var(--azul);color:var(--dorado)}
+        h3{color:var(--azul);margin-bottom:.8rem;font-size:1.3rem}
+        p{line-height:1.6;color:#444}
+       .articulo{background:#f9f9f9;padding:1rem;border-radius:8px;margin:.8rem 0;border-left:3px solid var(--dorado)}
     </style>
 </head>
 <body>
     <header class="header">
+        <!-- TOROGOZ SVG PROFESIONAL REAL -->
         <svg class="logo" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="48" fill="#0A1F44" stroke="#D4AF37" stroke-width="3"/>
-            <path d="M30 65 Q 40 45 50 50 Q 60 45 70 65 L 65 70 Q 50 60 35 70 Z" fill="#D4AF37"/>
-            <path d="M45 35 L 50 25 L 55 35 Q 52 40 48 40 Q 45 40 45 35" fill="#D4AF37"/>
-            <circle cx="42" cy="48" r="2" fill="#0A1F44"/>
-            <circle cx="58" cy="48" r="2" fill="#0A1F44"/>
-            <path d="M25 55 Q 20 50 25 45 L 30 50 Z" fill="#4169E1"/>
-            <path d="M75 55 Q 80 50 75 45 L 70 50 Z" fill="#4169E1"/>
+            <defs>
+                <radialGradient id="gold" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:1" />
+                </radialGradient>
+            </defs>
+            <circle cx="50" cy="50" r="48" fill="#0A1F44" stroke="url(#gold)" stroke-width="3"/>
+            <path d="M28 65 Q 38 43 50 48 Q 62 43 72 65 L 67 71 Q 50 58 33 71 Z" fill="url(#gold)"/>
+            <path d="M44 33 L 50 20 L 56 33 Q 53 39 47 39 Q 44 39 44 33" fill="url(#gold)"/>
+            <circle cx="41" cy="47" r="2.5" fill="#0A1F44"/>
+            <circle cx="59" cy="47" r="2.5" fill="#0A1F44"/>
+            <ellipse cx="25" cy="50" rx="6" ry="10" fill="#4169E1"/>
+            <ellipse cx="75" cy="50" rx="6" ry="10" fill="#4169E1"/>
+            <path d="M50 52 L 48 60 L 52 60 Z" fill="#FF6347"/>
         </svg>
         <h1 class="titulo">LexSV-Pro</h1>
         <p class="sub">Dr. Tonny Ramirez | Propietario Único | Santa Tecla, El Salvador</p>
     </header>
-    <div class="card">
-        <h3>Bienvenido Dr. Ramirez</h3>
-        <p><strong>Software jurídico privado y seguro.</strong> 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador.</p>
+
+    <nav class="nav">
+        <button class="nav-btn active" onclick="mostrar('inicio')">Inicio</button>
+        <button class="nav-btn" onclick="mostrar('casos')">Casos</button>
+        <button class="nav-btn" onclick="mostrar('leyes')">Leyes SV</button>
+        <button class="nav-btn" onclick="mostrar('plazos')">Plazos</button>
+        <button class="nav-btn" onclick="mostrar('ia')">IA Legal</button>
+    </nav>
+
+    <div id="inicio" class="seccion active">
+        <div class="card">
+            <h3>Bienvenido Dr. Ramirez</h3>
+            <p><strong>Software jurídico privado y seguro.</strong> 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador. Tus casos nunca salen de tu dispositivo.</p>
+        </div>
+        <div class="card">
+            <h3>Accesos Rápidos</h3>
+            <div class="btn-grid">
+                <div class="btn-ley" onclick="mostrar('casos')">📁 Nuevo Caso</div>
+                <div class="btn-ley" onclick="mostrar('plazos')">⚖️ Calcular Plazo</div>
+                <div class="btn-ley" onclick="mostrar('leyes')">📚 Códigos</div>
+                <div class="btn-ley" onclick="mostrar('ia')">🤖 Consultar IA</div>
+            </div>
+        </div>
     </div>
-    <div class="grid">
-        <a href="#" class="btn">📁 Mis Casos Activos</a>
-        <a href="#" class="btn">⚖️ Plazos CPCM</a>
-        <a href="#" class="btn">👥 Gestión de Clientes</a>
-        <a href="#" class="btn">📝 Escritos y Minutas</a>
-        <a href="#" class="btn">🤖 IA Legal Asistente</a>
-        <a href="#" class="btn">📅 Agenda y Audiencias</a>
+
+    <div id="casos" class="seccion">
+        <div class="card">
+            <h3>📁 Mis Casos Activos</h3>
+            <p>Aquí guardarás tus expedientes. 100% privado en tu dispositivo.</p>
+            <div class="btn-ley" style="margin-top:1rem">+ Agregar Nuevo Caso</div>
+        </div>
     </div>
+
+    <div id="leyes" class="seccion">
+        <div class="card">
+            <h3>📚 Códigos y Leyes de El Salvador</h3>
+            <div class="btn-grid">
+                <div class="btn-ley" onclick="verLey('cpcm')">CPCM</div>
+                <div class="btn-ley" onclick="verLey('cp')">Código Penal</div>
+                <div class="btn-ley" onclick="verLey('ct')">Código Trabajo</div>
+                <div class="btn-ley" onclick="verLey('cf')">Código Familia</div>
+            </div>
+            <div id="contenido-ley"></div>
+        </div>
+    </div>
+
+    <div id="plazos" class="seccion">
+        <div class="card">
+            <h3>⚖️ Calculadora Plazos CPCM</h3>
+            <p>Próximamente: Calculá términos, caducidad y prescripción según CPCM Art. 146 y siguientes.</p>
+        </div>
+    </div>
+
+    <div id="ia" class="seccion">
+        <div class="card">
+            <h3>🤖 IA Legal Asistente</h3>
+            <p>Consultá jurisprudencia, redactá escritos y analizá casos. 100% offline. Próximamente.</p>
+        </div>
+    </div>
+
+    <script>
+        function mostrar(id) {
+            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function verLey(codigo) {
+            const leyes = {
+                cpcm: `<div class="articulo"><strong>CPCM Art. 1.-</strong> Los procesos civiles y mercantiles se regirán por este Código...</div>
+                       <div class="articulo"><strong>CPCM Art. 146.-</strong> Los plazos procesales son perentorios e improrrogables...</div>`,
+                cp: `<div class="articulo"><strong>CP Art. 1.-</strong> Nadie podrá ser sancionado por hechos que la ley no haya previsto...</div>
+                     <div class="articulo"><strong>CP Art. 114.-</strong> Homicidio simple: El que matare a otro será sancionado con prisión de 10 a 20 años...</div>`,
+                ct: `<div class="articulo"><strong>CT Art. 1.-</strong> El presente Código regula las relaciones entre patronos y trabajadores...</div>`,
+                cf: `<div class="articulo"><strong>CF Art. 1.-</strong> La familia es la base fundamental de la sociedad...</div>`
+            };
+            document.getElementById('contenido-ley').innerHTML = leyes[codigo];
+        }
+    </script>
 </body>
 </html>
