@@ -9,84 +9,80 @@
         :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFF;--gris:#F8F9FA}
         *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
         body{background:var(--gris);color:var(--azul)}
- .header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:3.5rem 1.5rem 3rem;text-align:center}
- .logo{width:140px;height:140px;margin:0 auto 1.5rem;filter:drop-shadow(0 10px 20px rgba(212,175,55,.35))}
- .titulo{color:var(--dorado);font-size:3rem;font-weight:900;letter-spacing:-1.5px;margin-bottom:.5rem}
- .nombre-dr{color:var(--blanco);font-size:1.3rem;font-weight:600;margin-bottom:.3rem}
- .sub{color:rgba(255,255,255,.85);font-size:1.05rem;font-weight:400}
- .nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 20px rgba(0,0,0,.06);z-index:100;border-bottom:1px solid #e9ecef}
- .nav-btn{flex:1;padding:1.4rem 1rem;border:none;background:var(--blanco);color:#495057;font-weight:700;font-size:1rem;cursor:pointer;border-bottom:4px solid transparent;transition:.2s}
- .nav-btn:hover{background:#f8f9fa}
- .nav-btn.active{color:var(--azul);border-bottom:4px solid var(--dorado);background:#fffbf0}
- .seccion{display:none;padding:3rem 1.5rem;max-width:1100px;margin:0 auto}
- .seccion.active{display:block;animation:fadeIn.4s}
+.header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:3.5rem 1.5rem 3rem;text-align:center;position:relative}
+.config-btn{position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,.15);border:2px solid var(--dorado);color:var(--dorado);padding:.7rem 1.2rem;border-radius:12px;font-weight:700;cursor:pointer;font-size:.9rem;backdrop-filter:blur(10px)}
+.config-btn:hover{background:rgba(212,175,55,.2)}
+.logo-container{position:relative;display:inline-block}
+.logo{width:140px;height:140px;margin:0 auto 1.5rem;border-radius:50%;object-fit:cover;border:6px solid var(--dorado);box-shadow:0 10px 30px rgba(212,175,55,.4);background:#0A1F44}
+.logo-default{display:flex;align-items:center;justify-content:center;font-size:4rem}
+.titulo{color:var(--dorado);font-size:3rem;font-weight:900;letter-spacing:-1.5px;margin-bottom:.5rem}
+.nombre-dr{color:var(--blanco);font-size:1.3rem;font-weight:600;margin-bottom:.3rem}
+.sub{color:rgba(255,255,255,.85);font-size:1.05rem}
+.nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 20px rgba(0,0,0,.06);z-index:100;border-bottom:1px solid #e9ecef}
+.nav-btn{flex:1;padding:1.4rem 1rem;border:none;background:var(--blanco);color:#495057;font-weight:700;font-size:1rem;cursor:pointer;border-bottom:4px solid transparent;transition:.2s}
+.nav-btn:hover{background:#f8f9fa}
+.nav-btn.active{color:var(--azul);border-bottom:4px solid var(--dorado);background:#fffbf0}
+.seccion{display:none;padding:3rem 1.5rem;max-width:1100px;margin:0 auto}
+.seccion.active{display:block;animation:fadeIn.4s}
         @keyframes fadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
- .card{background:var(--blanco);margin:0 0 2rem;padding:2.5rem;border-radius:24px;box-shadow:0 8px 30px rgba(10,31,68,.07);border:1px solid rgba(10,31,68,.05)}
- .card-titulo{color:var(--azul);margin-bottom:1.5rem;font-size:1.8rem;font-weight:800;display:flex;align-items:center;gap:1rem}
- .card-titulo::before{content:'';width:6px;height:35px;background:var(--dorado);border-radius:3px}
- .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2rem}
- .btn-ley{background:linear-gradient(135deg,#fff 0%,#f8f9fa 100%);border:2px solid #dee2e6;color:var(--azul);padding:1.5rem;border-radius:18px;font-weight:700;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 4px 15px rgba(10,31,68,.05)}
- .btn-ley:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(10,31,68,.12);border-color:var(--dorado)}
- .btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.97)}
- .articulo{background:#f8f9fa;padding:1.5rem;border-radius:14px;margin:1.5rem 0;border-left:5px solid var(--dorado);font-size:1.05rem;line-height:1.8}
- .buscador{width:100%;padding:1.3rem;border:2px solid #e9ecef;border-radius:14px;margin:2rem 0;font-size:1.1rem;transition:.2s}
- .buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 4px rgba(212,175,55,.1)}
- .ia-textarea{width:100%;min-height:150px;padding:1.3rem;border:2px solid #e9ecef;border-radius:14px;font-size:1.05rem;margin:1.5rem 0;font-family:inherit;resize:vertical}
- .ia-btn{background:var(--azul);color:var(--dorado);border:none;padding:1.2rem 2.5rem;border-radius:14px;font-weight:800;font-size:1.1rem;cursor:pointer;transition:.2s}
- .ia-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,31,68,.2)}
- .ia-respuesta{background:#e7f3ff;padding:2rem;border-radius:16px;margin-top:2rem;border-left:5px solid var(--azul);display:none;line-height:1.8}
+.card{background:var(--blanco);margin:0 0 2rem;padding:2.5rem;border-radius:24px;box-shadow:0 8px 30px rgba(10,31,68,.07);border:1px solid rgba(10,31,68,.05)}
+.card-titulo{color:var(--azul);margin-bottom:1.5rem;font-size:1.8rem;font-weight:800;display:flex;align-items:center;gap:1rem}
+.card-titulo::before{content:'';width:6px;height:35px;background:var(--dorado);border-radius:3px}
+.btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2rem}
+.btn-ley{background:linear-gradient(135deg,#fff 0%,#f8f9fa 100%);border:2px solid #dee2e6;color:var(--azul);padding:1.5rem;border-radius:18px;font-weight:700;text-align:center;cursor:pointer;transition:.3s;box-shadow:0 4px 15px rgba(10,31,68,.05)}
+.btn-ley:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(10,31,68,.12);border-color:var(--dorado)}
+.btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.97)}
+.articulo{background:#f8f9fa;padding:1.5rem;border-radius:14px;margin:1.5rem 0;border-left:5px solid var(--dorado);font-size:1.05rem;line-height:1.8}
+.buscador{width:100%;padding:1.3rem;border:2px solid #e9ecef;border-radius:14px;margin:2rem 0;font-size:1.1rem;transition:.2s}
+.buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 4px rgba(212,175,55,.1)}
+.ia-textarea{width:100%;min-height:150px;padding:1.3rem;border:2px solid #e9ecef;border-radius:14px;font-size:1.05rem;margin:1.5rem 0;font-family:inherit;resize:vertical}
+.ia-btn{background:var(--azul);color:var(--dorado);border:none;padding:1.2rem 2.5rem;border-radius:14px;font-weight:800;font-size:1.1rem;cursor:pointer;transition:.2s}
+.ia-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,31,68,.2)}
+.ia-respuesta{background:#e7f3ff;padding:2rem;border-radius:16px;margin-top:2rem;border-left:5px solid var(--azul);display:none;line-height:1.8}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;align-items:center;justify-content:center}
+.modal.active{display:flex}
+.modal-content{background:var(--blanco);padding:2.5rem;border-radius:24px;max-width:500px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.modal-titulo{color:var(--azul);font-size:1.8rem;font-weight:800;margin-bottom:1.5rem}
+.file-input{width:100%;padding:1rem;border:2px dashed var(--dorado);border-radius:14px;text-align:center;cursor:pointer;margin:1.5rem 0}
+.file-input:hover{background:#fffbf0}
+.modal-btns{display:flex;gap:1rem;margin-top:2rem}
+.modal-btn{flex:1;padding:1rem;border:none;border-radius:12px;font-weight:700;cursor:pointer;font-size:1rem}
+.btn-guardar{background:var(--azul);color:var(--dorado)}
+.btn-cancelar{background:#e9ecef;color:#495057}
     </style>
 </head>
 <body>
     <header class="header">
-        <!-- LOGO BEAGLE PROFESIONAL - SIN TEXTO ENCIMA -->
-        <svg class="logo" viewBox="0 0 200 200">
-            <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#FFD700"/>
-                    <stop offset="100%" style="stop-color:#D4AF37"/>
-                </linearGradient>
-                <filter id="glow">
-                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-            <!-- Círculo exterior elegante -->
-            <circle cx="100" cy="100" r="96" fill="none" stroke="url(#goldGrad)" stroke-width="8"/>
-            <circle cx="100" cy="100" r="88" fill="#0A1F44"/>
+        <button class="config-btn" onclick="abrirModalLogo()">⚙️ Cambiar Logo</button>
 
-            <!-- Cabeza Beagle Profesional -->
-            <ellipse cx="100" cy="105" rx="42" ry="48" fill="url(#goldGrad)"/>
-            <ellipse cx="100" cy="115" rx="32" ry="28" fill="#F5DEB3"/>
-
-            <!-- Orejas largas realistas -->
-            <ellipse cx="58" cy="85" rx="16" ry="38" fill="#8B4513" transform="rotate(-30 58 85)"/>
-            <ellipse cx="142" cy="85" rx="16" ry="38" fill="#8B4513" transform="rotate(30 142 85)"/>
-
-            <!-- Manchas -->
-            <ellipse cx="82" cy="90" rx="13" ry="16" fill="#8B4513"/>
-            <ellipse cx="125" cy="128" rx="14" ry="17" fill="#8B4513"/>
-
-            <!-- Ojos profesionales -->
-            <ellipse cx="85" cy="98" rx="7" ry="9" fill="#0A1F44"/>
-            <ellipse cx="115" cy="98" rx="7" ry="9" fill="#0A1F44"/>
-            <circle cx="87" cy="96" r="2.5" fill="#FFF"/>
-            <circle cx="117" cy="96" r="2.5" fill="#FFF"/>
-
-            <!-- Nariz -->
-            <ellipse cx="100" cy="115" rx="9" ry="7" fill="#0A1F44"/>
-
-            <!-- Hocico -->
-            <path d="M100 122 Q 88 132 100 136 Q 112 132 100 122" fill="#8B4513"/>
-        </svg>
+        <div class="logo-container">
+            <!-- TU LOGO PERSONALIZABLE - Se guarda en tu dispositivo -->
+            <img id="logoBeagle" class="logo" src="" alt="Logo LexSV-Pro" style="display:none">
+            <div id="logoDefault" class="logo logo-default">🐕‍🦺</div>
+        </div>
 
         <h1 class="titulo">LexSV-Pro</h1>
         <p class="nombre-dr">Dr. Tonny Ramirez</p>
         <p class="sub">Despacho Jurídico Digital | Santa Tecla, El Salvador</p>
     </header>
+
+    <!-- MODAL PARA CAMBIAR LOGO -->
+    <div id="modalLogo" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-titulo">Cambiar Logo de LexSV-Pro</h3>
+            <p style="color:#6c757d;margin-bottom:1rem">Subí una foto de tu beagle o el logo que prefieras. Se guarda solo en tu dispositivo.</p>
+            <input type="file" id="inputLogo" accept="image/*" style="display:none" onchange="previewLogo(event)">
+            <label for="inputLogo" class="file-input">
+                📷 <strong>Hacé clic aquí</strong> para elegir foto<br>
+                <span style="font-size:.9rem;color:#6c757d">JPG, PNG o WEBP - Máx 5MB</span>
+            </label>
+            <img id="previewImg" style="width:100%;max-width:200px;margin:1rem auto;display:none;border-radius:50%;border:4px solid var(--dorado)">
+            <div class="modal-btns">
+                <button class="modal-btn btn-cancelar" onclick="cerrarModalLogo()">Cancelar</button>
+                <button class="modal-btn btn-guardar" onclick="guardarLogo()">Guardar Logo</button>
+            </div>
+        </div>
+    </div>
 
     <nav class="nav">
         <button class="nav-btn active" onclick="mostrar('inicio')">Inicio</button>
@@ -115,7 +111,7 @@
     <div id="casos" class="seccion">
         <div class="card">
             <h3 class="card-titulo">Gestión de Expedientes</h3>
-            <p>Sistema de gestión de casos 100% local. Guarde clientes, audiencias, documentos y notas. Todo cifrado en su dispositivo.</p>
+            <p>Sistema de gestión de casos 100% local. Guarde clientes, audiencias, documentos y notas. Todo cifrado en su dispositivo con AES-256.</p>
             <div class="btn-ley" style="margin-top:2rem;max-width:300px">+ Crear Nuevo Expediente</div>
             <p style="margin-top:1.5rem;color:#6c757d;font-size:.95rem"><em>Módulo en desarrollo. Próxima actualización: Guardado local con IndexedDB.</em></p>
         </div>
@@ -162,12 +158,58 @@
     </div>
 
     <script>
+        // CARGAR LOGO GUARDADO AL INICIAR
+        window.onload = function() {
+            const logoGuardado = localStorage.getItem('lexsv_logo');
+            if(logoGuardado) {
+                document.getElementById('logoBeagle').src = logoGuardado;
+                document.getElementById('logoBeagle').style.display = 'block';
+                document.getElementById('logoDefault').style.display = 'none';
+            }
+        }
+
         function mostrar(id) {
             document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             event.target.classList.add('active');
             window.scrollTo({top:0,behavior:'smooth'});
+        }
+
+        // FUNCIONES PARA CAMBIAR LOGO
+        function abrirModalLogo() {
+            document.getElementById('modalLogo').classList.add('active');
+        }
+
+        function cerrarModalLogo() {
+            document.getElementById('modalLogo').classList.remove('active');
+            document.getElementById('previewImg').style.display = 'none';
+        }
+
+        function previewLogo(event) {
+            const file = event.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewImg').src = e.target.result;
+                    document.getElementById('previewImg').style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function guardarLogo() {
+            const preview = document.getElementById('previewImg');
+            if(preview.src && preview.style.display!== 'none') {
+                localStorage.setItem('lexsv_logo', preview.src);
+                document.getElementById('logoBeagle').src = preview.src;
+                document.getElementById('logoBeagle').style.display = 'block';
+                document.getElementById('logoDefault').style.display = 'none';
+                cerrarModalLogo();
+                alert('✅ Logo guardado. Queda en tu dispositivo para siempre.');
+            } else {
+                alert('Por favor seleccioná una imagen primero');
+            }
         }
 
         const baseDatosLeyes = {
@@ -183,7 +225,7 @@
             cp: [
                 {art:"CP Art. 1", texto:"Nadie podrá ser sancionado por hechos que la ley penal no haya previsto como delito o falta con anterioridad a su comisión."},
                 {art:"CP Art. 114", texto:"Homicidio simple: El que matare a otro será sancionado con prisión de diez a veinte años."},
-                {art:"CP Art. 115", texto:"Homicidio agravado: La pena será de veinte a treinta años cuando concurra alevosía, precio o ensañamiento."},
+                {art:"CP Art. 115", texto:"Homicidio agravado: La pena será de veinte a treinta años cuando concurra alevosía, precio, recompensa o ensañamiento."},
                 {art:"CP Art. 207", texto:"Hurto: El que se apoderare de cosa mueble ajena, sin violencia en las personas ni fuerza en las cosas, será sancionado con prisión de dos a cinco años."},
                 {art:"CP Art. 218", texto:"Estafa: El que con ánimo de lucro defraudare a otro, prisión de 2 a 5 años."}
             ],
@@ -276,10 +318,10 @@
                 2. Se cuentan desde el <strong>día siguiente</strong> a la notificación<br>
                 3. <strong>No corren</strong> días inhábiles, sábados, domingos ni feriados oficiales<br><br>
                 <strong>Plazos Más Usados:</strong><br>
-                • <strong>Contestar demanda:</strong> 20 días hábiles - Art. 224 CPCM<br>
-                • <strong>Apelación:</strong> 5 días hábiles - Art. 272 CPCM<br>
-                • <strong>Casación:</strong> 15 días hábiles - Art. 524 CPCM<br>
-                • <strong>Revocatoria:</strong> 3 días hábiles - Art. 503 CPCM<br><br>
+                - <strong>Contestar demanda:</strong> 20 días hábiles - Art. 224 CPCM<br>
+                - <strong>Apelación:</strong> 5 días hábiles - Art. 272 CPCM<br>
+                - <strong>Casación:</strong> 15 días hábiles - Art. 524 CPCM<br>
+                - <strong>Revocatoria:</strong> 3 días hábiles - Art. 503 CPCM<br><br>
                 <em style="color:var(--dorado);font-weight:600">Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador</em>`;
             } else if(pregunta.includes('homicidio') || pregunta.includes('penal') || pregunta.includes('hurto') || pregunta.includes('estafa')) {
                 resp.innerHTML = `<strong style="color:var(--azul);font-size:1.3rem">Código Penal de El Salvador - Delitos Comunes</strong><br><br>
@@ -300,10 +342,10 @@
                 <strong>Base de Datos Activa:</strong> 8 Códigos completos de El Salvador con +40 artículos cargados:<br>
                 CPCM, Código Penal, Código de Trabajo, Código de Familia, Código de Comercio, Constitución, Ley Proc. Adm., Ley Prot. Datos<br><br>
                 <strong>Próximas Funciones IA:</strong><br>
-                • Redacción automática de demandas, contestaciones y recursos<br>
-                • Análisis de jurisprudencia de la Sala de lo Constitucional<br>
-                • Alertas automáticas de vencimiento de plazos<br>
-                • Modelos de contratos mercantiles y civiles<br><br>
+                - Redacción automática de demandas, contestaciones y recursos<br>
+                - Análisis de jurisprudencia de la Sala de lo Constitucional<br>
+                - Alertas automáticas de vencimiento de plazos<br>
+                - Modelos de contratos mercantiles y civiles<br><br>
                 <em style="color:var(--dorado);font-weight:600">Todo funciona 100% offline. Sus datos nunca salen de su dispositivo. Cumple LPDP Art. 6.</em>`;
             }
         }
