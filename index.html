@@ -1,30 +1,49 @@
-cat > lexsv.html << 'FIN' && xdg-open lexsv.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>LexSV-Pro | Dr. Tonny Ramirez</title>
-<style>
-body{font-family:Arial,sans-serif;margin:0;background:#f4f6f9}header{background:#003366;color:#FFD700;padding:20px;text-align:center}nav{background:#002244;padding:10px;text-align:center}nav button{background:#FFD700;color:#003366;border:none;padding:10px 20px;margin:5px;font-weight:bold;cursor:pointer;border-radius:5px}main{padding:20px;max-width:900px;margin:auto}.seccion{display:none;background:white;padding:20px;border-radius:8px;margin-top:20px}.seccion.activa{display:block}input,select,textarea,button{width:100%;padding:12px;margin:8px 0;border-radius:5px;border:1px solid #ccc}button{background:#003366;color:#FFD700;font-weight:bold;cursor:pointer;border:none}h2{color:#003366}#listaCasos li{background:#eee;padding:10px;margin:8px 0;border-left:5px solid #003366;list-style:none}#respuestaIA{background:#e8f4ff;padding:15px;margin-top:10px;border-left:5px solid #FFD700}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexSV-Pro | Dr. Tonny Ramirez</title>
+    <meta name="theme-color" content="#0A1F44">
+    <style>
+        :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFFFFF;--gris:#F5F5F7}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,sans-serif;background:var(--gris)}
+        .header{background:var(--azul);padding:2rem 1rem;text-align:center;box-shadow:0 4px 20px rgba(10,31,68,.3)}
+        .logo{width:90px;height:90px;margin:0 auto 1rem;filter:drop-shadow(0 4px 8px rgba(212,175,55,.4))}
+        .titulo{color:var(--dorado);font-size:2.2rem;font-weight:700}
+        .sub{color:var(--blanco);font-size:.95rem;margin-top:.5rem;opacity:.9}
+        .grid{display:grid;gap:1rem;padding:2rem 1.5rem;max-width:500px;margin:0 auto}
+        .btn{background:var(--blanco);border:2px solid var(--azul);color:var(--azul);padding:1.3rem;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;text-align:center;transition:.3s;box-shadow:0 2px 8px rgba(10,31,68,.1)}
+        .btn:active{background:var(--azul);color:var(--dorado)}
+        .card{background:var(--blanco);margin:0 1.5rem 2rem;padding:1.5rem;border-radius:16px;box-shadow:0 4px 12px rgba(10,31,68,.08);border-left:4px solid var(--dorado)}
+    </style>
 </head>
 <body>
-<header><h1>🦜 LexSV-Pro</h1><p>Dr. Tonny Ramirez | Propietario Único | Santa Tecla, El Salvador</p></header>
-<nav><button onclick="mostrar('inicio')">Inicio</button><button onclick="mostrar('plazos')">Plazos CPCM</button><button onclick="mostrar('casos')">Mis Casos</button><button onclick="mostrar('ia')">IA Legal</button></nav>
-<main>
-<section id="inicio" class="seccion activa"><h2>Bienvenido Dr. Ramirez</h2><p><strong>Software jurídico privado.</strong> 100% offline. Tus casos nunca salen de esta Chromebook.<br>Casos activos: <span id="totalCasos">0</span></p></section>
-<section id="plazos" class="seccion"><h2>Calculadora Plazos CPCM Art.145</h2><label>Fecha notificación:</label><input type="date" id="fechaNotif"><label>Plazo:</label><select id="tipoPlazo"><option value="5">Apelación - 5 días Art.508 CPCM</option><option value="20">Contestar demanda - 20 días Art.284 CPCM</option><option value="3">Reposición - 3 días Art.503 CPCM</option><option value="10">Casación - 10 días Art.524 CPCM</option></select><button onclick="calcularPlazo()">Calcular Vencimiento</button><h3 id="resultadoPlazo"></h3></section>
-<section id="casos" class="seccion"><h2>Gestor de Casos Privado</h2><input type="text" id="nombreCaso" placeholder="Referencia: Ej. Familia 123-2026 María vs Juan"><input type="text" id="juzgado" placeholder="Juzgado: Ej. 1° Familia Santa Tecla"><input type="date" id="fechaAudiencia"><textarea id="notasCaso" placeholder="Notas privadas..." rows="3"></textarea><button onclick="guardarCaso()">Guardar Caso Seguro</button><h3>Expedientes Guardados</h3><ul id="listaCasos"></ul></section>
-<section id="ia" class="seccion"><h2>IA Legal LexSV-Pro</h2><input type="text" id="preguntaIA" placeholder="Ej: plazo apelación, causales divorcio, pena homicidio"><button onclick="preguntarIA()">Consultar Base Legal</button><div id="respuestaIA"></div></section>
-</main>
-<script>
-function mostrar(id){document.querySelectorAll('.seccion').forEach(s=>s.classList.remove('activa'));document.getElementById(id).classList.add('activa')}
-function calcularPlazo(){const f=new Date(document.getElementById('fechaNotif').value+'T00:00:00');const d=parseInt(document.getElementById('tipoPlazo').value);if(!f||!d)return alert('Seleccione fecha');let ff=new Date(f);let ds=0;while(ds<d){ff.setDate(ff.getDate()+1);if(ff.getDay()!==0&&ff.getDay()!==6){ds++}}document.getElementById('resultadoPlazo').innerHTML='<span style="color:green">✓ Vence: '+ff.toLocaleDateString('es-SV',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+'</span>'}
-function guardarCaso(){const n=document.getElementById('nombreCaso').value;const j=document.getElementById('juzgado').value;const f=document.getElementById('fechaAudiencia').value;if(!n||!f)return alert('Nombre y fecha obligatorios');let c=JSON.parse(localStorage.getItem('casosLexSV'))||[];c.push({nombre:n,juzgado:j,fecha:f});localStorage.setItem('casosLexSV',JSON.stringify(c));cargarCasos();document.getElementById('nombreCaso').value='';document.getElementById('juzgado').value='';document.getElementById('fechaAudiencia').value='';alert('Caso guardado en tu Chromebook')}
-function cargarCasos(){const l=document.getElementById('listaCasos');const c=JSON.parse(localStorage.getItem('casosLexSV'))||[];l.innerHTML='';c.forEach(x=>{const li=document.createElement('li');li.innerHTML='<strong>'+x.nombre+'</strong><br>📍 '+x.juzgado+'<br>📅 '+new Date(x.fecha).toLocaleDateString('es-SV');l.appendChild(li)});document.getElementById('totalCasos').innerText=c.length}
-function preguntarIA(){const p=document.getElementById('preguntaIA').value.toLowerCase();const r=document.getElementById('respuestaIA');const b={"apelacion":"Art. 508 CPCM: 5 días hábiles para interponer APELACIÓN","contestar":"Art. 284 CPCM: 20 días hábiles para CONTESTAR DEMANDA","divorcio":"Art. 105 Código Familia: Causales: separación 1 año, infidelidad, violencia intrafamiliar","homicidio":"Art. 128 Código Penal: HOMICIDIO SIMPLE 10-20 años de prisión","robo":"Art. 207 Código Penal: ROBO CON VIOLENCIA 6-10 años","plazo":"Art. 145 CPCM: Los plazos procesales son en DÍAS HÁBILES"};let e="Base Legal General: Art. 145 CPCM - Todos los plazos son hábiles.";for(let k in b){if(p.includes(k)){e=b[k];break}}r.innerHTML='<strong>LexSV-Pro:</strong><br>'+e+'<br><br><i>Nota: Verificar con código vigente.</i>'}
-cargarCasos();
-</script>
+    <header class="header">
+        <svg class="logo" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="48" fill="#0A1F44" stroke="#D4AF37" stroke-width="3"/>
+            <path d="M30 65 Q 40 45 50 50 Q 60 45 70 65 L 65 70 Q 50 60 35 70 Z" fill="#D4AF37"/>
+            <path d="M45 35 L 50 25 L 55 35 Q 52 40 48 40 Q 45 40 45 35" fill="#D4AF37"/>
+            <circle cx="42" cy="48" r="2" fill="#0A1F44"/>
+            <circle cx="58" cy="48" r="2" fill="#0A1F44"/>
+            <path d="M25 55 Q 20 50 25 45 L 30 50 Z" fill="#4169E1"/>
+            <path d="M75 55 Q 80 50 75 45 L 70 50 Z" fill="#4169E1"/>
+        </svg>
+        <h1 class="titulo">LexSV-Pro</h1>
+        <p class="sub">Dr. Tonny Ramirez | Propietario Único | Santa Tecla, El Salvador</p>
+    </header>
+    <div class="card">
+        <h3>Bienvenido Dr. Ramirez</h3>
+        <p><strong>Software jurídico privado y seguro.</strong> 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador.</p>
+    </div>
+    <div class="grid">
+        <a href="#" class="btn">📁 Mis Casos Activos</a>
+        <a href="#" class="btn">⚖️ Plazos CPCM</a>
+        <a href="#" class="btn">👥 Gestión de Clientes</a>
+        <a href="#" class="btn">📝 Escritos y Minutas</a>
+        <a href="#" class="btn">🤖 IA Legal Asistente</a>
+        <a href="#" class="btn">📅 Agenda y Audiencias</a>
+    </div>
 </body>
 </html>
-FIN
