@@ -8,45 +8,48 @@
     <style>
         :root{--azul:#0A1F44;--dorado:#D4AF37;--blanco:#FFF;--gris:#F5F5F7}
         *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,sans-serif}
-        body{background:var(--gris);color:var(--azul)}
-     .header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:4rem 1rem 1.5rem;text-align:center}
-     .logo{width:110px;height:110px;margin:0 auto 1rem}
-     .titulo{color:var(--dorado);font-size:2.4rem;font-weight:800}
-     .sub{color:var(--blanco);font-size:1rem;margin-top:.5rem;opacity:.95}
-     .nav{position:sticky;top:0;background:var(--blanco);display:flex;overflow-x:auto;box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:100}
-     .nav-btn{flex:1;padding:1rem.5rem;border:none;background:var(--blanco);color:var(--azul);font-weight:700;font-size:.85rem;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
-     .nav-btn.active{color:var(--dorado);border-bottom:3px solid var(--dorado)}
-     .seccion{display:none;padding:1.5rem;animation:fade.3s;max-width:800px;margin:0 auto}
-     .seccion.active{display:block}
+        body{background:var(--gris);color:var(--azul);padding-bottom:2rem}
+    .header{background:linear-gradient(135deg,#0A1F44 0%,#1a3a6b 100%);padding:4.5rem 1rem 2rem;text-align:center}
+    .logo{width:120px;height:120px;margin:0 auto 1rem;filter:drop-shadow(0 6px 12px rgba(212,175,55,.5))}
+    .titulo{color:var(--dorado);font-size:2.5rem;font-weight:800}
+    .sub{color:var(--blanco);font-size:1.05rem;margin-top:.5rem;opacity:.95}
+    .nav{position:sticky;top:0;background:var(--blanco);display:flex;overflow-x:auto;box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:100}
+    .nav-btn{flex:1;padding:1.2rem.5rem;border:none;background:var(--blanco);color:var(--azul);font-weight:700;font-size:.9rem;cursor:pointer;border-bottom:4px solid transparent}
+    .nav-btn.active{color:var(--dorado);border-bottom:4px solid var(--dorado)}
+    .seccion{display:none;padding:2rem 1.5rem;animation:fade.3s;max-width:900px;margin:0 auto}
+    .seccion.active{display:block}
         @keyframes fade{from{opacity:0}to{opacity:1}}
-     .card{background:var(--blanco);margin:0 0 1rem;padding:1.5rem;border-radius:16px;box-shadow:0 4px 12px rgba(10,31,68,.08);border-left:4px solid var(--dorado)}
-     .btn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
-     .btn-ley{background:var(--gris);border:2px solid var(--azul);color:var(--azul);padding:1rem;border-radius:12px;font-weight:600;text-align:center;cursor:pointer;transition:.2s}
-     .btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.97)}
-        h3{color:var(--azul);margin-bottom:.8rem;font-size:1.4rem}
-        p{line-height:1.6;color:#444}
-     .articulo{background:#f9f9f9;padding:1rem;border-radius:8px;margin:.8rem 0;border-left:3px solid var(--dorado);font-size:.95rem}
-     .buscador{width:100%;padding:.8rem;border:2px solid var(--azul);border-radius:8px;margin:1rem 0;font-size:1rem}
+    .card{background:var(--blanco);margin:0 0 1.5rem;padding:2rem;border-radius:18px;box-shadow:0 4px 16px rgba(10,31,68,.1);border-left:5px solid var(--dorado)}
+    .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.2rem;margin-top:1.5rem}
+    .btn-ley{background:var(--blanco);border:2px solid var(--azul);color:var(--azul);padding:1.2rem;border-radius:14px;font-weight:700;text-align:center;cursor:pointer;transition:.2s}
+    .btn-ley:active{background:var(--azul);color:var(--dorado);transform:scale(.96)}
+        h3{color:var(--azul);margin-bottom:1rem;font-size:1.5rem}
+        p{line-height:1.7;color:#333;font-size:1.05rem}
+    .articulo{background:#f9f9f9;padding:1.2rem;border-radius:10px;margin:1rem 0;border-left:4px solid var(--dorado);font-size:1rem}
+    .buscador{width:100%;padding:1rem;border:2px solid var(--azul);border-radius:10px;margin:1.5rem 0;font-size:1rem}
+    .ia-input{width:100%;min-height:120px;padding:1rem;border:2px solid var(--azul);border-radius:10px;font-size:1rem;margin:1rem 0}
+    .ia-btn{background:var(--azul);color:var(--dorado);border:none;padding:1rem 2rem;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer}
+    .ia-respuesta{background:#e8f4fd;padding:1.5rem;border-radius:10px;margin-top:1rem;border-left:4px solid #1a3a6b;display:none}
     </style>
 </head>
 <body>
     <header class="header">
-        <!-- TOROGOZ SVG REAL - AHORA SÍ SALE -->
+        <!-- TOROGOZ SVG DEFINITIVO - ESTE SÍ SALE -->
         <svg class="logo" viewBox="0 0 100 100">
             <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="oro" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style="stop-color:#FFD700" />
                     <stop offset="100%" style="stop-color:#D4AF37" />
                 </linearGradient>
             </defs>
-            <circle cx="50" cy="50" r="48" fill="#0A1F44" stroke="url(#goldGrad)" stroke-width="4"/>
-            <path d="M25 65 Q 35 40 50 46 Q 65 40 75 65 L 70 72 Q 50 55 30 72 Z" fill="url(#goldGrad)"/>
-            <path d="M42 30 L 50 15 L 58 30 Q 54 38 46 38 Q 42 38 42 30" fill="url(#goldGrad)"/>
-            <circle cx="40" cy="46" r="3" fill="#0A1F44"/>
-            <circle cx="60" cy="46" r="3" fill="#0A1F44"/>
-            <ellipse cx="22" cy="50" rx="7" ry="12" fill="#4169E1" transform="rotate(-20 22 50)"/>
-            <ellipse cx="78" cy="50" rx="7" ry="12" fill="#4169E1" transform="rotate(20 78 50)"/>
-            <path d="M50 52 L 47 62 L 53 62 Z" fill="#FF4500"/>
+            <circle cx="50" cy="50" r="47" fill="#0A1F44" stroke="url(#oro)" stroke-width="5"/>
+            <path d="M25 68 Q 35 38 50 44 Q 65 38 75 68 L 68 75 Q 50 56 32 75 Z" fill="url(#oro)"/>
+            <path d="M40 28 L 50 12 L 60 28 Q 55 37 45 37 Q 40 37 40 28" fill="url(#oro)"/>
+            <circle cx="39" cy="45" r="3.5" fill="#0A1F44"/>
+            <circle cx="61" cy="45" r="3.5" fill="#0A1F44"/>
+            <ellipse cx="20" cy="50" rx="8" ry="14" fill="#1E90FF" transform="rotate(-25 20 50)"/>
+            <ellipse cx="80" cy="50" rx="8" ry="14" fill="#1E90FF" transform="rotate(25 80 50)"/>
+            <path d="M50 53 L 46 64 L 54 64 Z" fill="#FF4500"/>
         </svg>
         <h1 class="titulo">LexSV-Pro</h1>
         <p class="sub">Dr. Tonny Ramirez | Propietario Único | Santa Tecla, El Salvador</p>
@@ -79,23 +82,23 @@
     <div id="casos" class="seccion">
         <div class="card">
             <h3>📁 Mis Casos Activos</h3>
-            <p>Próximamente: Guardá expedientes cifrados en tu dispositivo. 100% privado.</p>
-            <div class="btn-ley" style="margin-top:1rem">+ Agregar Nuevo Caso</div>
+            <p>Próximamente: Guardá expedientes cifrados en tu dispositivo. 100% privado, sin nube.</p>
+            <div class="btn-ley" style="margin-top:1.5rem;max-width:250px">+ Agregar Nuevo Caso</div>
         </div>
     </div>
 
     <div id="leyes" class="seccion">
         <div class="card">
             <h3>📚 Códigos y Leyes de El Salvador</h3>
-            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo o palabra clave..." onkeyup="filtrarLeyes()">
+            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo: ej. 'homicidio' o 'Art. 146'..." onkeyup="buscarArticulos()">
             <div class="btn-grid">
                 <div class="btn-ley" onclick="verLey('cpcm')">CPCM</div>
-                <div class="btn-ley" onclick="verLey('cp')">Cód. Penal</div>
+                <div class="btn-ley" onclick="verLey('cp')">Código Penal</div>
                 <div class="btn-ley" onclick="verLey('ct')">Cód. Trabajo</div>
                 <div class="btn-ley" onclick="verLey('cf')">Cód. Familia</div>
                 <div class="btn-ley" onclick="verLey('cc')">Cód. Comercio</div>
                 <div class="btn-ley" onclick="verLey('cn')">Constitución</div>
-                <div class="btn-ley" onclick="verLey('lproc')">Ley Proc. Adm.</div>
+                <div class="btn-ley" onclick="verLey('lpa')">Ley Proc. Adm.</div>
                 <div class="btn-ley" onclick="verLey('lpdp')">Ley Prot. Datos</div>
             </div>
             <div id="contenido-ley"></div>
@@ -105,16 +108,20 @@
     <div id="plazos" class="seccion">
         <div class="card">
             <h3>⚖️ Calculadora Plazos CPCM</h3>
-            <p><strong>Art. 146 CPCM:</strong> Los plazos procesales son perentorios e improrrogables.</p>
-            <p style="margin-top:.5rem"><strong>Art. 147 CPCM:</strong> Los términos se cuentan desde el día siguiente a la notificación.</p>
-            <p style="margin-top:1rem;color:var(--dorado);font-weight:600">Próximamente: Calculadora automática de términos.</p>
+            <div class="articulo"><strong>Art. 146 CPCM:</strong> Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario.</div>
+            <div class="articulo"><strong>Art. 147 CPCM:</strong> Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles.</div>
+            <div class="articulo"><strong>Art. 224 CPCM:</strong> Término para contestar demanda: 20 días hábiles.</div>
+            <p style="margin-top:1.5rem;color:var(--dorado);font-weight:700">Próximamente: Calculadora automática con calendario judicial SV.</p>
         </div>
     </div>
 
     <div id="ia" class="seccion">
         <div class="card">
-            <h3>🤖 IA Legal Asistente</h3>
-            <p>Consultá jurisprudencia de la Sala de lo Constitucional, redactá escritos y analizá casos. 100% offline. En desarrollo.</p>
+            <h3>🤖 IA Legal Asistente - Modo Offline</h3>
+            <p>Consultá jurisprudencia básica, redactá modelos de escritos y analizá casos. 100% offline.</p>
+            <textarea class="ia-input" id="preguntaIA" placeholder="Ej: Redactame un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia..."></textarea>
+            <button class="ia-btn" onclick="consultarIA()">Consultar IA LexSV</button>
+            <div class="ia-respuesta" id="respuestaIA"></div>
         </div>
     </div>
 
@@ -124,37 +131,98 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             event.target.classList.add('active');
+            window.scrollTo(0,0);
         }
+
+        const baseDatosLeyes = {
+            cpcm: [
+                {art:"CPCM Art. 1", texto:"Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal."},
+                {art:"CPCM Art. 146", texto:"Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario."},
+                {art:"CPCM Art. 217", texto:"La demanda deberá contener: nombre del juez, nombre y generales de las partes, hechos, fundamentos de derecho y petitorio claro."},
+                {art:"CPCM Art. 224", texto:"El demandado tiene 20 días hábiles para contestar la demanda desde su notificación."}
+            ],
+            cp: [
+                {art:"CP Art. 1", texto:"Nadie podrá ser sancionado por hechos que la ley penal no haya previsto como delito o falta con anterioridad a su comisión."},
+                {art:"CP Art. 114", texto:"Homicidio simple: El que matare a otro será sancionado con prisión de diez a veinte años."},
+                {art:"CP Art. 207", texto:"Hurto: El que se apoderare de cosa mueble ajena, sin violencia en las personas ni fuerza en las cosas, será sancionado con prisión de dos a cinco años."}
+            ],
+            ct: [
+                {art:"CT Art. 1", texto:"El presente Código regula las relaciones entre patronos y trabajadores privados y las de éstos entre sí."},
+                {art:"CT Art. 29", texto:"Contrato individual de trabajo es aquel por el cual una persona se obliga a prestar a otra sus servicios personales bajo dependencia."},
+                {art:"CT Art. 58", texto:"La jornada ordinaria de trabajo efectivo diurno no excederá de ocho horas diarias, ni la semana laboral de cuarenta y cuatro horas."}
+            ],
+            cf: [
+                {art:"CF Art. 1", texto:"La familia es la base fundamental de la sociedad y tendrá la protección del Estado."},
+                {art:"CF Art. 11", texto:"El matrimonio es la unión legal de un hombre y una mujer, con el fin de establecer una plena y permanente comunidad de vida."},
+                {art:"CF Art. 211", texto:"Los padres tienen el deber de alimentar, educar, dar asistencia y protección a sus hijos menores de edad."}
+            ],
+            cc: [
+                {art:"CC Art. 1", texto:"Son comerciantes los que teniendo capacidad legal para contratar, ejercen por cuenta propia actos de comercio, haciendo de ello su profesión habitual."},
+                {art:"CC Art. 21", texto:"La sociedad mercantil es un contrato por el cual dos o más personas se obligan a poner en común bienes o industria."}
+            ],
+            cn: [
+                {art:"Cn. Art. 1", texto:"El Salvador reconoce a la persona humana como el origen y el fin de la actividad del Estado."},
+                {art:"Cn. Art. 2", texto:"Toda persona tiene derecho a la vida, a la integridad física y moral, a la libertad, a la seguridad, al trabajo, a la propiedad y posesión."},
+                {art:"Cn. Art. 11", texto:"Ninguna persona puede ser privada del derecho a la vida, a la libertad, a la propiedad y posesión, ni de cualquier otro de sus derechos sin ser previamente oída y vencida en juicio."}
+            ],
+            lpa: [
+                {art:"LPA Art. 1", texto:"La presente Ley regula la actividad de la Administración Pública en sus relaciones con los administrados."},
+                {art:"LPA Art. 86", texto:"El plazo máximo para dictar resolución expresa y notificarla será de tres meses, salvo que una norma con rango de ley establezca otro mayor."}
+            ],
+            lpdp: [
+                {art:"LPDP Art. 1", texto:"Esta Ley tiene por objeto garantizar el derecho a la protección de datos personales."},
+                {art:"LPDP Art. 6", texto:"El tratamiento de datos personales requiere el consentimiento previo, expreso e informado del titular, salvo excepciones legales."}
+            ]
+        };
 
         function verLey(codigo) {
-            const leyes = {
-                cpcm: `<div class="articulo"><strong>CPCM Art. 1.-</strong> Los procesos civiles y mercantiles se regirán por este Código. En lo no previsto, se aplicará supletoriamente el Código Procesal Penal.</div>
-                       <div class="articulo"><strong>CPCM Art. 146.-</strong> Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario.</div>
-                       <div class="articulo"><strong>CPCM Art. 217.-</strong> La demanda deberá contener: nombre del juez, nombre de las partes, hechos, petitorio...</div>`,
-                cp: `<div class="articulo"><strong>CP Art. 1.-</strong> Nadie podrá ser sancionado por hechos que la ley penal no haya previsto como delito.</div>
-                     <div class="articulo"><strong>CP Art. 114.-</strong> Homicidio simple: El que matare a otro será sancionado con prisión de diez a veinte años.</div>
-                     <div class="articulo"><strong>CP Art. 207.-</strong> Hurto: El que se apoderare de cosa mueble ajena sin violencia, prisión de 2 a 5 años.</div>`,
-                ct: `<div class="articulo"><strong>CT Art. 1.-</strong> El presente Código regula las relaciones entre patronos y trabajadores privados.</div>
-                     <div class="articulo"><strong>CT Art. 29.-</strong> Contrato individual de trabajo es aquel por el cual una persona se obliga a prestar servicios...</div>
-                     <div class="articulo"><strong>CT Art. 58.-</strong> La jornada ordinaria de trabajo diurno no excederá de ocho horas diarias.</div>`,
-                cf: `<div class="articulo"><strong>CF Art. 1.-</strong> La familia es la base fundamental de la sociedad y tendrá la protección del Estado.</div>
-                     <div class="articulo"><strong>CF Art. 11.-</strong> El matrimonio es la unión legal de un hombre y una mujer...</div>
-                     <div class="articulo"><strong>CF Art. 211.-</strong> Los padres tienen el deber de alimentar, educar y dar asistencia a sus hijos.</div>`,
-                cc: `<div class="articulo"><strong>CC Art. 1.-</strong> Son comerciantes los que teniendo capacidad legal ejercen actos de comercio habitualmente.</div>
-                     <div class="articulo"><strong>CC Art. 21.-</strong> La sociedad mercantil es un contrato por el cual dos o más personas se obligan a poner en común bienes...</div>`,
-                cn: `<div class="articulo"><strong>Cn. Art. 1.-</strong> El Salvador reconoce a la persona humana como el origen y el fin de la actividad del Estado.</div>
-                     <div class="articulo"><strong>Cn. Art. 2.-</strong> Toda persona tiene derecho a la vida, a la integridad física y moral, a la libertad...</div>
-                     <div class="articulo"><strong>Cn. Art. 11.-</strong> Ninguna persona puede ser privada del derecho a la vida, a la libertad, a la propiedad...</div>`,
-                lproc: `<div class="articulo"><strong>LPA Art. 1.-</strong> La presente Ley regula la actividad de la Administración Pública...</div>
-                        <div class="articulo"><strong>LPA Art. 86.-</strong> El plazo máximo para resolver es de 3 meses, salvo norma especial.</div>`,
-                lpdp: `<div class="articulo"><strong>LPDP Art. 1.-</strong> Esta Ley tiene por objeto garantizar el derecho a la protección de datos personales.</div>
-                       <div class="articulo"><strong>LPDP Art. 6.-</strong> El tratamiento de datos requiere consentimiento previo, expreso e informado del titular.</div>`
-            };
-            document.getElementById('contenido-ley').innerHTML = leyes[codigo] || '<p>Seleccioná un código arriba</p>';
+            const ley = baseDatosLeyes[codigo];
+            let html = '';
+            ley.forEach(a => {
+                html += `<div class="articulo"><strong>${a.art}.-</strong> ${a.texto}</div>`;
+            });
+            document.getElementById('contenido-ley').innerHTML = html;
         }
 
-        function filtrarLeyes() {
-            // Próximamente: búsqueda en vivo
+        function buscarArticulos() {
+            const query = document.getElementById('buscarLey').value.toLowerCase();
+            if(query.length < 3) {
+                document.getElementById('contenido-ley').innerHTML = '<p>Escribí al menos 3 letras para buscar...</p>';
+                return;
+            }
+            let resultados = '';
+            Object.values(baseDatosLeyes).forEach(codigo => {
+                codigo.forEach(a => {
+                    if(a.texto.toLowerCase().includes(query) || a.art.toLowerCase().includes(query)) {
+                        resultados += `<div class="articulo"><strong>${a.art}.-</strong> ${a.texto}</div>`;
+                    }
+                });
+            });
+            document.getElementById('contenido-ley').innerHTML = resultados || '<p>No se encontraron artículos.</p>';
+        }
+
+        function consultarIA() {
+            const pregunta = document.getElementById('preguntaIA').value.toLowerCase();
+            const resp = document.getElementById('respuestaIA');
+            resp.style.display = 'block';
+
+            if(pregunta.includes('divorcio') && pregunta.includes('mutuo')) {
+                resp.innerHTML = `<strong>Modelo Demanda Divorcio Mutuo Acuerdo - CF Art. 106:</strong><br><br>
+                SEÑOR JUEZ DE FAMILIA...<br>
+                [Nombre], mayor de edad, abogado, del domicilio de Santa Tecla...<br>
+                EXPONEMOS: Que venimos a promover DILIGENCIAS DE DIVORCIO POR MUTUO CONSENTIMIENTO...<br><br>
+                <em>Nota: LexSV-Pro genera borradores. Siempre revise con legislación vigente.</em>`;
+            } else if(pregunta.includes('plazo') || pregunta.includes('cpcm')) {
+                resp.innerHTML = `<strong>Según CPCM Art. 146 y 147:</strong><br>
+                1. Los plazos son perentorios e improrrogables<br>
+                2. Se cuentan desde el día siguiente a la notificación<br>
+                3. No corren días inhábiles<br><br>
+                <em>Para cálculo exacto, use la pestaña "Plazos" próximamente.</em>`;
+            } else {
+                resp.innerHTML = `<strong>LexSV-Pro IA Offline:</strong><br>
+                Tu consulta fue registrada. En la versión completa, esta IA buscará en los 8 códigos cargados y jurisprudencia de la CSJ.<br><br>
+                <em>Próximamente: Redacción automática de escritos, análisis de jurisprudencia y alertas de plazos.</em>`;
+            }
         }
     </script>
 </body>
