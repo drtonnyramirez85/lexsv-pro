@@ -2,64 +2,103 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>LexSV-Pro | Dr. Tonny Ramirez</title>
     <meta name="theme-color" content="#0A1F44">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root{--azul:#0A1F44;--azul2:#1a3a6b;--dorado:#D4AF37;--dorado2:#B8941F;--blanco:#FFF;--gris:#F7F8FC;--texto:#1A1D29;--borde:#E5E7EB}
+        :root{--azul:#0A1F44;--azul2:#1a3a6b;--dorado:#D4AF37;--dorado2:#F4D03F;--dorado3:#B8941F;--blanco:#FFF;--gris:#F7F8FC;--texto:#1A1D29;--borde:#E5E7EB;--verde:#10B981}
         *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
         html{scroll-behavior:smooth}
-        body{background:var(--gris);color:var(--texto);font-family:'Inter',-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-.header{background:linear-gradient(160deg,var(--azul) 0%,var(--azul2) 100%);padding:3rem 1.5rem 2.8rem;text-align:center;position:relative}
-.config-btn{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.15);border:2px solid var(--dorado);color:var(--dorado);padding:.9rem 1.5rem;border-radius:14px;font-weight:700;cursor:pointer;font-size:.95rem;backdrop-filter:blur(12px);z-index:10}
-.logo{width:170px;height:170px;margin:0 auto 2rem;border-radius:50%;object-fit:cover;border:8px solid var(--dorado);box-shadow:0 20px 60px rgba(212,175,55,.6);background:var(--azul);display:block}
-.logo-default{width:170px;height:170px;margin:0 auto 2rem;border-radius:50%;border:8px solid var(--dorado);background:var(--azul);display:flex;align-items:center;justify-content:center;font-size:6rem;box-shadow:0 20px 60px rgba(212,175,55,.6)}
-.titulo{color:var(--dorado);font-size:3.8rem;font-weight:900;letter-spacing:-2px;margin-bottom:.8rem;font-family:'Playfair Display',serif;text-shadow:0 4px 12px rgba(0,0,0,.3)}
-.nombre-dr{color:var(--blanco);font-size:1.6rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.5px}
-.sub{color:rgba(255,255,255,.9);font-size:1.15rem;font-weight:400}
-.nav{position:sticky;top:0;background:var(--blanco);display:flex;box-shadow:0 4px 30px rgba(0,0,0,.08);z-index:100;border-bottom:1px solid var(--borde)}
-.nav-btn{flex:1;padding:1.7rem 1rem;border:none;background:var(--blanco);color:#64748B;font-weight:700;font-size:1.08rem;cursor:pointer;border-bottom:4px solid transparent;transition:all.25s}
-.nav-btn.active{color:var(--azul);border-bottom:4px solid var(--dorado);background:#FFFBF0}
-.seccion{display:none;padding:3.5rem 1.5rem;max-width:1300px;margin:0 auto}
-.seccion.active{display:block;animation:fadeInUp.5s}
-        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.card{background:var(--blanco);margin:0 0 2.5rem;padding:3.2rem;border-radius:28px;box-shadow:0 12px 50px rgba(10,31,68,.09);border:1px solid var(--borde)}
-.card-titulo{color:var(--azul);margin-bottom:2rem;font-size:2.3rem;font-weight:900;display:flex;align-items:center;gap:1.3rem;font-family:'Playfair Display',serif}
-.card-titulo::before{content:'';width:8px;height:50px;background:linear-gradient(180deg,var(--dorado) 0%,var(--dorado2) 100%);border-radius:4px;box-shadow:0 4px 12px rgba(212,175,55,.4)}
-.btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:2.5rem}
-.btn-ley{background:linear-gradient(135deg,#fff 0%,#F8FAFC 100%);border:2px solid var(--borde);color:var(--azul);padding:2.2rem;border-radius:20px;font-weight:700;text-align:center;cursor:pointer;transition:all.35s;box-shadow:0 6px 20px rgba(10,31,68,.06);font-size:1.15rem}
-.btn-ley:active{transform:scale(.97);background:var(--azul);color:var(--dorado)}
-.articulo{background:linear-gradient(135deg,#F8FAFC 0%,#FFF 100%);padding:2.2rem;border-radius:18px;margin:2rem 0;border-left:6px solid var(--dorado);font-size:1.15rem;line-height:2.1;box-shadow:0 4px 15px rgba(0,0,0,.05)}
-.articulo strong{color:var(--azul);font-weight:800;font-family:'Playfair Display',serif;font-size:1.2rem}
-.buscador{width:100%;padding:1.6rem;border:2px solid var(--borde);border-radius:18px;margin:2.5rem 0;font-size:1.15rem;transition:.3s;background:var(--blanco)}
-.buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 5px rgba(212,175,55,.15)}
-.ia-textarea{width:100%;min-height:200px;padding:1.6rem;border:2px solid var(--borde);border-radius:18px;font-size:1.1rem;margin:2rem 0;font-family:'Inter',sans-serif;resize:vertical;background:var(--blanco)}
-.ia-btn{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:var(--dorado);border:none;padding:1.5rem 3.5rem;border-radius:18px;font-weight:800;font-size:1.2rem;cursor:pointer;transition:all.3s;box-shadow:0 10px 30px rgba(10,31,68,.3)}
-.ia-btn:active{transform:scale(.97)}
-.ia-respuesta{background:linear-gradient(135deg,#E7F3FF 0%,#F0F7FF 100%);padding:2.8rem;border-radius:22px;margin-top:2.5rem;border-left:6px solid var(--azul);display:none;line-height:2.1;font-size:1.15rem;box-shadow:0 6px 25px rgba(26,58,107,.12)}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.9);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(10px);padding:1rem}
-.modal.active{display:flex;animation:fadeIn.3s}
-.modal-content{background:var(--blanco);padding:3.5rem;border-radius:32px;max-width:580px;width:100%;box-shadow:0 30px 100px rgba(0,0,0,.6);max-height:90vh;overflow-y:auto}
-.modal-titulo{color:var(--azul);font-size:2.3rem;font-weight:900;margin-bottom:1.8rem;font-family:'Playfair Display',serif}
-.file-input{width:100%;padding:3rem;border:3px dashed var(--dorado);border-radius:20px;text-align:center;cursor:pointer;margin:2rem 0;background:#FFFBF0;transition:.3s}
-.file-input:active{background:#FFF9E6;transform:scale(.99)}
-.modal-btns{display:flex;gap:1.3rem;margin-top:3rem}
-.modal-btn{flex:1;padding:1.4rem;border:none;border-radius:16px;font-weight:800;cursor:pointer;font-size:1.15rem;transition:all.2s}
-.btn-guardar{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:var(--dorado);box-shadow:0 8px 25px rgba(10,31,68,.35)}
-.btn-guardar:active{transform:scale(.97)}
-.btn-cancelar{background:#E5E7EB;color:#374151}
-.btn-cancelar:active{transform:scale(.97)}
-        p{font-size:1.18rem;color:#374151}
-        @media (max-width:768px){.titulo{font-size:3rem}.nombre-dr{font-size:1.4rem}.nav-btn{font-size:.95rem;padding:1.4rem.5rem}.card{padding:2.2rem}.card-titulo{font-size:1.9rem}}
+        body{background:var(--gris);color:var(--texto);font-family:'Inter',-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+        /* ANIMACIONES ALEGRES */
+        @keyframes flotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        @keyframes brillo{0%,100%{box-shadow:0 20px 60px rgba(212,175,55,.6)}50%{box-shadow:0 25px 80px rgba(212,175,55,.9)}}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes pulso{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+       .header{background:linear-gradient(165deg,var(--azul) 0%,var(--azul2) 50%,#2a4d7a 100%);padding:3.5rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+       .header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,175,55,.1) 0%,transparent 70%);animation:flotar 8s ease-in-out infinite}
+       .config-btn{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.2);border:2px solid var(--dorado);color:var(--dorado);padding:1rem 1.6rem;border-radius:16px;font-weight:800;cursor:pointer;font-size:1rem;backdrop-filter:blur(15px);z-index:10;transition:all.3s;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+       .config-btn:active{transform:scale(.92);background:rgba(212,175,55,.4)}
+       .config-btn i{margin-right:.5rem;animation:pulso 2s ease-in-out infinite}
+
+       .logo{width:180px;height:180px;margin:0 auto 2rem;border-radius:50%;object-fit:cover;border:10px solid var(--dorado);box-shadow:0 20px 60px rgba(212,175,55,.6);background:var(--azul);display:block;animation:brillo 4s ease-in-out infinite;position:relative;z-index:5}
+       .logo-default{width:180px;height:180px;margin:0 auto 2rem;border-radius:50%;border:10px solid var(--dorado);background:var(--azul);display:flex;align-items:center;justify-content:center;font-size:6.5rem;box-shadow:0 20px 60px rgba(212,175,55,.6);animation:brillo 4s ease-in-out infinite;position:relative;z-index:5}
+
+       .titulo{color:var(--dorado);font-size:4rem;font-weight:900;letter-spacing:-2.5px;margin-bottom:.8rem;font-family:'Playfair Display',serif;text-shadow:0 6px 20px rgba(0,0,0,.4);position:relative;z-index:5}
+       .nombre-dr{color:var(--blanco);font-size:1.7rem;font-weight:700;margin-bottom:.6rem;letter-spacing:1px;position:relative;z-index:5}
+       .sub{color:rgba(255,255,255,.95);font-size:1.2rem;font-weight:500;position:relative;z-index:5}
+
+       .nav{position:sticky;top:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);display:flex;box-shadow:0 8px 40px rgba(0,0,0,.1);z-index:100;border-bottom:1px solid var(--borde)}
+       .nav-btn{flex:1;padding:1.8rem 1rem;border:none;background:transparent;color:#64748B;font-weight:800;font-size:1.1rem;cursor:pointer;border-bottom:4px solid transparent;transition:all.3s;position:relative}
+       .nav-btn i{display:block;font-size:1.8rem;margin-bottom:.5rem;transition:all.3s}
+       .nav-btn:active{transform:scale(.96)}
+       .nav-btn.active{color:var(--azul);border-bottom:4px solid var(--dorado);background:linear-gradient(180deg,#FFFBF0 0%,transparent 100%)}
+       .nav-btn.active i{color:var(--dorado);transform:translateY(-3px)}
+
+       .seccion{display:none;padding:4rem 1.5rem;max-width:1350px;margin:0 auto}
+       .seccion.active{display:block;animation:fadeInUp.6s cubic-bezier(.34,1.56,.64,1)}
+
+       .card{background:var(--blanco);margin:0 0 3rem;padding:3.5rem;border-radius:32px;box-shadow:0 15px 60px rgba(10,31,68,.1);border:1px solid var(--borde);transition:all.4s;position:relative;overflow:hidden}
+       .card::before{content:'';position:absolute;top:0;left:0;width:100%;height:5px;background:linear-gradient(90deg,var(--dorado) 0%,var(--dorado2) 50%,var(--dorado) 100%);background-size:200% 100%;animation:shimmer 3s linear infinite}
+        @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+       .card:active{transform:scale(.99)}
+
+       .card-titulo{color:var(--azul);margin-bottom:2.2rem;font-size:2.5rem;font-weight:900;display:flex;align-items:center;gap:1.5rem;font-family:'Playfair Display',serif}
+       .card-titulo::before{content:'';width:10px;height:55px;background:linear-gradient(180deg,var(--dorado) 0%,var(--dorado3) 100%);border-radius:5px;box-shadow:0 6px 15px rgba(212,175,55,.5)}
+       .card-titulo i{color:var(--dorado);font-size:2.8rem;animation:flotar 3s ease-in-out infinite}
+
+       .btn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2.2rem;margin-top:3rem}
+       .btn-ley{background:linear-gradient(135deg,#fff 0%,#F8FAFC 100%);border:2px solid var(--borde);color:var(--azul);padding:2.5rem;border-radius:22px;font-weight:800;text-align:center;cursor:pointer;transition:all.4s;box-shadow:0 8px 25px rgba(10,31,68,.08);font-size:1.2rem;position:relative;overflow:hidden}
+       .btn-ley::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(212,175,55,.2),transparent);transition:left.5s}
+       .btn-ley:hover::before{left:100%}
+       .btn-ley:active{transform:scale(.96);background:var(--azul);color:var(--dorado);border-color:var(--dorado)}
+       .btn-ley i{display:block;font-size:2.5rem;margin-bottom:1rem;color:var(--dorado);transition:all.3s}
+       .btn-ley:active i{transform:rotate(360deg)}
+
+       .articulo{background:linear-gradient(135deg,#F8FAFC 0%,#FFF 100%);padding:2.5rem;border-radius:20px;margin:2.2rem 0;border-left:7px solid var(--dorado);font-size:1.18rem;line-height:2.2;box-shadow:0 5px 20px rgba(0,0,0,.06);transition:all.3s}
+       .articulo:hover{transform:translateX(5px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+       .articulo strong{color:var(--azul);font-weight:800;font-family:'Playfair Display',serif;font-size:1.25rem}
+
+       .buscador{width:100%;padding:1.8rem;border:3px solid var(--borde);border-radius:20px;margin:3rem 0;font-size:1.2rem;transition:.3s;background:var(--blanco);font-weight:600}
+       .buscador:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 6px rgba(212,175,55,.2);transform:translateY(-2px)}
+
+       .ia-textarea{width:100%;min-height:220px;padding:1.8rem;border:3px solid var(--borde);border-radius:20px;font-size:1.15rem;margin:2.5rem 0;font-family:'Inter',sans-serif;resize:vertical;background:var(--blanco);font-weight:500}
+       .ia-textarea:focus{outline:none;border-color:var(--dorado);box-shadow:0 0 0 6px rgba(212,175,55,.2)}
+
+       .ia-btn{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:var(--dorado);border:none;padding:1.7rem 4rem;border-radius:20px;font-weight:900;font-size:1.25rem;cursor:pointer;transition:all.3s;box-shadow:0 12px 35px rgba(10,31,68,.35);position:relative;overflow:hidden}
+       .ia-btn::before{content:'✨';position:absolute;left:1.5rem;animation:pulso 1.5s ease-in-out infinite}
+       .ia-btn:active{transform:scale(.95)}
+
+       .ia-respuesta{background:linear-gradient(135deg,#E7F3FF 0%,#F0F7FF 100%);padding:3rem;border-radius:24px;margin-top:3rem;border-left:7px solid var(--azul);display:none;line-height:2.2;font-size:1.18rem;box-shadow:0 8px 30px rgba(26,58,107,.15)}
+
+       .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,31,68,.95);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(15px);padding:1rem}
+       .modal.active{display:flex;animation:fadeIn.4s}
+       .modal-content{background:var(--blanco);padding:4rem;border-radius:36px;max-width:600px;width:100%;box-shadow:0 40px 120px rgba(0,0,0,.7);max-height:90vh;overflow-y:auto}
+       .modal-titulo{color:var(--azul);font-size:2.5rem;font-weight:900;margin-bottom:2rem;font-family:'Playfair Display',serif;text-align:center}
+       .file-input{width:100%;padding:3.5rem;border:4px dashed var(--dorado);border-radius:24px;text-align:center;cursor:pointer;margin:2.5rem 0;background:linear-gradient(135deg,#FFFBF0 0%,#FFF9E6 100%);transition:.3s}
+       .file-input:active{background:#FFF9E6;transform:scale(.98)}
+       .modal-btns{display:flex;gap:1.5rem;margin-top:3.5rem}
+       .modal-btn{flex:1;padding:1.5rem;border:none;border-radius:18px;font-weight:900;cursor:pointer;font-size:1.2rem;transition:all.2s}
+       .btn-guardar{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:var(--dorado);box-shadow:0 10px 30px rgba(10,31,68,.4)}
+       .btn-guardar:active{transform:scale(.95)}
+       .btn-cancelar{background:#E5E7EB;color:#374151}
+       .btn-cancelar:active{transform:scale(.95)}
+
+        p{font-size:1.22rem;color:#374151;font-weight:500}
+        @media (max-width:768px){.titulo{font-size:3.2rem}.nombre-dr{font-size:1.5rem}.nav-btn{font-size:1rem;padding:1.5rem.5rem}.nav-btn i{font-size:1.5rem}.card{padding:2.5rem}.card-titulo{font-size:2rem}.btn-ley{font-size:1.1rem}}
     </style>
 </head>
 <body>
     <header class="header">
-        <button class="config-btn" id="btnCambiarLogo">⚙️ Cambiar Logo</button>
+        <button class="config-btn" id="btnCambiarLogo"><i class="fas fa-cog"></i>Cambiar Logo</button>
 
         <div class="logo-container">
             <img id="logoBeagle" class="logo" src="" alt="Logo LexSV-Pro" style="display:none">
@@ -74,67 +113,67 @@
     <div id="modalLogo" class="modal">
         <div class="modal-content">
             <h3 class="modal-titulo">Cambiar Logo de LexSV-Pro</h3>
-            <p style="color:#6B7280;margin-bottom:1.5rem;font-size:1.15rem;line-height:1.9">Subí la foto de tu beagle o el logo que prefieras. Se guarda solo en tu dispositivo y nadie más lo ve. Podés cambiarlo cuando querás.</p>
+            <p style="color:#6B7280;margin-bottom:2rem;font-size:1.2rem;line-height:2;text-align:center">Subí la foto de tu beagle o el logo que prefieras. Se guarda solo en tu dispositivo y nadie más lo ve. <br><strong style="color:var(--dorado)">Podés cambiarlo cuando querás.</strong></p>
             <input type="file" id="inputLogo" accept="image/*" style="display:none">
             <label for="inputLogo" class="file-input">
-                <div style="font-size:3.5rem;margin-bottom:1rem">📷</div>
-                <strong style="font-size:1.25rem;color:var(--azul)">Hacé clic aquí para elegir foto</strong><br>
-                <span style="font-size:1.05rem;color:#6B7280;margin-top:.8rem;display:block">JPG, PNG o WEBP - Máx 5MB</span>
+                <div style="font-size:4rem;margin-bottom:1.2rem">📷</div>
+                <strong style="font-size:1.35rem;color:var(--azul)">Hacé clic aquí para elegir foto</strong><br>
+                <span style="font-size:1.1rem;color:#6B7280;margin-top:1rem;display:block">JPG, PNG o WEBP - Máx 5MB</span>
             </label>
-            <img id="previewImg" style="width:100%;max-width:260px;margin:2rem auto;display:none;border-radius:50%;border:7px solid var(--dorado);box-shadow:0 12px 35px rgba(0,0,0,.25)">
+            <img id="previewImg" style="width:100%;max-width:280px;margin:2.5rem auto;display:none;border-radius:50%;border:8px solid var(--dorado);box-shadow:0 15px 40px rgba(0,0,0,.3)">
             <div class="modal-btns">
-                <button class="modal-btn btn-cancelar" id="btnCancelar">Cancelar</button>
-                <button class="modal-btn btn-guardar" id="btnGuardarLogo">Guardar Logo</button>
+                <button class="modal-btn btn-cancelar" id="btnCancelar"><i class="fas fa-times"></i> Cancelar</button>
+                <button class="modal-btn btn-guardar" id="btnGuardarLogo"><i class="fas fa-check"></i> Guardar Logo</button>
             </div>
         </div>
     </div>
 
     <nav class="nav">
-        <button class="nav-btn active" data-seccion="inicio">Inicio</button>
-        <button class="nav-btn" data-seccion="casos">Casos</button>
-        <button class="nav-btn" data-seccion="leyes">Leyes SV</button>
-        <button class="nav-btn" data-seccion="plazos">Plazos</button>
-        <button class="nav-btn" data-seccion="ia">IA Legal</button>
+        <button class="nav-btn active" data-seccion="inicio"><i class="fas fa-home"></i>Inicio</button>
+        <button class="nav-btn" data-seccion="casos"><i class="fas fa-folder-open"></i>Casos</button>
+        <button class="nav-btn" data-seccion="leyes"><i class="fas fa-balance-scale"></i>Leyes SV</button>
+        <button class="nav-btn" data-seccion="plazos"><i class="fas fa-clock"></i>Plazos</button>
+        <button class="nav-btn" data-seccion="ia"><i class="fas fa-robot"></i>IA Legal</button>
     </nav>
 
     <div id="inicio" class="seccion active">
         <div class="card">
-            <h3 class="card-titulo">Bienvenido Dr. Ramirez</h3>
-            <p><strong>Software jurídico privado y seguro.</strong> Diseñado exclusivamente para su despacho. 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador. Sus expedientes nunca salen de su dispositivo.</p>
+            <h3 class="card-titulo"><i class="fas fa-shield-alt"></i>Bienvenido Dr. Ramirez</h3>
+            <p><strong>Software jurídico privado, seguro y ahora... ALEGRE.</strong> Diseñado exclusivamente para su despacho. 100% offline. Cifrado AES-256. Cumple Ley de Protección de Datos Personales de El Salvador. <strong style="color:var(--dorado)">Sus expedientes nunca salen de su dispositivo.</strong></p>
         </div>
         <div class="card">
-            <h3 class="card-titulo">Accesos Rápidos</h3>
+            <h3 class="card-titulo"><i class="fas fa-rocket"></i>Accesos Rápidos</h3>
             <div class="btn-grid">
-                <div class="btn-ley" data-seccion="casos">📁 Nuevo Expediente</div>
-                <div class="btn-ley" data-seccion="plazos">⚖️ Calcular Plazo</div>
-                <div class="btn-ley" data-seccion="leyes">📚 Códigos SV</div>
-                <div class="btn-ley" data-seccion="ia">🤖 Asistente IA</div>
+                <div class="btn-ley" data-seccion="casos"><i class="fas fa-folder-plus"></i>Nuevo Expediente</div>
+                <div class="btn-ley" data-seccion="plazos"><i class="fas fa-calendar-check"></i>Calcular Plazo</div>
+                <div class="btn-ley" data-seccion="leyes"><i class="fas fa-book"></i>Códigos SV</div>
+                <div class="btn-ley" data-seccion="ia"><i class="fas fa-brain"></i>Asistente IA</div>
             </div>
         </div>
     </div>
 
     <div id="casos" class="seccion">
         <div class="card">
-            <h3 class="card-titulo">Gestión de Expedientes</h3>
+            <h3 class="card-titulo"><i class="fas fa-briefcase"></i>Gestión de Expedientes</h3>
             <p>Sistema de gestión de casos 100% local. Guarde clientes, audiencias, documentos y notas. Todo cifrado en su dispositivo con AES-256.</p>
-            <div class="btn-ley" style="margin-top:2.5rem;max-width:360px">+ Crear Nuevo Expediente</div>
-            <p style="margin-top:2rem;color:#6B7280;font-size:1.08rem"><em>Módulo en desarrollo. Próxima actualización: Guardado local con IndexedDB y encriptación.</em></p>
+            <div class="btn-ley" style="margin-top:2.5rem;max-width:380px"><i class="fas fa-plus-circle"></i> Crear Nuevo Expediente</div>
+            <p style="margin-top:2.5rem;color:#6B7280;font-size:1.1rem"><em><i class="fas fa-info-circle"></i> Módulo en desarrollo. Próxima actualización: Guardado local con IndexedDB y encriptación.</em></p>
         </div>
     </div>
 
     <div id="leyes" class="seccion">
         <div class="card">
-            <h3 class="card-titulo">Códigos y Leyes de El Salvador</h3>
-            <input type="text" class="buscador" id="buscarLey" placeholder="Buscar artículo o palabra clave: ej. 'homicidio', 'Art. 146', 'divorcio'...">
+            <h3 class="card-titulo"><i class="fas fa-gavel"></i>Códigos y Leyes de El Salvador</h3>
+            <input type="text" class="buscador" id="buscarLey" placeholder="🔍 Buscar artículo o palabra clave: ej. 'homicidio', 'Art. 146', 'divorcio'...">
             <div class="btn-grid">
-                <div class="btn-ley" data-ley="cpcm">CPCM</div>
-                <div class="btn-ley" data-ley="cp">Código Penal</div>
-                <div class="btn-ley" data-ley="ct">Código de Trabajo</div>
-                <div class="btn-ley" data-ley="cf">Código de Familia</div>
-                <div class="btn-ley" data-ley="cc">Código de Comercio</div>
-                <div class="btn-ley" data-ley="cn">Constitución</div>
-                <div class="btn-ley" data-ley="lpa">Ley Proc. Adm.</div>
-                <div class="btn-ley" data-ley="lpdp">Ley Prot. Datos</div>
+                <div class="btn-ley" data-ley="cpcm"><i class="fas fa-file-contract"></i>CPCM</div>
+                <div class="btn-ley" data-ley="cp"><i class="fas fa-handcuffs"></i>Código Penal</div>
+                <div class="btn-ley" data-ley="ct"><i class="fas fa-hard-hat"></i>Código de Trabajo</div>
+                <div class="btn-ley" data-ley="cf"><i class="fas fa-heart"></i>Código de Familia</div>
+                <div class="btn-ley" data-ley="cc"><i class="fas fa-chart-line"></i>Código de Comercio</div>
+                <div class="btn-ley" data-ley="cn"><i class="fas fa-landmark"></i>Constitución</div>
+                <div class="btn-ley" data-ley="lpa"><i class="fas fa-building"></i>Ley Proc. Adm.</div>
+                <div class="btn-ley" data-ley="lpdp"><i class="fas fa-user-shield"></i>Ley Prot. Datos</div>
             </div>
             <div id="contenido-ley"></div>
         </div>
@@ -142,21 +181,21 @@
 
     <div id="plazos" class="seccion">
         <div class="card">
-            <h3 class="card-titulo">Calculadora de Plazos Procesales</h3>
+            <h3 class="card-titulo"><i class="fas fa-hourglass-half"></i>Calculadora de Plazos Procesales</h3>
             <div class="articulo"><strong>Art. 146 CPCM:</strong> Los plazos procesales son perentorios e improrrogables, salvo disposición legal en contrario.</div>
             <div class="articulo"><strong>Art. 147 CPCM:</strong> Los términos se cuentan desde el día siguiente a la notificación. No se cuentan días inhábiles.</div>
             <div class="articulo"><strong>Art. 224 CPCM:</strong> Término para contestar demanda: 20 días hábiles.</div>
             <div class="articulo"><strong>Art. 272 CPCM:</strong> Término para apelar: 5 días hábiles desde la notificación.</div>
             <div class="articulo"><strong>Art. 524 CPCM:</strong> Término para interponer casación: 15 días hábiles.</div>
-            <p style="margin-top:2.5rem;color:var(--dorado);font-weight:700;font-size:1.25rem">Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador.</p>
+            <p style="margin-top:2.5rem;color:var(--dorado);font-weight:800;font-size:1.3rem"><i class="fas fa-wrench"></i> Próximamente: Calculadora automática con calendario judicial 2026 de El Salvador.</p>
         </div>
     </div>
 
     <div id="ia" class="seccion">
         <div class="card">
-            <h3 class="card-titulo">Asistente IA Legal - LexSV</h3>
+            <h3 class="card-titulo"><i class="fas fa-magic"></i>Asistente IA Legal - LexSV</h3>
             <p>Esta IA funciona 100% offline. Consulta los 8 códigos cargados y genera borradores de escritos basados en legislación salvadoreña.</p>
-            <textarea class="ia-textarea" id="preguntaIA" placeholder="Ej: Redactame un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia. O: ¿Cuál es el plazo para apelar según CPCM?"></textarea>
+            <textarea class="ia-textarea" id="preguntaIA" placeholder="✍️ Ej: Redactame un modelo de demanda de divorcio por mutuo acuerdo según Código de Familia. O: ¿Cuál es el plazo para apelar según CPCM?"></textarea>
             <button class="ia-btn" id="btnConsultarIA">Consultar IA LexSV-Pro</button>
             <div id="respuestaIA" class="ia-respuesta"></div>
         </div>
@@ -216,7 +255,7 @@
             ]
         };
 
-        // ESPERAR A QUE EL DOM CARGUE - ARREGLA SAFARI
+        // ESPERAR DOM - ARREGLA IPHONE SAFARI
         document.addEventListener('DOMContentLoaded', function() {
             cargarLogo();
             configurarEventos();
@@ -232,7 +271,7 @@
         }
 
         function configurarEventos() {
-            // Navegación - USANDO THIS EN LUGAR DE EVENT
+            // NAVEGACIÓN - USANDO THIS, NO EVENT
             var navBtns = document.querySelectorAll('.nav-btn');
             for(var i=0; i<navBtns.length; i++) {
                 navBtns[i].addEventListener('click', function() {
@@ -241,16 +280,17 @@
                 });
             }
 
-            // Botones de acceso rápido
+            // ACCESOS RÁPIDOS
             var btnsAcceso = document.querySelectorAll('.btn-ley[data-seccion]');
             for(var i=0; i<btnsAcceso.length; i++) {
                 btnsAcceso[i].addEventListener('click', function() {
                     var seccion = this.getAttribute('data-seccion');
-                    mostrar(seccion, document.querySelector('[data-seccion="'+seccion+'"]'));
+                    var navBtn = document.querySelector('[data-seccion="'+seccion+'"]');
+                    mostrar(seccion, navBtn);
                 });
             }
 
-            // Botones de leyes
+            // LEYES
             var btnsLeyes = document.querySelectorAll('.btn-ley[data-ley]');
             for(var i=0; i<btnsLeyes.length; i++) {
                 btnsLeyes[i].addEventListener('click', function() {
@@ -259,13 +299,13 @@
                 });
             }
 
-            // Buscador
+            // BUSCADOR
             document.getElementById('buscarLey').addEventListener('keyup', buscar);
 
             // IA
             document.getElementById('btnConsultarIA').addEventListener('click', consultarIA);
 
-            // Modal Logo
+            // MODAL
             document.getElementById('btnCambiarLogo').addEventListener('click', abrirModalLogo);
             document.getElementById('btnCancelar').addEventListener('click', cerrarModalLogo);
             document.getElementById('btnGuardarLogo').addEventListener('click', guardarLogo);
@@ -280,84 +320,3 @@
             var botones = document.getElementsByClassName('nav-btn');
             for(var i=0; i<botones.length; i++) {
                 botones[i].classList.remove('active');
-            }
-            document.getElementById(id).classList.add('active');
-            if(botonClickeado) botonClickeado.classList.add('active');
-            window.scrollTo({top:0,behavior:'smooth'});
-        }
-
-        function abrirModalLogo() {
-            document.getElementById('modalLogo').classList.add('active');
-        }
-
-        function cerrarModalLogo() {
-            document.getElementById('modalLogo').classList.remove('active');
-            document.getElementById('previewImg').style.display = 'none';
-            document.getElementById('inputLogo').value = '';
-        }
-
-        function previewLogo(e) {
-            var file = e.target.files[0];
-            if(file && file.size < 5242880) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('previewImg').src = e.target.result;
-                    document.getElementById('previewImg').style.display = 'block';
-                }
-                reader.readAsDataURL(file);
-            } else {
-                alert('La imagen debe pesar menos de 5MB');
-            }
-        }
-
-        function guardarLogo() {
-            var preview = document.getElementById('previewImg');
-            if(preview.src && preview.style.display!== 'none') {
-                localStorage.setItem('lexsv_logo', preview.src);
-                document.getElementById('logoBeagle').src = preview.src;
-                document.getElementById('logoBeagle').style.display = 'block';
-                document.getElementById('logoDefault').style.display = 'none';
-                cerrarModalLogo();
-                alert('✅ Logo guardado. Queda en tu dispositivo para siempre.');
-            } else {
-                alert('Por favor seleccioná una imagen primero');
-            }
-        }
-
-        function verLey(codigo) {
-            var ley = leyes[codigo];
-            var html = '';
-            for(var i=0; i<ley.length; i++) {
-                html += '<div class="articulo"><strong>' + ley[i].art + '.-</strong> ' + ley[i].txt + '</div>';
-            }
-            document.getElementById('contenido-ley').innerHTML = html;
-            document.getElementById('contenido-ley').scrollIntoView({behavior:'smooth',block:'start'});
-        }
-
-        function buscar() {
-            var texto = document.getElementById('buscarLey').value.toLowerCase();
-            if(texto.length < 3) {
-                document.getElementById('contenido-ley').innerHTML = '<p style="text-align:center;color:#6B7280;padding:3rem;font-size:1.15rem">Escriba al menos 3 letras para buscar en los 8 códigos...</p>';
-                return;
-            }
-            var resultados = '';
-            for(var key in leyes) {
-                for(var i=0; i<leyes[key].length; i++) {
-                    var articulo = leyes[key][i];
-                    if(articulo.txt.toLowerCase().indexOf(texto) > -1 || articulo.art.toLowerCase().indexOf(texto) > -1) {
-                        resultados += '<div class="articulo"><strong>' + articulo.art + '.-</strong> ' + articulo.txt + '</div>';
-                    }
-                }
-            }
-            document.getElementById('contenido-ley').innerHTML = resultados || '<p style="text-align:center;color:#6B7280;padding:3rem;font-size:1.15rem">No se encontraron resultados para "' + texto + '"</p>';
-        }
-
-        function consultarIA() {
-            var pregunta = document.getElementById('preguntaIA').value.toLowerCase();
-            var resp = document.getElementById('respuestaIA');
-            resp.style.display = 'block';
-
-            if(pregunta.indexOf('divorcio') > -1 && pregunta.indexOf('mutuo') > -1) {
-                resp.innerHTML = '<strong style="color:var(--azul);font-size:1.4rem">Modelo: Demanda de Divorcio por Mutuo Consentimiento</strong><br><strong>Fundamento Legal:</strong> Código de Familia Art. 106<br><br><strong>SEÑOR JUEZ DE FAMILIA DE SANTA TECLA</strong><br><br>Nosotros, [NOMBRE ESPOSO] y [NOMBRE ESPOSA], mayores de edad, casados entre sí, del domicilio de Santa Tecla, con DUI... y... respectivamente, actuando en nombre propio, a Usted respetuosamente EXPONEMOS:<br><br><strong>I. HECHOS:</strong><br>1. Que contrajimos matrimonio civil el día [FECHA] ante los oficios de...<br>2. Que de dicha unión [no procreamos hijos] / [procreamos a...]<br>3. Que por convenir a nuestros intereses personales, hemos decidido disolver el vínculo matrimonial que nos une...<br><br><strong>II. FUNDAMENTOS DE DERECHO:</strong><br>Código de Familia Art. 106: "El divorcio por mutuo consentimiento procede cuando los cónyuges lo solicitan de común acuerdo..."<br><br><strong>III. PETITORIO:</strong><br>Por lo expuesto, PEDIMOS: Se admita la presente demanda, se le dé el trámite de ley y en sentencia definitiva se decrete el divorcio por mutuo consentimiento...<br><br><em style="color:var(--dorado);font-weight:700">Nota: Este es un borrador generado por LexSV-Pro. Revise con legislación vigente y ajuste datos específicos del caso.</em>';
-            } else if(pregunta.indexOf('plazo') > -1 || pregunta.indexOf('apel') > -1 || pregunta.indexOf('cpcm') > -1 || pregunta.indexOf('término') > -1) {
-                resp.innerHTML = '<strong style="color:var(--azul);font-size:1.4rem">Plazos Procesales - CPCM</strong><br><br><strong>Reglas Fundamentales Art. 146-147 CPCM:</strong><br>1. Los plazos son <strong>perentorios e improrrog
